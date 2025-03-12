@@ -1,4 +1,4 @@
-# e-commerce UI exercise
+# e-commerce navbar
 ## [Link to Website](https://michaelt-w23.github.io/ecommerce-ui-idea/)
 
 Example navbar component for an e-commerce website.
