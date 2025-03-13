@@ -1,22 +1,36 @@
 import React, { useState } from "react";
+import styles from "../styles/components/SearchBar.module.css";
 
-const SearchBar = ({ searchText, setSearchText }) => {
+const SearchBar = () => {
   const [isFocused, setIsFocused] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const suggestions = ["nice", "Cool", "versace", "shoes", "friend"];
+
+  const filteredSuggestions = suggestions.filter((item) =>
+    item.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="relative w-64">
-      {isFocused && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-70 rounded-lg z-10"></div>
-      )}
+    <div className={`${styles.inputContainer} ${isFocused ? styles.focused : ""}`}>
       <input
         type="text"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
+        className={styles.inputField}
+        placeholder="Search for items, brands, or styles..."
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className="relative w-full px-4 py-2 border bg-white border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500 z-20"
-        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
+      {isFocused && filteredSuggestions.length > 0 && (
+        <div className={styles.expandedBackground}>
+          <ul>
+            {filteredSuggestions.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

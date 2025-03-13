@@ -1,0 +1,39 @@
+.inputContainer {
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .focused {
+    background-color: blue;
+    border-radius: 1.3rem 1.3rem 0 0;
+  }
+  
+  .inputField {
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 1.3rem;
+    outline: none;
+    width: 400px;
+  }
+  
+
+  .expandedBackground {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: blue;
+    padding: 1rem;
+    border-radius: 0 0 1.3rem 1.3rem;
+    text-align: left;
+    min-height: 200px; /* Extend the background downwards */
+  }
+  
+  .expandedBackground p {
+    margin: 0;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
