@@ -1,32 +1,22 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ searchText, setSearchText }) => {
-  const items = ["Chicken", "bird", "lion", "fish", "Bear"];
-  
-  const filteredItems = items.filter(item => 
-    item.toLowerCase().includes(searchText.toLowerCase())
-  );
+  const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="relative w-64 bg-gray-100 p-2 rounded-lg shadow-md">
+    <div className="relative w-64">
+      {isFocused && (
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-70 rounded-lg z-10"></div>
+      )}
       <input
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        className="relative w-full px-4 py-2 border bg-white border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500 z-20"
         placeholder="Search..."
-        className="w-full p-2 rounded-md border border-gray-300 focus:outline-none"
       />
-      <div className="mt-2 w-full bg-gray-100 border-t border-gray-300 rounded-md max-h-40 overflow-auto">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item, index) => (
-            <div key={index} className="p-2 hover:bg-gray-200 cursor-pointer">
-              {item}
-            </div>
-          ))
-        ) : (
-          <div className="p-2 text-gray-500">No results found</div>
-        )}
-      </div>
     </div>
   );
 };
