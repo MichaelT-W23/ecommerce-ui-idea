@@ -32,9 +32,10 @@
     padding: 4px 14px;
     border: 2px solid #262626;
     cursor: pointer;
-    font-weight: 900;
-    font-size: 20px;
-    font-family: "GT America Expanded"
+    font-weight: 700;
+    font-size: 18px;
+    /* font-family: "GT America Expanded" */
+    font-family: "Arial"
   }
 
   .button:focus {

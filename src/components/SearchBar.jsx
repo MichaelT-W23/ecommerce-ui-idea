@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/components/SearchBar.module.css";
 import { LensIcon } from "../assets/svg/Lens";
+import searchData from "../assets/SearchData.json";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [trendingSearches, setTrendingSearches] = useState([]);
+
+  useEffect(() => {
+    setTrendingSearches(searchData["trending-searches"]);
+  }, []);
 
   const suggestions = ["nice", "Cool", "versace", "shoes", "friend"];
-  const filteredSuggestions = suggestions.filter((item) =>
-    item.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredSuggestions = searchTerm
+    ? suggestions.filter((item) =>
+        item.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   const handleSelectSuggestion = (item) => {
     setSearchTerm(item);
@@ -29,16 +37,34 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
         />
       </div>
-      {isFocused && filteredSuggestions.length > 0 && (
+      {isFocused && (
         <ul className={styles.suggestionsList}>
-          {filteredSuggestions.map((item, index) => (
-            <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
-              {item}
-            </li>
-          ))}
+          {searchTerm ? (
+            filteredSuggestions.length > 0 ? (
+              filteredSuggestions.map((item, index) => (
+                <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
+                  {item}
+                </li>
+              ))
+            ) : (
+              <li className={styles.noResults}>No results found</li>
+            )
+          ) : (
+            <>
+              <li className={styles.trendingTitle}>Trending searches</li>
+              {trendingSearches.map((search) => (
+                <li
+                  key={search.id}
+                  onMouseDown={() => handleSelectSuggestion(search.text)}
+                >
+                  {search.text}
+                </li>
+              ))}
+            </>
+          )}
         </ul>
       )}
     </div>
@@ -46,4 +72,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
