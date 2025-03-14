@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/components/Navbar.module.css";
 import SearchBar from "./SearchBar";
+import { DepopLogo } from "../assets/svg/DepopLogo";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles["navbar-title"]}>MyApp</div>
+      <DepopLogo />
       <SearchBar />
       <div className={styles["navbar-controls"]}>
         <button className={`${styles.button} ${styles["button-blue"]}`}>Button 1</button>
