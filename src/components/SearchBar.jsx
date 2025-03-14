@@ -13,7 +13,10 @@ const SearchBar = () => {
     setTrendingSearches(searchData["trending-searches"]);
 
     const handleClickOutside = (event) => {
-      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+      if (
+        searchBarRef.current &&
+        !searchBarRef.current.contains(event.target)
+      ) {
         setIsFocused(false);
       }
     };
@@ -35,7 +38,10 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={styles.inputContainer} ref={searchBarRef}>
+    <div
+      className={`${styles.inputContainer} ${isFocused ? styles.active : ""}`}
+      ref={searchBarRef}
+    >
       <div className={styles.inputWrapper}>
         <div className={styles.searchIcon}>
           <LensIcon />
