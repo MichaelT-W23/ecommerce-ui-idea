@@ -5,17 +5,17 @@
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
-  padding: 0.5rem;
   border-radius: 1.3rem;
   z-index: 10;
-  border: 2px solid transparent; /* Add transparent border to maintain space */
-  
+  /* border: 2px solid transparent; */
+  overflow: hidden; /* Ensures the child elements respect the border-radius */
 }
 
 /* Input wrapper to position elements correctly */
 .inputWrapper {
   position: relative;
   width: 100%;
+  padding: 0.5rem;
 }
 
 /* Search icon inside input */
@@ -50,20 +50,24 @@
 }
 
 .inputContainer:focus-within {
-  border: 2px solid #262626;
   background-color: #f3f3f3;
+  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.3);
 }
 
-/* Suggestions list */
+/* Suggestions list should fill the container properly */
 .suggestionsList {
   width: 100%;
+  /* background-color: red; */
   background-color: #f3f3f3;
-  padding: 0.5rem;
-  border-radius: 0 0 1.3rem 1.3rem;
   list-style: none;
-  margin-top: 0.3rem;
+  margin: 0; /* Remove margin that may be causing misalignment */
+  padding: 0;
+  border-radius: 0 0 1.3rem 1.3rem;
+  overflow: hidden; /* Ensures no overflow breaks the radius */
+  /* padding: 0; Remove unnecessary padding */
 }
 
+/* Ensure last item gets rounded corners when hovered */
 .suggestionsList li {
   padding: 0.5rem;
   font-size: 1rem;
@@ -72,5 +76,12 @@
 }
 
 .suggestionsList li:hover {
-  background-color: #ddd;
+  background-color: #3D37BD;
+  color: white;
+}
+
+/* Apply border-radius to last item when hovered */
+.suggestionsList li:last-child:hover {
+  color: white;
+  border-radius: 0 0 1.3rem 1.3rem;
 }
