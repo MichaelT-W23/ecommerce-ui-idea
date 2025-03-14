@@ -14,10 +14,13 @@ const Navbar = () => {
       <SearchBar />
       <div className={styles["navbar-controls"]}>
         <LikeIcon />
-        <BagIcon />
+
+        <div className={styles["bag-icon"]}>
+          <BagIcon />
+        </div>
         <button className={`${styles.button} ${styles["sell-now-btn"]}`}>Sell now</button>
         <button className={`${styles.button} ${styles["sign-up-btn"]}`}>Sign Up</button>
-        <p className={styles['log-in-text']}>Log in</p>
+        <button className={`${styles.button} ${styles["log-in-btn"]}`}>Log in</button>
       </div>
     </nav>
   );
