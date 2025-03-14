@@ -1,0 +1,24 @@
+{
+    "trending-searches": [
+        {
+            "id": 1,
+            "text": "lululemon define jacket"
+        },
+        {
+            "id": 2,
+            "text": "baggy jeans"
+        },
+        {
+            "id": 3,
+            "text": "carhartt jacket"
+        },
+        {
+            "id": 4,
+            "text": "essentials hoodie"
+        },
+        {
+            "id": 5,
+            "text": "vintage t shirt"
+        }
+    ]
+}

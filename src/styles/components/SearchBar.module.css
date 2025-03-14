@@ -62,9 +62,10 @@
 
 .suggestionsList li {
   padding: 0.5rem;
-  font-size: 1rem;
   padding-left: 1.2rem;
   cursor: pointer;
+  font-family: "GT America Expanded";
+  font-size: 1.15rem;
 }
 
 .suggestionsList li:hover {
