@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/components/SearchBar.module.css";
+import { LensIcon } from "../assets/svg/Lens";
 
 const SearchBar = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -13,6 +14,9 @@ const SearchBar = () => {
 
   return (
     <div className={`${styles.inputContainer} ${isFocused ? styles.focused : ""}`}>
+      <div className={styles["search-icon"]}>
+        <LensIcon />
+      </div>
       <input
         type="text"
         className={styles.inputField}
