@@ -1,60 +1,76 @@
+/* Ensure inputContainer is positioned properly */
 .inputContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-right: 200px;
-}
-
-.focused {
-  background-color: #f3f3f3;
-  border-radius: 1.3rem 1.3rem 0 0;
-}
-
-/* Styling for the search icon */
-.search-icon {
   position: absolute;
-  left: 1.5rem; /* Adjust left positioning */
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  padding: 0.5rem;
+  border-radius: 1.3rem;
+  z-index: 10;
+  border: 2px solid transparent; /* Add transparent border to maintain space */
+  
+}
+
+/* Input wrapper to position elements correctly */
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Search icon inside input */
+.searchIcon {
+  position: absolute;
+  left: 0.8rem; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust size */
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  pointer-events: none; /* Prevent clicking on the icon */
+  pointer-events: none; /* Prevent interaction */
 }
 
+/* Input field */
 .inputField {
   color: #262626;
   font-size: 15.5px;
-  padding: 0.5rem 0.5rem 0.5rem 2.5rem; /* Left padding increased for icon spacing */
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem; /* Ensure left padding accounts for the icon */
   border: 2px solid #262626;
   background-color: #f3f3f3;
-  font-family: var(--font-GtAmericaExtended), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--font-GtAmericaExtended), sans-serif;
   border-radius: 1.3rem;
   outline: none;
-  width: 600px;
+  width: 100%;
 }
 
 .inputField::placeholder {
   color: #262626;
 }
 
-.expandedBackground {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+.inputContainer:focus-within {
+  border: 2px solid #262626;
   background-color: #f3f3f3;
-  padding: 1rem;
-  border-radius: 0 0 1.3rem 1.3rem;
-  text-align: left;
-  min-height: 200px; /* Extend the background downwards */
 }
 
-.expandedBackground p {
-  margin: 0;
-  padding: 0.5rem 0;
+/* Suggestions list */
+.suggestionsList {
+  width: 100%;
+  background-color: #f3f3f3;
+  padding: 0.5rem;
+  border-radius: 0 0 1.3rem 1.3rem;
+  list-style: none;
+  margin-top: 0.3rem;
+}
+
+.suggestionsList li {
+  padding: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.suggestionsList li:hover {
+  background-color: #ddd;
 }

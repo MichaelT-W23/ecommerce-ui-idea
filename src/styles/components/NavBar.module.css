@@ -21,6 +21,12 @@
     margin-left: 8px;
   }
   
+  .search-bar {
+    top: -30px;
+    position: relative;
+  }
+
+  
   .button {
     color: white;
     padding: 4px 14px;
@@ -35,7 +41,7 @@
     box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
     outline: transparent dotted 4px;
   }
-  
+
   .sell-now-btn {
     background-color: #262626;
   }

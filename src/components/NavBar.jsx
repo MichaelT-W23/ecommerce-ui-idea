@@ -11,7 +11,9 @@ const Navbar = () => {
       <div className={styles['depop-logo']}>
       <DepopLogo />
       </div>
-      <SearchBar />
+      <div className={styles['search-bar']}>
+        <SearchBar />
+      </div>
       <div className={styles["navbar-controls"]}>
         <LikeIcon />
 
