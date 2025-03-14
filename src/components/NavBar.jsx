@@ -15,8 +15,8 @@ const Navbar = () => {
       <div className={styles["navbar-controls"]}>
         <LikeIcon />
         <BagIcon />
-        <button className={`${styles.button} ${styles["button-blue"]}`}>Sell now</button>
-        <button className={`${styles.button} ${styles["button-green"]}`}>Sign Up</button>
+        <button className={`${styles.button} ${styles["sell-now-btn"]}`}>Sell now</button>
+        <button className={`${styles.button} ${styles["sign-up-btn"]}`}>Sign Up</button>
         <p className={styles['log-in-text']}>Log in</p>
       </div>
     </nav>
