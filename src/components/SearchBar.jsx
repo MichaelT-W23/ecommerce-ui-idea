@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/components/SearchBar.module.css";
 import { LensIcon } from "../assets/svg/Lens";
 import searchData from "../assets/SearchData.json";
@@ -7,9 +7,19 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [trendingSearches, setTrendingSearches] = useState([]);
+  const searchBarRef = useRef(null);
 
   useEffect(() => {
     setTrendingSearches(searchData["trending-searches"]);
+
+    const handleClickOutside = (event) => {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+        setIsFocused(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const suggestions = ["nice", "Cool", "versace", "shoes", "friend"];
@@ -25,7 +35,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={styles.inputContainer}>
+    <div className={styles.inputContainer} ref={searchBarRef}>
       <div className={styles.inputWrapper}>
         <div className={styles.searchIcon}>
           <LensIcon />
@@ -37,7 +47,6 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setTimeout(() => setIsFocused(false), 200)}
         />
       </div>
       {isFocused && (
