@@ -66,6 +66,7 @@
     align-items: center;
     margin-right: 20px;
     gap: 1rem;
+    /* background-color: red; */
   }
   
   .log-in-btn {
@@ -76,4 +77,22 @@
 
   .log-in-btn:hover {
     cursor: pointer;
+    color: #747474;
+  }
+
+  .heart-icon {
+    cursor: pointer;
+    margin-left: 40px; /* Higher number to move right */
+  }
+
+  .bag-icon {
+    cursor: pointer;
+  }
+
+  .heart-icon:hover {
+    color: rgb(116, 116, 116);
+  }
+
+  .bag-icon:hover {
+    color: rgb(116, 116, 116);
   }

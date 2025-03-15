@@ -15,11 +15,15 @@ const Navbar = () => {
         <SearchBar />
       </div>
       <div className={styles["navbar-controls"]}>
-        <LikeIcon />
+
+        <div className={styles['heart-icon']}>
+          <LikeIcon />
+        </div>
 
         <div className={styles["bag-icon"]}>
           <BagIcon />
         </div>
+        
         <button className={`${styles.button} ${styles["sell-now-btn"]}`}>Sell now</button>
         <button className={`${styles.button} ${styles["sign-up-btn"]}`}>Sign Up</button>
         <button className={`${styles.button} ${styles["log-in-btn"]}`}>Log in</button>

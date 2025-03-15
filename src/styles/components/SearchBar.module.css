@@ -88,6 +88,15 @@
   border-radius: 0 0 1.3rem 1.3rem;
 }
 
+.category-text {
+  color: #3D37BD;
+  margin-left: 4.5px;
+}
+
+.suggestionsList li:hover .category-text {
+  color: white; 
+}
+
 .trendingTitle {
   margin-top: 10px;
   margin-bottom: 1px;

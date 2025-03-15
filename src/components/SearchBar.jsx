@@ -7,6 +7,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [trendingSearches, setTrendingSearches] = useState([]);
+  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const searchBarRef = useRef(null);
 
   useEffect(() => {
@@ -25,22 +26,44 @@ const SearchBar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const suggestions = ["nice", "Cool", "versace", "shoes", "friend"];
-  const filteredSuggestions = searchTerm
-    ? suggestions.filter((item) =>
-        item.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    : [];
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      const firstLetter = searchTerm[0].toLowerCase();
+      if (searchData["search-data"][firstLetter]) {
+        setFilteredSuggestions(searchData["search-data"][firstLetter]);
+      } else {
+        setFilteredSuggestions([]);
+      }
+    } else {
+      setFilteredSuggestions([]);
+    }
+  }, [searchTerm]);
 
   const handleSelectSuggestion = (item) => {
-    setSearchTerm(item);
+    setSearchTerm(item.search);
     setIsFocused(false);
+  };
+
+  const highlightMatch = (text, searchTerm) => {
+    const index = text.toLowerCase().indexOf(searchTerm.toLowerCase());
+    if (index !== -1) {
+      return (
+        <>
+          {text.substring(0, index)}
+          <b>{text.substring(index, index + searchTerm.length)}</b>
+          {text.substring(index + searchTerm.length)}
+        </>
+      );
+    }
+    return text;
   };
 
   return (
     <div
       className={`${styles.inputContainer} ${
-        isFocused && (searchTerm === "" || filteredSuggestions.length > 0) ? styles.active : ""
+        isFocused && (searchTerm === "" || filteredSuggestions.length > 0)
+          ? styles.active
+          : ""
       }`}
       ref={searchBarRef}
     >
@@ -62,7 +85,12 @@ const SearchBar = () => {
           {searchTerm ? (
             filteredSuggestions.map((item, index) => (
               <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
-                {item}
+                {highlightMatch(item.search, searchTerm)}
+                {index < 2 && item.category && (
+                  <span className={styles['category-text']}>
+                    {item.category}
+                  </span>
+                )}
               </li>
             ))
           ) : (
@@ -71,7 +99,7 @@ const SearchBar = () => {
               {trendingSearches.map((search) => (
                 <li
                   key={search.id}
-                  onMouseDown={() => handleSelectSuggestion(search.text)}
+                  onMouseDown={() => handleSelectSuggestion({ search: search.text })}
                 >
                   {search.text}
                 </li>
