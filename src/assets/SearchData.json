@@ -20,5 +20,1151 @@
             "id": 5,
             "text": "vintage t shirt"
         }
-    ]
+    ],
+    "search-data": {
+        "a": [
+            {
+                "id": 1,
+                "search": "adidas samba",
+                "category": "in Women's Shoes"
+            },
+            {
+                "id": 2,
+                "search": "adidas samba",
+                "category": "in Men's Shoes"
+            },
+            {
+                "id": 3,
+                "search": "adidas samba"
+            },
+            {
+                "id": 4,
+                "search": "i am gia"
+            },
+            {
+                "id": 5,
+                "search": "aritzia"
+            },
+            {
+                "id": 6,
+                "search": "arcteryx"
+            },
+            {
+                "id": 7,
+                "search": "affliction"
+            },
+            {
+                "id": 8,
+                "search": "adidas"
+            },
+            {
+                "id": 9,
+                "search": "asics"
+            },
+            {
+                "id": 10,
+                "search": "air force 1"
+            }
+        ],
+        "b": [
+            {
+                "id": 1,
+                "search": "boots",
+                "category": "in Women's Shoes"
+            },
+            {
+                "id": 2,
+                "search": "boots",
+                "category": "in Men's Shoes"
+            },
+            {
+                "id": 3,
+                "search": "boots"
+            },
+            {
+                "id": 4,
+                "search": "brandy melville"
+            },
+            {
+                "id": 5,
+                "search": "baby tee"
+            },
+            {
+                "id": 6,
+                "search": "new balance"
+            },
+            {
+                "id": 7,
+                "search": "baggy jeans"
+            },
+            {
+                "id": 8,
+                "search": "belt"
+            },
+            {
+                "id": 9,
+                "search": "cowboy boots"
+            },
+            {
+                "id": 10,
+                "search": "tote bag"
+            }
+        ],
+        "c": [
+            {
+                "id": 1,
+                "search": "cargo pants",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 2,
+                "search": "cargo pants",
+                "category": "in Men's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "cargo pants"
+            },
+            {
+                "id": 4,
+                "search": "coquette grunge"
+            },
+            {
+                "id": 5,
+                "search": "y2k cargo"
+            },
+            {
+                "id": 6,
+                "search": "carhatt"
+            },
+            {
+                "id": 7,
+                "search": "carhatt jacket"
+            },
+            {
+                "id": 8,
+                "search": "cowboy boots"
+            },
+            {
+                "id": 9,
+                "search": "cardigan"
+            },
+            {
+                "id": 10,
+                "search": "converse"
+            }
+        ],
+        "d": [
+            {
+                "id": 1,
+                "search": "dress",
+                "category": "in Women's Dresses"
+            },
+            {
+                "id": 2,
+                "search": "dress",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "dress"
+            },
+            {
+                "id": 4,
+                "search": "doc martens"
+            },
+            {
+                "id": 5,
+                "search": "dior"
+            },
+            {
+                "id": 6,
+                "search": "dunks"
+            },
+            {
+                "id": 7,
+                "search": "nike dunks"
+            },
+            {
+                "id": 8,
+                "search": "dissh"
+            },
+            {
+                "id": 9,
+                "search": "mini dress"
+            },
+            {
+                "id": 10,
+                "search": "maxi dress"
+            }
+        ],
+        "e": [
+            {
+                "id": 1,
+                "search": "ed hardy",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 2,
+                "search": "ed hardy",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "ed hardy"
+            },
+            {
+                "id": 4,
+                "search": "essentials hoodie"
+            },
+            {
+                "id": 5,
+                "search": "edikted"
+            },
+            {
+                "id": 6,
+                "search": "evisu jeans"
+            },
+            {
+                "id": 7,
+                "search": "ed hardy jeans"
+            },
+            {
+                "id": 8,
+                "search": "earrings"
+            },
+            {
+                "id": 9,
+                "search": "evisu"
+            },
+            {
+                "id": 10,
+                "search": "essentials"
+            }
+        ],
+        "f": [
+            {
+                "id": 1,
+                "search": "free people",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "free people",
+                "category": "in Men's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "free people"
+            },
+            {
+                "id": 4,
+                "search": "white fox"
+            },
+            {
+                "id": 5,
+                "search": "north face puffer"
+            },
+            {
+                "id": 6,
+                "search": "white fox hoodie"
+            },
+            {
+                "id": 7,
+                "search": "ballet flats"
+            },
+            {
+                "id": 8,
+                "search": "air force 1"
+            },
+            {
+                "id": 9,
+                "search": "fleece"
+            },
+            {
+                "id": 10,
+                "search": "formal dress"
+            }
+        ],
+        "g": [
+            {
+                "id": 1,
+                "search": "coquette grunge",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "coquette grunge",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "coquette grunge"
+            },
+            {
+                "id": 4,
+                "search": "gorpcore"
+            },
+            {
+                "id": 5,
+                "search": "graphic tee"
+            },
+            {
+                "id": 6,
+                "search": "ganni"
+            },
+            {
+                "id": 7,
+                "search": "i am gia"
+            },
+            {
+                "id": 8,
+                "search": "goth"
+            },
+            {
+                "id": 9,
+                "search": "gucci"
+            },
+            {
+                "id": 10,
+                "search": "going out top"
+            }
+        ],
+        "h": [
+            {
+                "id": 1,
+                "search": "hoodie",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 2,
+                "search": "hoodie",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "hoodie"
+            },
+            {
+                "id": 4,
+                "search": "stussy hoodie"
+            },
+            {
+                "id": 5,
+                "search": "ed hardy"
+            },
+            {
+                "id": 6,
+                "search": "house of cb"
+            },
+            {
+                "id": 7,
+                "search": "essentials hoodie"
+            },
+            {
+                "id": 8,
+                "search": "hello kitty"
+            },
+            {
+                "id": 9,
+                "search": "vintage hoodie"
+            },
+            {
+                "id": 10,
+                "search": "nike hoodie"
+            }
+        ], 
+        "i": [
+            {
+                "id": 1,
+                "search": "i am gia",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "i am gia",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "i am gia"
+            },
+            {
+                "id": 4,
+                "search": "stone island"
+            },
+            {
+                "id": 5,
+                "search": "iamgia"
+            },
+            {
+                "id": 6,
+                "search": "issey miyake"
+            },
+            {
+                "id": 7,
+                "search": "stone island jumper"
+            },
+            {
+                "id": 8,
+                "search": "lucy in the sky dress"
+            },
+            {
+                "id": 9,
+                "search": "in print we trust"
+            },
+            {
+                "id": 10,
+                "search": "stone island jacket"
+            }
+        ],
+        "j": [
+            {
+                "id": 1,
+                "search": "varsity jacket",
+                "category": "in Men's Outwear"
+            },
+            {
+                "id": 2,
+                "search": "varsity jacket",
+                "category": "in Women's Outwear"
+            },
+            {
+                "id": 3,
+                "search": "varsity jacket"
+            },
+            {
+                "id": 4,
+                "search": "jeans"
+            },
+            {
+                "id": 5,
+                "search": "jorts"
+            },
+            {
+                "id": 6,
+                "search": "jordan 4"
+            },
+            {
+                "id": 7,
+                "search": "jacket"
+            },
+            {
+                "id": 8,
+                "search": "jnco jeans"
+            },
+            {
+                "id": 9,
+                "search": "baggy jeans"
+            },
+            {
+                "id": 10,
+                "search": "leather jacket"
+            }
+        ],
+        "k": [
+            {
+                "id": 1,
+                "search": "hello kitty",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "hello kitty",
+                "category": "in Women's Accessories"
+            },
+            {
+                "id": 3,
+                "search": "hello kitty"
+            },
+            {
+                "id": 4,
+                "search": "knee high boots"
+            },
+            {
+                "id": 5,
+                "search": "kitten heels"
+            },
+            {
+                "id": 6,
+                "search": "knit sweater"
+            },
+            {
+                "id": 7,
+                "search": "kookai"
+            },
+            {
+                "id": 8,
+                "search": "keychain"
+            },
+            {
+                "id": 9,
+                "search": "kith"
+            },
+            {
+                "id": 10,
+                "search": "killstar"
+            }
+        ],
+        "l": [
+            {
+                "id": 1,
+                "search": "lululemon",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 2,
+                "search": "lululemon",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "lululemon"
+            },
+            {
+                "id": 4,
+                "search": "leather jacket"
+            },
+            {
+                "id": 5,
+                "search": "ralph lauren"
+            },
+            {
+                "id": 6,
+                "search": "jaded london"
+            },
+            {
+                "id": 7,
+                "search": "loafers"
+            },
+            {
+                "id": 8,
+                "search": "long sleeve top"
+            },
+            {
+                "id": 9,
+                "search": "louis vuitton bag"
+            },
+            {
+                "id": 10,
+                "search": "lace top"
+            }
+        ], 
+        "m": [
+            {
+                "id": 1,
+                "search": "brandy melville",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "brandy melville",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "brandy melville"
+            },
+            {
+                "id": 4,
+                "search": "doc martens"
+            },
+            {
+                "id": 5,
+                "search": "mini skirt"
+            },
+            {
+                "id": 6,
+                "search": "maxi skirt"
+            },
+            {
+                "id": 7,
+                "search": "mini dress"
+            },
+            {
+                "id": 8,
+                "search": "maxi dress"
+            },
+            {
+                "id": 9,
+                "search": "miu miu"
+            },
+            {
+                "id": 10,
+                "search": "motel rocks"
+            }
+        ],
+        "n": [
+            {
+                "id": 1,
+                "search": "new balance",
+                "category": "in Men's Shoes"
+            },
+            {
+                "id": 2,
+                "search": "new balance",
+                "category": "in Women's Shoes"
+            },
+            {
+                "id": 3,
+                "search": "new balance"
+            },
+            {
+                "id": 4,
+                "search": "nike"
+            },
+            {
+                "id": 5,
+                "search": "nike dunks"
+            },
+            {
+                "id": 6,
+                "search": "new balance 550"
+            },
+            {
+                "id": 7,
+                "search": "north face puffer"
+            },
+            {
+                "id": 8,
+                "search": "nike hoodie"
+            },
+            {
+                "id": 9,
+                "search": "nike shoes"
+            },
+            {
+                "id": 10,
+                "search": "necklace"
+            }
+        ],
+        "o": [
+            {
+                "id": 1,
+                "search": "house of cb",
+                "category": "in Women's Dresses"
+            },
+            {
+                "id": 2,
+                "search": "house of cb",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "house of cb"
+            },
+            {
+                "id": 4,
+                "search": "overalls"
+            },
+            {
+                "id": 5,
+                "search": "urban outfitters"
+            },
+            {
+                "id": 6,
+                "search": "oh polly dress"
+            },
+            {
+                "id": 7,
+                "search": "rick owens"
+            },
+            {
+                "id": 8,
+                "search": "going out top"
+            },
+            {
+                "id": 9,
+                "search": "oh polly"
+            },
+            {
+                "id": 10,
+                "search": "house of cb dress"
+            }
+        ],
+        "p": [
+            {
+                "id": 1,
+                "search": "cargo pants",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 2,
+                "search": "cargo pants",
+                "category": "in Men's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "cargo pants"
+            },
+            {
+                "id": 4,
+                "search": "free people"
+            },
+            {
+                "id": 5,
+                "search": "pants"
+            },
+            {
+                "id": 6,
+                "search": "princess polly"
+            },
+            {
+                "id": 7,
+                "search": "prada"
+            },
+            {
+                "id": 8,
+                "search": "patagonia"
+            },
+            {
+                "id": 9,
+                "search": "north face puffer"
+            },
+            {
+                "id": 10,
+                "search": "carhatt pants"
+            }
+        ],
+        "q": [
+            {
+                "id": 1,
+                "search": "quarter zip",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 2,
+                "search": "quarter zip",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "quarter zip"
+            },
+            {
+                "id": 4,
+                "search": "quilted jacket"
+            },
+            {
+                "id": 5,
+                "search": "ralph lauren quarter zip"
+            },
+            {
+                "id": 6,
+                "search": "fleece quarter zip"
+            },
+            {
+                "id": 7,
+                "search": "quicksilver"
+            },
+            {
+                "id": 8,
+                "search": "save the queen"
+            },
+            {
+                "id": 9,
+                "search": "quarter zip fleece"
+            },
+            {
+                "id": 10,
+                "search": "anna quan"
+            }
+        ],
+        "r": [
+            {
+                "id": 1,
+                "search": "true religion jeans",
+                "category": "in Men's Bottoms"
+            },
+            {
+                "id": 2,
+                "search": "true religion jeans",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "true religion jeans"
+            },
+            {
+                "id": 4,
+                "search": "ralph lauren"
+            },
+            {
+                "id": 5,
+                "search": "rugby shirt"
+            },
+            {
+                "id": 6,
+                "search": "motel rocks"
+            },
+            {
+                "id": 7,
+                "search": "rick owens"
+            },
+            {
+                "id": 8,
+                "search": "reformation"
+            },
+            {
+                "id": 9,
+                "search": "ralph lauren jumper"
+            },
+            {
+                "id": 10,
+                "search": "low rise jeans"
+            }
+        ],
+        "s": [
+            {
+                "id": 1,
+                "search": "streetwear",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 2,
+                "search": "streetwear",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "streetwear"
+            },
+            {
+                "id": 4,
+                "search": "skims"
+            },
+            {
+                "id": 5,
+                "search": "stussy"
+            },
+            {
+                "id": 6,
+                "search": "sweater"
+            },
+            {
+                "id": 7,
+                "search": "adidas samba"
+            },
+            {
+                "id": 8,
+                "search": "shoes"
+            },
+            {
+                "id": 9,
+                "search": "vintage t shirt"
+            },
+            {
+                "id": 10,
+                "search": "mini skirt"
+            }
+        ],
+        "t": [
+            {
+                "id": 1,
+                "search": "baby tee",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "baby tee",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 3,
+                "search": "baby tee"
+            },
+            {
+                "id": 4,
+                "search": "vintage t shirt"
+            },
+            {
+                "id": 5,
+                "search": "graphic tee"
+            },
+            {
+                "id": 6,
+                "search": "y2k top"
+            },
+            {
+                "id": 7,
+                "search": "tote bag"
+            },
+            {
+                "id": 8,
+                "search": "summer top"
+            },
+            {
+                "id": 9,
+                "search": "true religion jeans"
+            },
+            {
+                "id": 10,
+                "search": "tank top"
+            }
+        ],
+        "u": [
+            {
+                "id": 1,
+                "search": "uggs",
+                "category": "in Women's Shoes"
+            },
+            {
+                "id": 2,
+                "search": "uggs",
+                "category": "in Men's Shoes"
+            },
+            {
+                "id": 3,
+                "search": "uggs"
+            },
+            {
+                "id": 4,
+                "search": "urban outfitters"
+            },
+            {
+                "id": 5,
+                "search": "zip up hoodie"
+            },
+            {
+                "id": 6,
+                "search": "unif"
+            },
+            {
+                "id": 7,
+                "search": "uniqlo"
+            },
+            {
+                "id": 8,
+                "search": "ugg slippers"
+            },
+            {
+                "id": 9,
+                "search": "ugg tasman"
+            },
+            {
+                "id": 10,
+                "search": "button up shirt"
+            }
+        ],
+        "v": [
+            {
+                "id": 1,
+                "search": "vintage",
+                "category": "in Men's Tops"
+            },
+            {
+                "id": 2,
+                "search": "vintage",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 3,
+                "search": "vintage"
+            },
+            {
+                "id": 4,
+                "search": "varsity jacket"
+            },
+            {
+                "id": 5,
+                "search": "vintage t shirt"
+            },
+            {
+                "id": 6,
+                "search": "vest"
+            },
+            {
+                "id": 7,
+                "search": "vivienne westwood"
+            },
+            {
+                "id": 8,
+                "search": "vintage hoodie"
+            },
+            {
+                "id": 9,
+                "search": "vans"
+            },
+            {
+                "id": 10,
+                "search": "louis vuitton bag"
+            }
+        ],
+        "w": [
+            {
+                "id": 1,
+                "search": "white fox",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "white fox",
+                "category": "in Women's Dresses"
+            },
+            {
+                "id": 3,
+                "search": "white fox"
+            },
+            {
+                "id": 4,
+                "search": "vivienne westwood"
+            },
+            {
+                "id": 5,
+                "search": "paloma wool"
+            },
+            {
+                "id": 6,
+                "search": "white fox hoodie"
+            },
+            {
+                "id": 7,
+                "search": "whimsigoth"
+            },
+            {
+                "id": 8,
+                "search": "dresses womens"
+            },
+            {
+                "id": 9,
+                "search": "watch"
+            },
+            {
+                "id": 10,
+                "search": "white dress"
+            }
+        ], 
+        "x": [
+            {
+                "id": 1,
+                "search": "salomon xt 6",
+                "category": "in Men's Shoes"
+            },
+            {
+                "id": 2,
+                "search": "salomon xt 6",
+                "category": "in Women's Shoes"
+            },
+            {
+                "id": 3,
+                "search": "salomon xt 6"
+            },
+            {
+                "id": 4,
+                "search": "xtreme couture"
+            },
+            {
+                "id": 5,
+                "search": "savage x fenty"
+            },
+            {
+                "id": 6,
+                "search": "salomon xt6"
+            },
+            {
+                "id": 7,
+                "search": "born x raised"
+            },
+            {
+                "id": 8,
+                "search": "xbox"
+            },
+            {
+                "id": 9,
+                "search": "nike x stussy joggers"
+            },
+            {
+                "id": 10,
+                "search": "charli xcx"
+            }
+        ],
+        "y": [
+            {
+                "id": 1,
+                "search": "y2k cargo",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 2,
+                "search": "y2k cargo",
+                "category": "in Men's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "y2k cargo"
+            },
+            {
+                "id": 4,
+                "search": "y2k top"
+            },
+            {
+                "id": 5,
+                "search": "yeezy"
+            },
+            {
+                "id": 6,
+                "search": "grunge y2k"
+            },
+            {
+                "id": 7,
+                "search": "yeezy slides"
+            },
+            {
+                "id": 8,
+                "search": "y2k shirts"
+            },
+            {
+                "id": 9,
+                "search": "lucy and yak"
+            },
+            {
+                "id": 10,
+                "search": "alo yoga"
+            }
+        ],
+        "z": [
+            {
+                "id": 1,
+                "search": "zara",
+                "category": "in Women's Tops"
+            },
+            {
+                "id": 2,
+                "search": "zara",
+                "category": "in Women's Bottoms"
+            },
+            {
+                "id": 3,
+                "search": "zara"
+            },
+            {
+                "id": 4,
+                "search": "zip up hoodie"
+            },
+            {
+                "id": 5,
+                "search": "zara dress"
+            },
+            {
+                "id": 6,
+                "search": "quarter zip"
+            },
+            {
+                "id": 7,
+                "search": "zara top"
+            },
+            {
+                "id": 8,
+                "search": "zip up"
+            },
+            {
+                "id": 9,
+                "search": "zara jeans"
+            },
+            {
+                "id": 10,
+                "search": "zimmermann"
+            }
+        ]
+    }
 }

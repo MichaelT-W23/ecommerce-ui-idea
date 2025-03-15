@@ -39,7 +39,9 @@ const SearchBar = () => {
 
   return (
     <div
-      className={`${styles.inputContainer} ${isFocused ? styles.active : ""}`}
+      className={`${styles.inputContainer} ${
+        isFocused && (searchTerm === "" || filteredSuggestions.length > 0) ? styles.active : ""
+      }`}
       ref={searchBarRef}
     >
       <div className={styles.inputWrapper}>
@@ -55,18 +57,14 @@ const SearchBar = () => {
           onFocus={() => setIsFocused(true)}
         />
       </div>
-      {isFocused && (
+      {isFocused && (searchTerm === "" || filteredSuggestions.length > 0) && (
         <ul className={styles.suggestionsList}>
           {searchTerm ? (
-            filteredSuggestions.length > 0 ? (
-              filteredSuggestions.map((item, index) => (
-                <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
-                  {item}
-                </li>
-              ))
-            ) : (
-              <li className={styles.noResults}>No results found</li>
-            )
+            filteredSuggestions.map((item, index) => (
+              <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
+                {item}
+              </li>
+            ))
           ) : (
             <>
               <li className={styles.trendingTitle}>Trending searches</li>

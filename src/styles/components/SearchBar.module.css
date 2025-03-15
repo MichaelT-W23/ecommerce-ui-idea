@@ -35,7 +35,8 @@
   border: 2px solid #262626;
   background-color: #f3f3f3;
   /* font-family: "Public Sans", sans-serif; */
-  font-family: "Libre Franklin", sans-serif;
+  /* font-family: "Libre Franklin", sans-serif; */
+  font-family: "Roboto", Arial, sans-serif;
   border-radius: 1.3rem;
   outline: none;
   width: 100%;
@@ -67,7 +68,8 @@
   padding-left: 1.2rem;
   cursor: pointer;
   /* font-family: "Public Sans", sans-serif; */
-  font-family: "Libre Franklin", sans-serif;
+  /* font-family: "Libre Franklin", sans-serif; */
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
 }
