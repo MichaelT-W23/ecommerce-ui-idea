@@ -98,14 +98,33 @@
 }
 
 .trendingTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 1px;
-  font-weight: bold !important; 
+  font-weight: bold !important;
   font-family: "Arial", sans-serif;
+  padding-right: 10px;
 }
 
 .trendingTitle:hover {
   cursor: default; 
   background-color: transparent !important;
   color: inherit !important;
+}
+
+.clearButton {
+  cursor: pointer;
+  color: #2960af;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Roboto", Arial, sans-serif;
+  margin-right: 1.2rem;
+  padding: 0;
+  margin-left: auto;
+}
+
+.clearButton:hover {
+  opacity: 0.7;
 }

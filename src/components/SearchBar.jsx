@@ -9,10 +9,13 @@ const SearchBar = () => {
   const [trendingSearches, setTrendingSearches] = useState([]);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [maxLength, setMaxLength] = useState(0);
+  const [recentSearches, setRecentSearches] = useState([]);
   const searchBarRef = useRef(null);
 
   useEffect(() => {
     setTrendingSearches(searchData["trending-searches"]);
+    const storedRecentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
+    setRecentSearches(storedRecentSearches);
 
     const handleClickOutside = (event) => {
       if (
@@ -52,6 +55,15 @@ const SearchBar = () => {
   const handleSelectSuggestion = (item) => {
     setSearchTerm(item.search);
     setIsFocused(false);
+
+    const updatedRecentSearches = [item.search, ...recentSearches.filter(search => search !== item.search)].slice(0, 5);
+    setRecentSearches(updatedRecentSearches);
+    localStorage.setItem("recentSearches", JSON.stringify(updatedRecentSearches));
+  };
+
+  const clearRecentSearches = () => {
+    setRecentSearches([]);
+    localStorage.removeItem("recentSearches");
   };
 
   const highlightMatch = (text, searchTerm) => {
@@ -109,6 +121,19 @@ const SearchBar = () => {
               ))
             ) : (
               <>
+                {recentSearches.length > 0 && (
+                  <>
+                    <li className={styles.trendingTitle}>
+                      Recent
+                      <span className={styles.clearButton} onClick={clearRecentSearches}>Clear</span>
+                    </li>
+                    {recentSearches.map((search, index) => (
+                      <li key={index} onMouseDown={() => handleSelectSuggestion({ search })}>
+                        {search}
+                      </li>
+                    ))}
+                  </>
+                )}
                 <li className={styles.trendingTitle}>Trending searches</li>
                 {trendingSearches.map((search) => (
                   <li
