@@ -1,4 +1,46 @@
 {
+    "search-for-tips": [
+        {
+            "id": 1,
+            "text": "pink ralph lauren shirt"
+        },
+        {
+            "id": 2,
+            "text": "grey nike sweatpants"
+        },
+        {
+            "id": 3,
+            "text": "black dickies cargos"
+        },
+        {
+            "id": 4,
+            "text": "white linen trousers"
+        },
+        {
+            "id": 5,
+            "text": "blue carhartt jeans"
+        },
+        {
+            "id": 6,
+            "text": "black josie top"
+        },
+        {
+            "id": 7,
+            "text": "red corteiz cargos"
+        },
+        {
+            "id": 8,
+            "text": "white lululemon skirt"
+        },
+        {
+            "id": 9,
+            "text": "black converse"
+        },
+        {
+            "id": 10,
+            "text": "green corduroy shirt"
+        }
+    ],
     "trending-searches": [
         {
             "id": 1,

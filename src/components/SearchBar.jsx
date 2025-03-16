@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import styles from "../styles/components/SearchBar.module.css";
 import { LensIcon } from "../assets/svg/Lens";
 import searchData from "../assets/SearchData.json";
@@ -11,7 +11,18 @@ const SearchBar = () => {
   const [maxLength, setMaxLength] = useState(0);
   const [recentSearches, setRecentSearches] = useState([]);
   const [isSuggestionsOpen, setSuggestionsOpen] = useState(false);
+  const [didUserStartedTyping, setDidUserStartedTyping] = useState(false);
   const searchBarRef = useRef(null);
+
+  const searchTips = useMemo(() => 
+    searchData["search-for-tips"].map(item => `"${item.text}"`), 
+  []);
+
+  const [currentTipIndex, setCurrentTipIndex] = useState(0);
+  const [displayedTip, setDisplayedTip] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [pauseAfterDelete, setPauseAfterDelete] = useState(false);
 
   useEffect(() => {
     setTrendingSearches(searchData["trending-searches"]);
@@ -19,10 +30,7 @@ const SearchBar = () => {
     setRecentSearches(storedRecentSearches);
 
     const handleClickOutside = (event) => {
-      if (
-        searchBarRef.current &&
-        !searchBarRef.current.contains(event.target)
-      ) {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
         setIsFocused(false);
       }
     };
@@ -53,10 +61,44 @@ const SearchBar = () => {
     }
   }, [searchTerm]);
 
+  useEffect(() => {
+    if (pauseAfterDelete) {
+      setTimeout(() => {
+        setPauseAfterDelete(false);
+        setCurrentTipIndex((prev) => (prev + 1) % searchTips.length);
+      }, 750);
+      return;
+    }
+
+    const typingSpeed = isDeleting ? 10 : 20;
+    const pauseTime = 1000;
+    const currentTip = searchTips[currentTipIndex];
+
+    const typingEffect = setTimeout(() => {
+      if (!isDeleting) {
+        if (charIndex < currentTip.length) {
+          setDisplayedTip((prev) => prev + currentTip[charIndex]);
+          setCharIndex((prev) => prev + 1);
+        } else {
+          setIsDeleting(true);
+        }
+      } else {
+        if (charIndex > 0) {
+          setDisplayedTip((prev) => prev.slice(0, -1));
+          setCharIndex((prev) => prev - 1);
+        } else {
+          setIsDeleting(false);
+          setPauseAfterDelete(true);
+        }
+      }
+    }, charIndex === currentTip.length && !isDeleting ? pauseTime : typingSpeed);
+
+    return () => clearTimeout(typingEffect);
+  }, [charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
+
   const handleSelectSuggestion = (item) => {
     setSearchTerm(item.search);
     setIsFocused(false);
-
     setSuggestionsOpen(false);
 
     const updatedRecentSearches = [item.search, ...recentSearches.filter(search => search !== item.search)].slice(0, 5);
@@ -101,12 +143,16 @@ const SearchBar = () => {
         <input
           type="text"
           className={styles.inputField}
-          placeholder="Search for items, brands, or styles..."
+          placeholder={
+            didUserStartedTyping ? 
+            "Search for items, brands, or styles..."
+            : `Search for ${displayedTip}`
+          }
           value={searchTerm}
           onChange={(e) => {
+            setDidUserStartedTyping(true);
             setSearchTerm(e.target.value);
             setSuggestionsOpen(true);
-            console.log("User is typing:", e.target.value);
           }}
           onFocus={() => setIsFocused(true)}
         />
