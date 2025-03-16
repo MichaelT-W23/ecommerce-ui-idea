@@ -10,6 +10,7 @@ const SearchBar = () => {
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [maxLength, setMaxLength] = useState(0);
   const [recentSearches, setRecentSearches] = useState([]);
+  const [isSuggestionsOpen, setSuggestionsOpen] = useState(false);
   const searchBarRef = useRef(null);
 
   useEffect(() => {
@@ -56,6 +57,8 @@ const SearchBar = () => {
     setSearchTerm(item.search);
     setIsFocused(false);
 
+    setSuggestionsOpen(false);
+
     const updatedRecentSearches = [item.search, ...recentSearches.filter(search => search !== item.search)].slice(0, 5);
     setRecentSearches(updatedRecentSearches);
     localStorage.setItem("recentSearches", JSON.stringify(updatedRecentSearches));
@@ -100,15 +103,19 @@ const SearchBar = () => {
           className={styles.inputField}
           placeholder="Search for items, brands, or styles..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setSuggestionsOpen(true);
+            console.log("User is typing:", e.target.value);
+          }}
           onFocus={() => setIsFocused(true)}
         />
       </div>
-      {isFocused &&
+      {isFocused && 
         searchTerm.length <= maxLength &&
         (searchTerm === "" || filteredSuggestions.length > 0) && (
           <ul className={styles.suggestionsList}>
-            {searchTerm ? (
+            {searchTerm && isSuggestionsOpen ? (
               filteredSuggestions.map((item, index) => (
                 <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
                   {highlightMatch(item.search, searchTerm)}
