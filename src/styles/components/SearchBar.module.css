@@ -164,12 +164,23 @@
 
 .forwardButton {
   position: absolute;
-  right: 15px;
-  top: 42.5%;
+  right: 4px;
+  top: 42.15%;
   transform: translateY(-50%);
+  width: 40px;
+  height: 36px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .forwardButton:hover {
-  background-color: red;
+  background-color: #3d37bd;
 }
