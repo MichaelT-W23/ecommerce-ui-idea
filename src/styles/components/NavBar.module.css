@@ -1,97 +1,102 @@
-/* styles/components/Navbar.css */
-
 .navbar {
-    /* background-color: purple; */
-    padding: 1rem; /* Equivalent to p-4 */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .depop-logo {
-    margin-left: 13px;
-  }
-  
-  .navbar-buttons {
-    display: flex;
-    gap: 0.5rem;
-  }
+.depop-logo {
+  margin-left: 13px;
+}
 
-  .bag-icon {
-    margin-left: 8px;
-  }
+.navbar-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
 
-  .search-bar {
-    position: relative;
-    top: -20px;
-    flex: 1; 
-  }
-  
-  .button {
-    color: white;
-    padding: 4px 14px;
-    border: 2px solid #262626;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 18px;
-    /* font-family: "GT America Expanded" */
-    font-family: "Arial"
-  }
+.bag-icon {
+  margin-left: 8px;
+}
 
-  .button:focus {
-    box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
-    outline: transparent dotted 4px;
-  }
+.search-bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
 
-  .sell-now-btn {
-    background-color: #262626;
-  }
-  
-  .sell-now-btn:hover {
-    background-color: #747474;
-    border-color: #747474;
-  }
-  
-  .sign-up-btn {
-    color: #262626;
-  }
-  
-  .sign-up-btn:hover {
-    background-color: rgba(38, 38, 38, 0.2);
-    border-color: #747474;
-  }
-  
-  .navbar-controls {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    gap: 1rem;
-    background-color: red;
-  }
-  
-  .log-in-btn {
-    color: #262626;
-    padding: 4px 0px;
-    border: none;
-  }
+.search-bar {
+  top: -20px;
+  width: 70%;
+  position: relative;
+}
 
-  .log-in-btn:hover {
-    cursor: pointer;
-    color: #747474;
-  }
+.button {
+  color: white;
+  padding: 4px 14px;
+  border: 2px solid #262626;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  width: 106px;
+  /* font-family: "GT America Expanded" */
+  font-family: "Arial"
+}
 
-  .heart-icon {
-    cursor: pointer;
-  }
+.button:focus {
+  box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
+  outline: transparent dotted 4px;
+}
 
-  .bag-icon {
-    cursor: pointer;
-  }
+.sell-now-btn {
+  background-color: #262626;
+}
 
-  .heart-icon:hover {
-    color: rgb(116, 116, 116);
-  }
+.sell-now-btn:hover {
+  background-color: #747474;
+  border-color: #747474;
+}
 
-  .bag-icon:hover {
-    color: rgb(116, 116, 116);
-  }
+.sign-up-btn {
+  color: #262626;
+}
+
+.sign-up-btn:hover {
+  background-color: rgba(38, 38, 38, 0.2);
+  border-color: #747474;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  gap: 1rem;
+}
+
+.log-in-btn {
+  color: #262626;
+  padding: 4px 0px;
+  width: 58px !important;
+  border: none;
+}
+
+.log-in-btn:hover {
+  cursor: pointer;
+  color: #747474;
+}
+
+.heart-icon {
+  cursor: pointer;
+}
+
+.bag-icon {
+  cursor: pointer;
+}
+
+.heart-icon:hover {
+  color: rgb(116, 116, 116);
+}
+
+.bag-icon:hover {
+  color: rgb(116, 116, 116);
+}

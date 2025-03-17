@@ -12,11 +12,12 @@ const Navbar = () => {
       <DepopLogo />
       </div>
 
-
+      <div className={styles['search-bar-wrapper']}>
         <div className={styles['search-bar']}>
           <SearchBar />
         </div>
-
+      </div>
+      
       <div className={styles["navbar-controls"]}>
 
         <div className={styles['heart-icon']}>
@@ -27,9 +28,15 @@ const Navbar = () => {
           <BagIcon />
         </div>
         
-        <button className={`${styles.button} ${styles["sell-now-btn"]}`}>Sell now</button>
-        <button className={`${styles.button} ${styles["sign-up-btn"]}`}>Sign Up</button>
-        <button className={`${styles.button} ${styles["log-in-btn"]}`}>Log in</button>
+        <button className={`${styles.button} ${styles["sell-now-btn"]}`}>
+          Sell now
+        </button>
+        <button className={`${styles.button} ${styles["sign-up-btn"]}`}>
+          Sign Up
+        </button>
+        <button className={`${styles.button} ${styles["log-in-btn"]}`}>
+          Log in
+        </button>
       </div>
     </nav>
   );
