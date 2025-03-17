@@ -133,3 +133,40 @@
 .clearButton:hover {
   opacity: 0.7;
 }
+
+.closeButton {
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  font-size: 11px;
+  background-color: rgb(116, 116, 116);
+  color: white;
+  font-family: "Roboto", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.closeButton:hover {
+  background-color: rgb(167, 167, 167);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+}
+
+.forwardButton {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.forwardButton:hover {
+  background-color: red;
+}

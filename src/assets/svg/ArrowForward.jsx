@@ -1,6 +1,11 @@
-export const ArrowForwardIcon = () => {
+export const ArrowForwardIcon = ({ width = 24 }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" viewBox="0 0 24 24" fill="none">
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width={width} 
+      viewBox="0 0 24 24" 
+      fill="none"
+    >
       <path 
         d="M19.9706 12H3.00002" 
         stroke="currentColor" 

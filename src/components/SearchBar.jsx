@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import styles from "../styles/components/SearchBar.module.css";
 import { LensIcon } from "../assets/svg/Lens";
+import { ArrowForwardIcon } from "../assets/svg/ArrowForward";
 import searchData from "../assets/SearchData.json";
 
 const SearchBar = () => {
@@ -125,6 +126,12 @@ const SearchBar = () => {
     return text;
   };
 
+  const handleClearInput = () => {
+    setSearchTerm("");
+    setDidUserStartedTyping(false);
+    setSuggestionsOpen(false);
+  };
+
   return (
     <div
       className={`${styles.inputContainer} ${
@@ -156,6 +163,17 @@ const SearchBar = () => {
           }}
           onFocus={() => setIsFocused(true)}
         />
+        {searchTerm ? (
+          <button className={styles.closeButton} onClick={handleClearInput}>
+            clear
+          </button>
+        ) : null}
+
+        {searchTerm ? (
+          <button className={styles.forwardButton}>
+            <ArrowForwardIcon />
+          </button>
+        ) : null}
       </div>
       {isFocused && 
         searchTerm.length <= maxLength &&
