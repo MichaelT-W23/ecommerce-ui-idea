@@ -184,3 +184,7 @@
 .forwardButton:hover {
   background-color: #3d37bd;
 }
+
+.forwardButton:hover svg path {
+  stroke: white;
+}
