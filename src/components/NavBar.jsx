@@ -11,9 +11,12 @@ const Navbar = () => {
       <div className={styles['depop-logo']}>
       <DepopLogo />
       </div>
-      <div className={styles['search-bar']}>
-        <SearchBar />
-      </div>
+
+
+        <div className={styles['search-bar']}>
+          <SearchBar />
+        </div>
+
       <div className={styles["navbar-controls"]}>
 
         <div className={styles['heart-icon']}>
