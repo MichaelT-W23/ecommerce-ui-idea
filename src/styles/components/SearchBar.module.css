@@ -31,7 +31,8 @@
 .inputField {
   color: #262626;
   font-size: 15.5px;
-  padding: 0.4rem 0.5rem 0.4rem 2.4rem;
+  padding: 0.0rem 0.5rem 0.0rem 2.4rem;
+  height: 40px;
   border: 2px solid #262626;
   background-color: #f3f3f3;
   /* font-family: "Public Sans", sans-serif; */
