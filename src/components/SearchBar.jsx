@@ -171,7 +171,7 @@ const SearchBar = () => {
 
         {searchTerm ? (
           <button className={styles.forwardButton}>
-            <ArrowForwardIcon />
+            <ArrowForwardIcon width={20}/>
           </button>
         ) : null}
       </div>
