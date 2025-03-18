@@ -1,15 +1,28 @@
-import { AppRouter } from './router'
+import { useState, useEffect } from 'react';
+import { AppRouter } from './router';
 import Navbar from './components/NavBar';
-import './App.css'
+import MobileNavBar from './components/MobileNavBar';
+import './App.css';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
-      <Navbar></Navbar>
+      {isMobile ? <MobileNavBar /> : <Navbar />}
       <p className="text-2xl">TEST WEBSITE</p>
       <AppRouter />
     </>
   );
 }
 
-export default App
+export default App;
