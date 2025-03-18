@@ -100,3 +100,21 @@
 .bag-icon:hover {
   color: rgb(116, 116, 116);
 }
+
+
+@media (max-width: 1024px) {
+
+  .sell-now-btn {
+    display: none;
+  }
+  
+  .sign-up-btn {
+    background-color: #262626;
+    color: white;
+  }
+  
+  .sign-up-btn:hover {
+    background-color: #747474;
+    border-color: #747474;
+  }
+}
