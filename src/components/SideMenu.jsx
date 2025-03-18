@@ -1,19 +1,27 @@
-import { CancelIcon } from "../assets/svg/Cancel"; // Import MenuIcon
+import { DepopLogo } from "../assets/svg/DepopLogo";
+import { CancelIcon } from "../assets/svg/Cancel";
+import styles from "../styles/components/SideMenu.module.css";
 
 const SideMenu = ({ isOpen, setIsOpen }) => {
   return (
-    <div className={`fixed top-0 left-0 h-full w-64 bg-gray-800 text-white p-5 shadow-lg transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300`}>
-      {/* Close Button Using MenuIcon */}
-      <button onClick={() => setIsOpen(false)} className="absolute top-4 left-4 z-50">
-        <CancelIcon />
-      </button>
+    <div className={`${styles.sideMenu} ${isOpen ? styles.open : ""}`}>
+      <div className={styles.header}>
+        {/* DepopLogo on the top-left */}
+        <div className={styles.logoContainer}>
+          <DepopLogo />
+        </div>
+        {/* Close Button on the top-right */}
+        <button onClick={() => setIsOpen(false)} className={styles.closeButton}>
+          <CancelIcon />
+        </button>
+      </div>
 
-      <h2 className="text-xl font-bold mb-4 mt-12">Sidebar Menu</h2>
-      <ul>
-        <li className="mb-2">Home</li>
-        <li className="mb-2">About</li>
-        <li className="mb-2">Services</li>
-        <li className="mb-2">Contact</li>
+      <h2 className={styles.title}>Sidebar Menu</h2>
+      <ul className={styles.menuList}>
+        <li className={styles.menuItem}>Home</li>
+        <li className={styles.menuItem}>About</li>
+        <li className={styles.menuItem}>Services</li>
+        <li className={styles.menuItem}>Contact</li>
       </ul>
     </div>
   );

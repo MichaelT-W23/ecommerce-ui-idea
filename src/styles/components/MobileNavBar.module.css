@@ -20,6 +20,11 @@
   cursor: pointer;
 }
 
+.menuButton:hover {
+  cursor: pointer;
+  color: rgb(116, 116, 116);
+}
+
 .rightIcons {
   display: flex;
   align-items: center;
@@ -73,11 +78,6 @@
   border-color: inherit;
 }
 
-.menu-icon:hover {
-  cursor: pointer;
-  color: rgb(116, 116, 116);
-}
-
 .heart-icon:hover {
   cursor: pointer;
   color: rgb(116, 116, 116);
@@ -97,8 +97,8 @@
 
 .searchIcon {
   position: absolute;
-  left: 12px;
-  top: 50%;
+  left: 14px;
+  top: 43.5%;
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
