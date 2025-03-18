@@ -149,7 +149,10 @@ const SearchBar = () => {
         </div>
         <input
           type="text"
-          className={styles.inputField}
+          className={`${styles.inputField} ${
+            searchTerm.length > maxLength && isFocused 
+              ? styles.noResultsShadow : ""
+          }`}
           placeholder={
             didUserStartedTyping ? 
             "Search for items, brands, or styles..."

@@ -13,7 +13,7 @@
 .inputWrapper {
   position: relative;
   width: 100%;
-  padding: 0rem 0.2rem 0.5rem 0.2rem;  /* top, right, bottom, left */
+  padding: 0.05rem 0.2rem 0.5rem 0.2rem; /* top, right, bottom, left */
 }
 
 .searchIcon {
@@ -188,4 +188,10 @@
 
 .forwardButton:hover svg path {
   stroke: white;
+}
+
+.noResultsShadow {
+  background-color: rgb(243, 243, 243);
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px -1px;
 }
