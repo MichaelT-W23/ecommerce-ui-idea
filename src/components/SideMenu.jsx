@@ -7,9 +7,9 @@ const SideMenu = ({ isOpen, setIsOpen }) => {
     <div className={`${styles.sideMenu} ${isOpen ? styles.open : ""}`}>
       <div className={styles.header}>
         {/* DepopLogo on the top-left */}
-        <div className={styles.logoContainer}>
+        <button onClick={() => setIsOpen(false)} className={styles.logoContainer}>
           <DepopLogo />
-        </div>
+        </button>
         {/* Close Button on the top-right */}
         <button onClick={() => setIsOpen(false)} className={styles.closeButton}>
           <CancelIcon />

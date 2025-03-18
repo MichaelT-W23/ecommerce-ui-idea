@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 18rem;   
+    width: 22rem;   
     background-color: white; 
     color: black;
     padding: 1.5rem;
@@ -16,16 +16,22 @@
     transform: translateX(0);
   }
 
+  .logoContainer:hover {
+    cursor: pointer;
+  }
 
   .closeButton {
     position: absolute;
-    top: 1rem;
+    top: 1.2rem;
     right: 1rem;  /* Move the close button to the right */
     background: none;
     border: none;
     cursor: pointer;
 }
 
+.closeButton:hover {
+  color: rgb(116, 116, 116);
+}
 
   .title {
     font-size: 1.5rem;
