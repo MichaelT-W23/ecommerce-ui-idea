@@ -5,7 +5,7 @@ import { LikeIcon } from "../assets/svg/Like";
 import { BagIcon } from "../assets/svg/Bag";
 import { MenuIcon } from "../assets/svg/Menu";
 import { LensIcon } from "../assets/svg/Lens";
-
+import SideMenu from "./SideMenu";
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,16 +13,15 @@ const MobileNavBar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.topSection}>
+        {/* Menu Button to Toggle Sidebar */}
         <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-          <div className={styles["menu-icon"]}>
-            <MenuIcon />
-          </div>
+          <MenuIcon />
         </button>
+
         <div className={styles.rightIcons}>
-          <div className={styles['heart-icon']}>
+          <div className={styles["heart-icon"]}>
             <LikeIcon />
           </div>
-  
           <div className={styles["bag-icon"]}>
             <BagIcon />
           </div>
@@ -35,13 +34,12 @@ const MobileNavBar = () => {
           <span className={styles.searchIcon}>
             <LensIcon />
           </span>
-          <input
-            type="text"
-            placeholder="Search for anything"
-            className={styles.searchInput}
-          />
+          <input type="text" placeholder="Search for anything" className={styles.searchInput} />
         </div>
       </div>
+
+      {/* Sidebar Component (Controlled by isOpen state) */}
+      <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );
 };
