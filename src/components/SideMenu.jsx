@@ -16,13 +16,18 @@ const SideMenu = ({ isOpen, setIsOpen }) => {
         </button>
       </div>
 
-      <h2 className={styles.title}>Sidebar Menu</h2>
-      <ul className={styles.menuList}>
-        <li className={styles.menuItem}>Home</li>
-        <li className={styles.menuItem}>About</li>
-        <li className={styles.menuItem}>Services</li>
-        <li className={styles.menuItem}>Contact</li>
-      </ul>
+      {/* Buttons below the logo */}
+      <div className={styles.menuButtons}>
+        <button className={`${styles.menuBtn} ${styles.sellNowBtn}`}>
+          Sell now
+        </button>
+        <button className={`${styles.menuBtn} ${styles.signUpBtn}`}>
+          Sign up
+        </button>
+        <button className={`${styles.menuBtn} ${styles.logInBtn}`}>
+          Log in
+        </button>
+      </div>
     </div>
   );
 };

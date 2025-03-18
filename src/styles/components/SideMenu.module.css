@@ -40,19 +40,51 @@
     margin-top: 2rem;
   }
   
-  .menuList {
-    list-style: none;
-    padding: 0;
+  .menuButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 12px;
   }
-  
-  .menuItem {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+
+  .menuBtn {
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    width: 300px;
+    padding: 4px;
+    border-radius: 2px;
+    border: 2px solid #262626;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: background 0.2s;
+    transition: all 0.15s ease-in-out;
   }
   
-  .menuItem:hover {
-    background: rgba(0, 0, 0, 0.05);
+  .menuBtn:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+  
+  .menuBtn:focus {
+    box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
+    outline: transparent dotted 4px;
+  }
+  
+  .sellNowBtn {
+    background-color: #262626;
+    color: white;
+  }
+
+  .sellNowBtn:hover {
+    background-color: #747474;
+    border-color: #747474;
+  }
+  
+  .signUpBtn:hover {
+    color: #747474;
+    border-color: #747474;
+  }
+
+  .logInBtn:hover {
+    color: #747474;
+    border-color: #747474;
   }
