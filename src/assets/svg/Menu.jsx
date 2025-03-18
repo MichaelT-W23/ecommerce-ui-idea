@@ -1,6 +1,6 @@
 export const MenuIcon = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" viewBox="0 0 24 24" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 24 24" fill="none">
       <line 
         x1="4.75" 
         y1="5.25" 

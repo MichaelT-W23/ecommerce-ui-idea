@@ -85,19 +85,13 @@
   color: #747474;
 }
 
-.heart-icon {
-  cursor: pointer;
-}
-
-.bag-icon {
-  cursor: pointer;
-}
-
 .heart-icon:hover {
+  cursor: pointer;
   color: rgb(116, 116, 116);
 }
 
 .bag-icon:hover {
+  cursor: pointer;
   color: rgb(116, 116, 116);
 }
 
