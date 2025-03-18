@@ -4,6 +4,8 @@ import { DepopLogo } from "../assets/svg/DepopLogo";
 import { LikeIcon } from "../assets/svg/Like";
 import { BagIcon } from "../assets/svg/Bag";
 import { MenuIcon } from "../assets/svg/Menu";
+import { LensIcon } from "../assets/svg/Lens";
+
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +29,18 @@ const MobileNavBar = () => {
           <button className={styles.signUpButton}>Sign Up</button>
         </div>
       </div>
-      
+
       <div className={styles.bottomSection}>
-        <input type="text" placeholder="Search for anything" className={styles.searchInput} />
+        <div className={styles.searchContainer}>
+          <span className={styles.searchIcon}>
+            <LensIcon />
+          </span>
+          <input
+            type="text"
+            placeholder="Search for anything"
+            className={styles.searchInput}
+          />
+        </div>
       </div>
     </nav>
   );
