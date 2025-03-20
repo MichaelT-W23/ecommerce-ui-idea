@@ -28,8 +28,14 @@
   display: block;
   margin: 10px;
   padding: 5px;
+  margin-left: 0px;
+  margin-top: 3px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.backButton:hover {
+  color: rgb(116, 116, 116);
 }
 
 .subMenuHeader {
@@ -40,6 +46,9 @@
 }
 
 .closeButton {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
   background: none;
   border: none;
   cursor: pointer;

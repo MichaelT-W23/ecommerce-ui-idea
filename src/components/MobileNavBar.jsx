@@ -13,7 +13,6 @@ const MobileNavBar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.topSection}>
-        {/* Menu Button to Toggle Sidebar */}
         <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
         </button>
