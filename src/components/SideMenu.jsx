@@ -49,7 +49,9 @@ const SideMenu = ({ isOpen, setIsOpen }) => {
         <SubMenu 
           activeMenu={activeMenu} 
           setActiveMenu={setActiveMenu} 
+          setIsOpen={setIsOpen} 
         />
+
       </div>
     </div>
   );
