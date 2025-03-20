@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemList = ({ title, items }) => {
+const ItemList = ({ title, items, highlightLast = false }) => {
   return (
     <div className="w-full">
       <h2 className="font-bold text-base mb-3 pl-4">{title}</h2>
@@ -19,10 +19,10 @@ const ItemList = ({ title, items }) => {
               className="pl-4 block cursor-pointer"
               style={{ 
                 fontSize: "16.5px",
-                color: "#262626",
+                color: highlightLast && index === items.length - 1 ? "#E20020" : "#262626",
               }}
             >
-                {item.text}
+              {item.text}
             </span> 
           </li>
         ))}

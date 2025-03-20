@@ -8,7 +8,8 @@ const MenSubMenu = () => {
       <SubMenuTitle title={Data.Men.Title}/>
 
       <ItemList 
-        title={Data.Men.Data.title} 
+        title={Data.Men.Data.title}
+        highlightLast={Data.Men.Data.highlightLast}
         items={Data.Men.Data.items} 
       />
     </div>

@@ -3,6 +3,7 @@
         "Title": "Men",
         "Data": {
             "title": "Shop by category",
+            "highlightLast": true,
             "items": [
                 {
                     "id": 1,
@@ -111,6 +112,7 @@
         "Title": "Women",
         "Data": {
             "title": "Shop by category",
+            "highlightLast": true,
             "items": [
                 {
                     "id": 1,
