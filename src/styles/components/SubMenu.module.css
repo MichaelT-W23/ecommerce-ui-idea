@@ -1,38 +1,36 @@
+/* Main Menu */
+.menuContainer {
+  position: relative;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
 
-  
-  /* Main Menu */
-  .menuContainer {
-    position: relative;
-    width: 100%; /* Ensure it doesn't shrink */
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .menuContainer.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  /* Submenu */
-  .subMenu {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: white;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .subMenu.visible {
-    transform: translateX(100%);
-  }
-  
-  .backButton {
-    display: block;
-    margin: 10px;
-    padding: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  
+.menuContainer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Submenu */
+.subMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  z-index: 2; /* Ensure submenu is on top */
+}
+
+.subMenu.visible {
+  transform: translateX(0);
+}
+
+.backButton {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}

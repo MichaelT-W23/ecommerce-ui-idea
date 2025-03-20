@@ -13,43 +13,44 @@ const SideMenu = ({ isOpen, setIsOpen }) => {
   return (
     <div className={`${styles.sideMenu} ${isOpen ? styles.open : ""}`}>
 
-      <div className={`${styles.menuContainer} ${activeMenu ? styles.hidden : ""}`}>
-        <div className={styles.header}>
-          <button onClick={() => setIsOpen(false)} className={styles.logoContainer}>
-            <DepopLogo />
-          </button>
-          <button onClick={() => setIsOpen(false)} className={styles.closeButton}>
-            <CancelIcon />
-          </button>
+      <div className={styles.menuWrapper}>
+        <div className={`${styles.menuContainer} ${activeMenu ? styles.hidden : ""}`}>
+          <div className={styles.header}>
+            <button onClick={() => setIsOpen(false)} className={styles.logoContainer}>
+              <DepopLogo />
+            </button>
+            <button onClick={() => setIsOpen(false)} className={styles.closeButton}>
+              <CancelIcon />
+            </button>
+          </div>
+
+          <div className={styles.menuButtons}>
+            <button className={`${styles.menuBtn} ${styles.sellNowBtn}`}>Sell now</button>
+            <button className={`${styles.menuBtn} ${styles.signUpBtn}`}>Sign up</button>
+            <button className={`${styles.menuBtn} ${styles.logInBtn}`}>Log in</button>
+          </div>
+
+          <div className={styles.divider}></div>
+
+          <div className={styles.menuList}>
+            {menuItems.map((item, index) => (
+              <div
+                key={index}
+                className={styles.menuItem}
+                onClick={() => setActiveMenu(item)}
+              >
+                <span>{item}</span>
+                <ArrowForwardIcon />
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className={styles.menuButtons}>
-          <button className={`${styles.menuBtn} ${styles.sellNowBtn}`}>Sell now</button>
-          <button className={`${styles.menuBtn} ${styles.signUpBtn}`}>Sign up</button>
-          <button className={`${styles.menuBtn} ${styles.logInBtn}`}>Log in</button>
-        </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.menuList}>
-          {menuItems.map((item, index) => (
-            <div
-              key={index}
-              className={styles.menuItem}
-              onClick={() => setActiveMenu(item)} 
-            >
-              <span>{item}</span>
-              <ArrowForwardIcon />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {activeMenu && 
         <SubMenu 
           activeMenu={activeMenu} 
           setActiveMenu={setActiveMenu} 
-        />}
+        />
+      </div>
     </div>
   );
 };
