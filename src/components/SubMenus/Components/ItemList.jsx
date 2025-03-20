@@ -22,7 +22,7 @@ const ItemList = ({ title, items }) => {
                 color: "#262626",
               }}
             >
-                {item}
+                {item.text}
             </span> 
           </li>
         ))}

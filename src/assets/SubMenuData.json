@@ -1,222 +1,299 @@
 {
     "Men": {
-        "MetaData": {
-            "Title": "Men",
-            "Subtitle": "Shop by category",
-            "SeeAll": "See all men's",
-            "Images": [
+        "Title": "Men",
+        "Data": {
+            "title": "Shop by category",
+            "items": [
                 {
                     "id": 1,
-                    "text": "Gorpcore",
-                    "image": ""
+                    "text": "T-shirts"
                 },
                 {
                     "id": 2,
-                    "text": "Streetwear",
-                    "image": ""
+                    "text": "Shirts"
                 },
                 {
                     "id": 3,
-                    "text": "Minimalism",
-                    "image": ""
+                    "text": "Hoodies"
                 },
                 {
                     "id": 4,
-                    "text": "Workwear",
-                    "image": ""
+                    "text": "Jeans"
+                },
+                {
+                    "id": 5,
+                    "text": "Sweaters"
+                },
+                {
+                    "id": 6,
+                    "text": "Coats & Jackets"
+                },
+                {
+                    "id": 7,
+                    "text": "Shoes"
+                },
+                {
+                    "id": 8,
+                    "text": "Bags"
+                },
+                {
+                    "id": 9,
+                    "text": "Hats"
+                },
+                {
+                    "id": 10,
+                    "text": "Jewelry"
+                },
+                {
+                    "id": 11,
+                    "text": "Sunglasses"
+                },
+                {
+                    "id": 12,
+                    "text": "Sale"
                 }
             ]
         },
-        "Data": [
+        "BoldText": "See all men's",
+        "DataTwo": {
+            "title": "Featured",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Big & Tall"
+                },
+                {
+                    "id": 2,
+                    "text": "Black tie"
+                },
+                {
+                    "id": 3,
+                    "text": "Festival"
+                },
+                {
+                    "id": 4,
+                    "text": "Prom"
+                },
+                {
+                    "id": 5,
+                    "text": "Spring break"
+                },
+                {
+                    "id": 6,
+                    "text": "Wedding guests"
+                }
+            ]
+        },
+        "Images": [
             {
                 "id": 1,
-                "text": "T-shirts"
+                "text": "Gorpcore",
+                "image": ""
             },
             {
                 "id": 2,
-                "text": "Shirts"
+                "text": "Streetwear",
+                "image": ""
             },
             {
                 "id": 3,
-                "text": "Hoodies"
+                "text": "Minimalism",
+                "image": ""
             },
             {
                 "id": 4,
-                "text": "Jeans"
-            },
-            {
-                "id": 5,
-                "text": "Sweaters"
-            },
-            {
-                "id": 6,
-                "text": "Coats & Jackets"
-            },
-            {
-                "id": 7,
-                "text": "Shoes"
-            },
-            {
-                "id": 8,
-                "text": "Bags"
-            },
-            {
-                "id": 9,
-                "text": "Hats"
-            },
-            {
-                "id": 10,
-                "text": "Jewelry"
-            },
-            {
-                "id": 11,
-                "text": "Sunglasses"
-            },
-            {
-                "id": 12,
-                "text": "Sale"
-            }
-        ],
-        "Featured": [
-            {
-                "id": 1,
-                "text": "Big & Tall"
-            },
-            {
-                "id": 2,
-                "text": "Black tie"
-            },
-            {
-                "id": 3,
-                "text": "Festival"
-            },
-            {
-                "id": 4,
-                "text": "Prom"
-            },
-            {
-                "id": 5,
-                "text": "Spring break"
-            },
-            {
-                "id": 6,
-                "text": "Wedding guests"
+                "text": "Workwear",
+                "image": ""
             }
         ]
     },
     "Women": {
-        "MetaData": {
-            "Title": "Women",
-            "Subtitle": "Shop by category",
-            "SeeAll": "See all women's",
-            "Images": [
+        "Title": "Women",
+        "Data": {
+            "title": "Shop by category",
+            "items": [
                 {
                     "id": 1,
-                    "text": "Minimalism",
-                    "image": ""
+                    "text": "Tops"
                 },
                 {
                     "id": 2,
-                    "text": "Coquette",
-                    "image": ""
+                    "text": "Jeans"
                 },
                 {
                     "id": 3,
-                    "text": "Y2k",
-                    "image": ""
+                    "text": "Sweaters"
                 },
                 {
                     "id": 4,
-                    "text": "Boho",
-                    "image": ""
+                    "text": "Skirts"
+                },
+                {
+                    "id": 5,
+                    "text": "Dresses"
+                },
+                {
+                    "id": 6,
+                    "text": "Coats & Jackets"
+                },
+                {
+                    "id": 7,
+                    "text": "Shoes"
+                },
+                {
+                    "id": 8,
+                    "text": "Bags & Purses"
+                },
+                {
+                    "id": 9,
+                    "text": "Sunglasses"
+                },
+                {
+                    "id": 10,
+                    "text": "Hats"
+                },
+                {
+                    "id": 11,
+                    "text": "Jewelry"
+                },
+                {
+                    "id": 12,
+                    "text": "Sale"
                 }
             ]
         },
-        "Data": [
+        "BoldText": "See all women's",
+        "DataTwo": {
+            "title": "Featured",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Plus Size"
+                },
+                {
+                    "id": 2,
+                    "text": "Festival"
+                },
+                {
+                    "id": 3,
+                    "text": "Party fits"
+                },
+                {
+                    "id": 4,
+                    "text": "Prom"
+                },
+                {
+                    "id": 5,
+                    "text": "Spring break"
+                },
+                {
+                    "id": 6,
+                    "text": "Wedding guests"
+                }
+            ]
+        },
+        "Images": [
             {
                 "id": 1,
-                "text": "Tops"
+                "text": "Minimalism",
+                "image": ""
             },
             {
                 "id": 2,
-                "text": "Jeans"
+                "text": "Coquette",
+                "image": ""
             },
             {
                 "id": 3,
-                "text": "Sweaters"
+                "text": "Y2k",
+                "image": ""
             },
             {
                 "id": 4,
-                "text": "Skirts"
-            },
-            {
-                "id": 5,
-                "text": "Dresses"
-            },
-            {
-                "id": 6,
-                "text": "Coats & Jackets"
-            },
-            {
-                "id": 7,
-                "text": "Shoes"
-            },
-            {
-                "id": 8,
-                "text": "Bags & Purses"
-            },
-            {
-                "id": 9,
-                "text": "Sunglasses"
-            },
-            {
-                "id": 10,
-                "text": "Hats"
-            },
-            {
-                "id": 11,
-                "text": "Jewelry"
-            },
-            {
-                "id": 12,
-                "text": "Sale"
-            }
-        ],
-        "Featured": [
-            {
-                "id": 1,
-                "text": "Plus Size"
-            },
-            {
-                "id": 2,
-                "text": "Festival"
-            },
-            {
-                "id": 3,
-                "text": "Party fits"
-            },
-            {
-                "id": 4,
-                "text": "Prom"
-            },
-            {
-                "id": 5,
-                "text": "Spring break"
-            },
-            {
-                "id": 6,
-                "text": "Wedding guests"
+                "text": "Boho",
+                "image": ""
             }
         ]
     },
     "Kids": {
-        "MetaData": {
-            "Title": "Kids",
-            "Subtitle": "Shop by category",
-            "SeeAll": "See all kid's",
-            "PopBrands": "Popular brands",
-            "ShopByGender": "Shop by gender",
-            "Images": [
+        "Title": "Kids",
+        "Data": {
+            "title": "Shop by category",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Tops"
+                },
+                {
+                    "id": 2,
+                    "text": "Pants"
+                },
+                {
+                    "id": 3,
+                    "text": "Dresses"
+                },
+                {
+                    "id": 4,
+                    "text": "Jackets"
+                },
+                {
+                    "id": 5,
+                    "text": "Shoes"
+                },
+                {
+                    "id": 6,
+                    "text": "Bundles"
+                }
+            ]
+        },
+        "BoldText": "See all kid's",
+        "DataTwo": {
+            "title": "Popular brands",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Carhartt"
+                },
+                {
+                    "id": 2,
+                    "text": "Carter's"
+                },
+                {
+                    "id": 3,
+                    "text": "Gap"
+                },
+                {
+                    "id": 4,
+                    "text": "Nike"
+                },
+                {
+                    "id": 5,
+                    "text": "OshKosh B’gosh"
+                },
+                {
+                    "id": 6,
+                    "text": "Vans"
+                }
+            ]
+        },
+        "DataThree": {
+            "title": "Shop by gender",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Boy"
+                },
+                {
+                    "id": 2,
+                    "text": "Girl"
+                },
+                {
+                    "id": 3,
+                    "text": "Unisex"
+                }
+            ]
+        },
+        "Images": [
                 {
                     "id": 1,
                     "text": "Baby (0-12m)",
@@ -238,408 +315,347 @@
                     "image": ""
                 }
             ]
-        },
-        "Data": [
-            {
-                "id": 1,
-                "text": "Tops"
-            },
-            {
-                "id": 2,
-                "text": "Pants"
-            },
-            {
-                "id": 3,
-                "text": "Dresses"
-            },
-            {
-                "id": 4,
-                "text": "Jackets"
-            },
-            {
-                "id": 5,
-                "text": "Shoes"
-            },
-            {
-                "id": 6,
-                "text": "Bundles"
-            }
-        ],
-        "PopularBrands": [
-            {
-                "id": 1,
-                "text": "Carhartt"
-            },
-            {
-                "id": 2,
-                "text": "Carter's"
-            },
-            {
-                "id": 3,
-                "text": "Gap"
-            },
-            {
-                "id": 4,
-                "text": "Nike"
-            },
-            {
-                "id": 5,
-                "text": "OshKosh B’gosh"
-            },
-            {
-                "id": 6,
-                "text": "Vans"
-            }
-        ],
-        "ShopByGender": [
-            {
-                "id": 1,
-                "text": "Boy"
-            },
-            {
-                "id": 2,
-                "text": "Girl"
-            },
-            {
-                "id": 3,
-                "text": "Unisex"
-            }
-        ]
     },
     "Sports": {
-        "MetaData": {
-            "Title": "Sports",
-            "Subtitle": "Shop by category",
-            "SeeAll": "See all sportswear",
-            "ShopVintage": "Shop vintage",
-            "ShopByLeague": "Shop by league",
-            "Images": [
+        "Title": "Sports",
+        "Data": {
+            "title": "Shop by category",
+            "items": [
                 {
                     "id": 1,
-                    "text": "F1",
-                    "image": ""
+                    "text": "Jerseys"
                 },
                 {
                     "id": 2,
-                    "text": "Yoga",
-                    "image": ""
+                    "text": "Sneakers"
                 },
                 {
                     "id": 3,
-                    "text": "Running",
-                    "image": ""
+                    "text": "Sweatpants"
                 },
                 {
                     "id": 4,
-                    "text": "Soccer",
-                    "image": ""
+                    "text": "Sweatshirts"
+                },
+                {
+                    "id": 5,
+                    "text": "Tracksuits"
+                },
+                {
+                    "id": 6,
+                    "text": "Hats"
+                },
+                {
+                    "id": 7,
+                    "text": "Scarves"
+                },
+                {
+                    "id": 8,
+                    "text": "Cleats"
                 }
             ]
         },
-        "Data": [
+        "BoldText": "See all sportswear",
+        "DataTwo": {
+            "title": "Shop vintage",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Vintage jerseys"
+                },
+                {
+                    "id": 2,
+                    "text": "Vintage sneakers"
+                },
+                {
+                    "id": 3,
+                    "text": "Vintage sweatpants"
+                },
+                {
+                    "id": 4,
+                    "text": "Vintage sweatshirts"
+                },
+                {
+                    "id": 5,
+                    "text": "Vintage tracksuits"
+                },
+                {
+                    "id": 6,
+                    "text": "Vintage hats"
+                },
+                {
+                    "id": 7,
+                    "text": "Vintage scarves"
+                },
+                {
+                    "id": 8,
+                    "text": "Vintage shorts"
+                }
+            ]
+        },
+        "DataThree": {
+            "title": "Shop by league",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "NFL"
+                },
+                {
+                    "id": 2,
+                    "text": "NHL"
+                },
+                {
+                    "id": 3,
+                    "text": "NBA"
+                }
+            ]
+        },
+        "Images": [
             {
                 "id": 1,
-                "text": "Jerseys"
+                "text": "F1",
+                "image": ""
             },
             {
                 "id": 2,
-                "text": "Sneakers"
+                "text": "Yoga",
+                "image": ""
             },
             {
                 "id": 3,
-                "text": "Sweatpants"
+                "text": "Running",
+                "image": ""
             },
             {
                 "id": 4,
-                "text": "Sweatshirts"
-            },
-            {
-                "id": 5,
-                "text": "Tracksuits"
-            },
-            {
-                "id": 6,
-                "text": "Hats"
-            },
-            {
-                "id": 7,
-                "text": "Scarves"
-            },
-            {
-                "id": 8,
-                "text": "Cleats"
-            }
-        ],
-        "ShopVintage": [
-            {
-                "id": 1,
-                "text": "Vintage jerseys"
-            },
-            {
-                "id": 2,
-                "text": "Vintage sneakers"
-            },
-            {
-                "id": 3,
-                "text": "Vintage sweatpants"
-            },
-            {
-                "id": 4,
-                "text": "Vintage sweatshirts"
-            },
-            {
-                "id": 5,
-                "text": "Vintage tracksuits"
-            },
-            {
-                "id": 6,
-                "text": "Vintage hats"
-            },
-            {
-                "id": 7,
-                "text": "Vintage scarves"
-            },
-            {
-                "id": 8,
-                "text": "Vintage shorts"
-            }
-        ],
-        "ShopByLeague": [
-            {
-                "id": 1,
-                "text": "NFL"
-            },
-            {
-                "id": 2,
-                "text": "NHL"
-            },
-            {
-                "id": 3,
-                "text": "NBA"
+                "text": "Soccer",
+                "image": ""
             }
         ]
     },
     "Brands": {
-        "MetaData": {
-            "Title": "Brands",
-            "Subtitle": "Popular Brands",
-            "SeeAll": "See all brands",
-            "Images": [
+        "Title": "Brands",
+        "Data": {
+            "title": "Popular Brands",
+            "items": [
                 {
                     "id": 1,
-                    "text": "Levi's",
-                    "image": ""
+                    "text": "Abercrombie & Fitch"
                 },
                 {
                     "id": 2,
-                    "text": "Stüssy",
-                    "image": ""
+                    "text": "Adidas"
+                },
+                {
+                    "id": 3,
+                    "text": "Brandy Melville"
+                },
+                {
+                    "id": 4,
+                    "text": "Carhartt"
+                },
+                {
+                    "id": 5,
+                    "text": "Dickies"
+                },
+                {
+                    "id": 6,
+                    "text": "Dr. Martens"
+                },
+                {
+                    "id": 7,
+                    "text": "Free People"
+                },
+                {
+                    "id": 8,
+                    "text": "Harley Davidson"
+                },
+                {
+                    "id": 9,
+                    "text": "Jordan"
+                },
+                {
+                    "id": 10,
+                    "text": "Lululemon"
+                },
+                {
+                    "id": 11,
+                    "text": "New Balance"
+                },
+                {
+                    "id": 12,
+                    "text": "Nike"
+                },
+                {
+                    "id": 13,
+                    "text": "Patagonia"
+                },
+                {
+                    "id": 14,
+                    "text": "Polo Ralph Lauren"
+                },
+                {
+                    "id": 15,
+                    "text": "Supreme"
+                },
+                {
+                    "id": 16,
+                    "text": "The North Face"
+                },
+                {
+                    "id": 17,
+                    "text": "Urban Outfitters"
+                },
+                {
+                    "id": 18,
+                    "text": "Zara"
                 }
             ]
         },
-        "Data": [
+        "BoldText": "Sell all brands",
+        "Images": [
             {
                 "id": 1,
-                "text": "Abercrombie & Fitch"
+                "text": "Levi's",
+                "image": ""
             },
             {
                 "id": 2,
-                "text": "Adidas"
-            },
-            {
-                "id": 3,
-                "text": "Brandy Melville"
-            },
-            {
-                "id": 4,
-                "text": "Carhartt"
-            },
-            {
-                "id": 5,
-                "text": "Dickies"
-            },
-            {
-                "id": 6,
-                "text": "Dr. Martens"
-            },
-            {
-                "id": 7,
-                "text": "Free People"
-            },
-            {
-                "id": 8,
-                "text": "Harley Davidson"
-            },
-            {
-                "id": 9,
-                "text": "Jordan"
-            },
-            {
-                "id": 10,
-                "text": "Lululemon"
-            },
-            {
-                "id": 11,
-                "text": "New Balance"
-            },
-            {
-                "id": 12,
-                "text": "Nike"
-            },
-            {
-                "id": 13,
-                "text": "Patagonia"
-            },
-            {
-                "id": 14,
-                "text": "Polo Ralph Lauren"
-            },
-            {
-                "id": 15,
-                "text": "Supreme"
-            },
-            {
-                "id": 16,
-                "text": "The North Face"
-            },
-            {
-                "id": 17,
-                "text": "Urban Outfitters"
-            },
-            {
-                "id": 18,
-                "text": "Zara"
+                "text": "Stüssy",
+                "image": ""
             }
         ]
     },
     "Sale": {
-        "MetaData": {
-            "Title": "Sale",
-            "Subtitle": "Women's sale",
-            "MensSale": "Men's sale",
-            "SeeAll": "See all women's sale",
-            "SeeAllMen": "See all men's sale",
-            "Images": [
+        "Title": "Sale",
+        "Data": {
+            "title": "Women's sale",
+            "items": [
                 {
                     "id": 1,
-                    "text": "Under $100",
-                    "image": ""
+                    "text": "Tops"
                 },
                 {
                     "id": 2,
-                    "text": "Under $50",
-                    "image": ""
+                    "text": "Bottoms"
                 },
                 {
                     "id": 3,
-                    "text": "Under $20",
-                    "image": ""
+                    "text": "Dresses"
                 },
                 {
                     "id": 4,
-                    "text": "Under $10",
-                    "image": ""
+                    "text": "Coats & Jackets"
+                },
+                {
+                    "id": 5,
+                    "text": "Shoes"
+                },
+                {
+                    "id": 6,
+                    "text": "Accessories"
+                },
+                {
+                    "id": 7,
+                    "text": "T-shirts"
+                },
+                {
+                    "id": 8,
+                    "text": "Bags & Purses"
+                },
+                {
+                    "id": 9,
+                    "text": "Skirts"
+                },
+                {
+                    "id": 10,
+                    "text": "Leather jackets"
+                },
+                {
+                    "id": 11,
+                    "text": "Sneakers"
+                },
+                {
+                    "id": 12,
+                    "text": "Boots"
                 }
             ]
         },
-        "Data": [
+        "BoldText": "See all women's sale",
+        "DataTwo": {
+            "title": "Men's sale",
+            "items": [
+                {
+                    "id": 1,
+                    "text": "Tops"
+                },
+                {
+                    "id": 2,
+                    "text": "Bottoms"
+                },
+                {
+                    "id": 3,
+                    "text": "Coats & Jackets"
+                },
+                {
+                    "id": 4,
+                    "text": "Shoes"
+                },
+                {
+                    "id": 5,
+                    "text": "Accessories"
+                },
+                {
+                    "id": 6,
+                    "text": "T-shirts"
+                },
+                {
+                    "id": 7,
+                    "text": "Sweaters"
+                },
+                {
+                    "id": 8,
+                    "text": "Windbreakers"
+                },
+                {
+                    "id": 9,
+                    "text": "Casual pants"
+                },
+                {
+                    "id": 10,
+                    "text": "Jeans"
+                },
+                {
+                    "id": 11,
+                    "text": "Sneakers"
+                },
+                {
+                    "id": 12,
+                    "text": "Boots"
+                }
+            ]
+        },
+        "BoldTextTwo": "See all men's sale",
+        "Images": [
             {
                 "id": 1,
-                "text": "Tops"
+                "text": "Under $100",
+                "image": ""
             },
             {
                 "id": 2,
-                "text": "Bottoms"
+                "text": "Under $50",
+                "image": ""
             },
             {
                 "id": 3,
-                "text": "Dresses"
+                "text": "Under $20",
+                "image": ""
             },
             {
                 "id": 4,
-                "text": "Coats & Jackets"
-            },
-            {
-                "id": 5,
-                "text": "Shoes"
-            },
-            {
-                "id": 6,
-                "text": "Accessories"
-            },
-            {
-                "id": 7,
-                "text": "T-shirts"
-            },
-            {
-                "id": 8,
-                "text": "Bags & Purses"
-            },
-            {
-                "id": 9,
-                "text": "Skirts"
-            },
-            {
-                "id": 10,
-                "text": "Leather jackets"
-            },
-            {
-                "id": 11,
-                "text": "Sneakers"
-            },
-            {
-                "id": 12,
-                "text": "Boots"
-            }
-        ],
-        "MensSales": [
-            {
-                "id": 1,
-                "text": "Tops"
-            },
-            {
-                "id": 2,
-                "text": "Bottoms"
-            },
-            {
-                "id": 3,
-                "text": "Coats & Jackets"
-            },
-            {
-                "id": 4,
-                "text": "Shoes"
-            },
-            {
-                "id": 5,
-                "text": "Accessories"
-            },
-            {
-                "id": 6,
-                "text": "T-shirts"
-            },
-            {
-                "id": 7,
-                "text": "Sweaters"
-            },
-            {
-                "id": 8,
-                "text": "Windbreakers"
-            },
-            {
-                "id": 9,
-                "text": "Casual pants"
-            },
-            {
-                "id": 10,
-                "text": "Jeans"
-            },
-            {
-                "id": 11,
-                "text": "Sneakers"
-            },
-            {
-                "id": 12,
-                "text": "Boots"
+                "text": "Under $10",
+                "image": ""
             }
         ]
     }

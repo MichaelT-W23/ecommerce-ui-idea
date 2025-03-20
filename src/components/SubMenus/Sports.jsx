@@ -3,7 +3,6 @@ import ItemList from "./Components/ItemList";
 import Data from "../../assets/SubMenuData.json"; 
 
 const SportSubMenu = () => {
-  const sportData = Data.Sports.Data.map((item) => item.text);
 
   return (
     <div>
@@ -14,11 +13,11 @@ const SportSubMenu = () => {
           color: "#262626",
         }}
       >
-        {Data.Sports.MetaData.Title}
+        {Data.Sports.Title}
       </h1>
       <ItemList 
-        title={Data.Sports.MetaData.Subtitle} 
-        items={sportData} 
+        title={Data.Sports.Data.title} 
+        items={Data.Sports.Data.items} 
       />
     </div>
   );
