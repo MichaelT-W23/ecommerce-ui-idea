@@ -1,6 +1,11 @@
 import React from "react";
-import { SubMenuTitle, ItemList } from "./SubMenuComponents";
 import Data from "../../assets/SubMenuData.json"; 
+import { 
+  SubMenuTitle, 
+  ItemList, 
+  BoldText 
+} from "./SubMenuComponents";
+
 
 const WomenSubMenu = () => {
 
@@ -13,6 +18,9 @@ const WomenSubMenu = () => {
         highlightLast={Data.Women.Data.highlightLast}
         items={Data.Women.Data.items} 
       />
+
+      <BoldText text={Data.Women.BoldText}/>
+
     </div>
   );
 };
