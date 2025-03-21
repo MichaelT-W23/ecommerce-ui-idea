@@ -19,6 +19,18 @@ const SportSubMenu = () => {
       
       <BoldText text={Data.Sports.BoldText} />
 
+      <ItemList 
+        title={Data.Sports.DataTwo.title}
+        bottomBorder={Data.Men.DataTwo.bottomBorder}
+        items={Data.Sports.DataTwo.items} 
+      />
+      
+      <ItemList 
+        title={Data.Sports.DataThree.title}
+        bottomBorder={Data.Men.DataTwo.bottomBorder}
+        items={Data.Sports.DataThree.items} 
+      />
+
     </div>
   );
 };

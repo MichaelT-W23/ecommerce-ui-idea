@@ -2,7 +2,7 @@
 const SubMenuTitle = ({ title }) => {
   return (
     <h1 
-      className="font-bold -mt-3 mb-9 text-center"
+      className="font-bold -mt-3 mb-4.5 text-center"
       style={{ 
         fontSize: "20px",
         color: "#262626",

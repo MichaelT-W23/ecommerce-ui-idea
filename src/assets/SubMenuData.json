@@ -58,6 +58,7 @@
         "BoldText": "See all men's",
         "DataTwo": {
             "title": "Featured",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,
@@ -167,6 +168,7 @@
         "BoldText": "See all women's",
         "DataTwo": {
             "title": "Featured",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,
@@ -251,6 +253,7 @@
         "BoldText": "See all kids",
         "DataTwo": {
             "title": "Popular brands",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,
@@ -280,6 +283,7 @@
         },
         "DataThree": {
             "title": "Shop by gender",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,
@@ -360,6 +364,7 @@
         "BoldText": "See all sportswear",
         "DataTwo": {
             "title": "Shop vintage",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,
@@ -397,6 +402,7 @@
         },
         "DataThree": {
             "title": "Shop by league",
+            "bottomBorder": true,
             "items": [
                 {
                     "id": 1,

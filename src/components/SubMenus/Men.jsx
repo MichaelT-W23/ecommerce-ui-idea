@@ -18,6 +18,13 @@ const MenSubMenu = () => {
       />
 
       <BoldText text={Data.Men.BoldText}/>
+
+      <ItemList 
+        title={Data.Men.DataTwo.title}
+        bottomBorder={Data.Men.DataTwo.bottomBorder}
+        items={Data.Men.DataTwo.items} 
+      />
+
     </div>
   );
 };

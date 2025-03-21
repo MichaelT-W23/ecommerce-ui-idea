@@ -15,7 +15,6 @@ const BoldText = ({ text }) => {
           {text}
         </h1>
       </div>
-      <div className="pb-24"></div>
     </div>
   );
 };

@@ -2,8 +2,11 @@ import React from "react";
 
 const ItemList = ({ title, items, highlightLast = false }) => {
   return (
-    <div className="w-full">
-      <h2 className="font-bold text-base mb-3 pl-4">{title}</h2>
+    <div className="w-full pt-5">
+      <h2 
+        className="font-bold mb-3 pl-4"
+        style={{ fontSize: 17.5 }}
+      >{title}</h2>
       <ul>
         {items.map((item, index) => (
           <li

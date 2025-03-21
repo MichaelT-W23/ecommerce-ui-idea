@@ -18,6 +18,14 @@ const SaleSubMenu = () => {
       />
 
       <BoldText text={Data.Sale.BoldText} />
+
+      <ItemList 
+        title={Data.Sale.DataTwo.title} 
+        items={Data.Sale.DataTwo.items} 
+      />
+
+      <BoldText text={Data.Sale.BoldTextTwo} />
+
     </div>
   );
 };

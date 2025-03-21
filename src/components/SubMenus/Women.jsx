@@ -21,6 +21,12 @@ const WomenSubMenu = () => {
 
       <BoldText text={Data.Women.BoldText}/>
 
+      <ItemList 
+        title={Data.Women.DataTwo.title}
+        bottomBorder={Data.Men.DataTwo.bottomBorder}
+        items={Data.Women.DataTwo.items} 
+      />
+
     </div>
   );
 };

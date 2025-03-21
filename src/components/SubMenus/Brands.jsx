@@ -7,7 +7,6 @@ import {
 } from "./SubMenuComponents";
 
 const BrandSubMenu = () => {
-
   return (
     <div>
       <SubMenuTitle title={Data.Brands.Title} />
