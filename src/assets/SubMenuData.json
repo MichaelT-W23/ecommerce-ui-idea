@@ -90,22 +90,22 @@
             {
                 "id": 1,
                 "text": "Gorpcore",
-                "image": ""
+                "path": "Men/gorpcore.png"
             },
             {
                 "id": 2,
                 "text": "Streetwear",
-                "image": ""
+                "path": "Men/minimalism.png"
             },
             {
                 "id": 3,
                 "text": "Minimalism",
-                "image": ""
+                "path": "Men/streetwear.png"
             },
             {
                 "id": 4,
                 "text": "Workwear",
-                "image": ""
+                "path": "Men/workwear.png"
             }
         ]
     },
@@ -200,22 +200,22 @@
             {
                 "id": 1,
                 "text": "Minimalism",
-                "image": ""
+                "path": "Women/minimalism.png"
             },
             {
                 "id": 2,
                 "text": "Coquette",
-                "image": ""
+                "path": "Women/coquette.png"
             },
             {
                 "id": 3,
                 "text": "Y2k",
-                "image": ""
+                "path": "Women/y2k.png"
             },
             {
                 "id": 4,
                 "text": "Boho",
-                "image": ""
+                "path": "Women/boho.png"
             }
         ]
     },
@@ -303,22 +303,22 @@
                 {
                     "id": 1,
                     "text": "Baby (0-12m)",
-                    "image": ""
+                    "path": "Kids/baby.png"
                 },
                 {
                     "id": 2,
                     "text": "Toddler (1-3 years)",
-                    "image": ""
+                    "path": "Kids/toddler.png"
                 },
                 {
                     "id": 3,
                     "text": "Child (4-12 years)",
-                    "image": ""
+                    "path": "Kids/child.png"
                 },
                 {
                     "id": 4,
                     "text": "Teen (13-16 years)",
-                    "image": ""
+                    "path": "Kids/teen.png"
                 }
             ]
     },
@@ -422,22 +422,22 @@
             {
                 "id": 1,
                 "text": "F1",
-                "image": ""
+                "path": "Sports/f1.png"
             },
             {
                 "id": 2,
                 "text": "Yoga",
-                "image": ""
+                "path": "Sports/yoga.png"
             },
             {
                 "id": 3,
                 "text": "Running",
-                "image": ""
+                "path": "Sports/running.png"
             },
             {
                 "id": 4,
                 "text": "Soccer",
-                "image": ""
+                "path": "Sports/soccer.png"
             }
         ]
     },
@@ -525,12 +525,12 @@
             {
                 "id": 1,
                 "text": "Levi's",
-                "image": ""
+                "path": "Brands/levis.png"
             },
             {
                 "id": 2,
                 "text": "Stüssy",
-                "image": ""
+                "path": "Brands/stussy.png"
             }
         ]
     },
@@ -648,22 +648,22 @@
             {
                 "id": 1,
                 "text": "Under $100",
-                "image": ""
+                "path": "Sale/Under100.png"
             },
             {
                 "id": 2,
                 "text": "Under $50",
-                "image": ""
+                "path": "Sale/Under50.png"
             },
             {
                 "id": 3,
                 "text": "Under $20",
-                "image": ""
+                "path": "Sale/Under20.png"
             },
             {
                 "id": 4,
                 "text": "Under $10",
-                "image": ""
+                "path": "Sale/Under10.png"
             }
         ]
     }

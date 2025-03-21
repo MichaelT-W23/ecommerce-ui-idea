@@ -3,7 +3,8 @@ import Data from "../../assets/SubMenuData.json";
 import { 
   SubMenuTitle, 
   ItemList,
-  BoldText
+  BoldText,
+  ImageList
 } from "./SubMenuComponents";
 
 const SportSubMenu = () => {
@@ -31,6 +32,7 @@ const SportSubMenu = () => {
         items={Data.Sports.DataThree.items} 
       />
 
+      <ImageList images={Data.Sports.Images} />
     </div>
   );
 };

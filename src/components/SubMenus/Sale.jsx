@@ -3,7 +3,8 @@ import Data from "../../assets/SubMenuData.json";
 import { 
   SubMenuTitle,
   ItemList,
-  BoldText
+  BoldText,
+  ImageList
 } from "./SubMenuComponents";
 
 const SaleSubMenu = () => {
@@ -25,7 +26,8 @@ const SaleSubMenu = () => {
       />
 
       <BoldText text={Data.Sale.BoldTextTwo} />
-
+      
+      <ImageList images={Data.Sale.Images} />
     </div>
   );
 };

@@ -3,7 +3,8 @@ import Data from "../../assets/SubMenuData.json";
 import { 
   SubMenuTitle, 
   ItemList,
-  BoldText
+  BoldText,
+  ImageList
 } from "./SubMenuComponents";
 
 const KidSubMenu = () => {
@@ -30,6 +31,8 @@ const KidSubMenu = () => {
         bottomBorder={Data.Men.DataTwo.bottomBorder}
         items={Data.Kids.DataThree.items} 
       />
+
+      <ImageList images={Data.Kids.Images} />
 
     </div>
 );
