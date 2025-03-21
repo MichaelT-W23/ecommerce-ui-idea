@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import styles from "../styles/components/MobileSearchView.module.css";
-import { LensIcon, CancelIcon } from "../assets/depop-svg";
+import { LensIcon, CancelIcon, ArrowForwardIcon } from "../assets/depop-svg";
 import searchData from "../assets/SearchData.json";
 
 const MobileSearchView = ({ closeSearchView }) => {
   const inputRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const searchTips = useMemo(
     () => searchData["search-for-tips"].map((item) => `"${item.text}"`), []
@@ -67,6 +68,17 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => clearTimeout(typingEffect);
   }, [startTyping, charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
+  const handleClearInput = () => {
+    setSearchTerm("");
+  };
+
+  const handleSearchSubmit = () => {
+    if (searchTerm.trim() !== "") {
+      console.log("Search submitted:", searchTerm);
+      // You could add routing or real search logic here.
+    }
+  };
+
   return (
     <div className={styles.overlay}>
       <div className={styles.searchHeader}>
@@ -81,12 +93,27 @@ const MobileSearchView = ({ closeSearchView }) => {
         <span className={styles.searchIcon}>
           <LensIcon />
         </span>
+
         <input
           ref={inputRef}
           type="text"
           placeholder={`Search for ${displayedTip}`}
           className={styles.searchInput}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
+
+        {searchTerm && (
+          <button className={styles.closeButton} onClick={handleClearInput}>
+            clear
+          </button>
+        )}
+
+        {searchTerm && (
+          <button className={styles.forwardButton} onClick={handleSearchSubmit}>
+            <ArrowForwardIcon width={20} />
+          </button>
+        )}
       </div>
     </div>
   );
