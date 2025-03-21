@@ -6,6 +6,7 @@ import { BagIcon } from "../assets/svg/Bag";
 import { MenuIcon } from "../assets/svg/Menu";
 import { LensIcon } from "../assets/svg/Lens";
 import SideMenu from "./SideMenu";
+import { Link } from 'react-router-dom';
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,10 @@ const MobileNavBar = () => {
         <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
           <MenuIcon />
         </button>
+        
+        <Link to="/" className={styles['depop-logo']}>
+          <DepopLogo />
+        </Link>
 
         <div className={styles.rightIcons}>
           <div className={styles["heart-icon"]}>

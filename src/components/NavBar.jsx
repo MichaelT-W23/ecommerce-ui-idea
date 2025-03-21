@@ -4,13 +4,14 @@ import SearchBar from "./SearchBar";
 import { DepopLogo } from "../assets/svg/DepopLogo";
 import { LikeIcon } from "../assets/svg/Like";
 import { BagIcon } from "../assets/svg/Bag";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <div className={styles['depop-logo']}>
-      <DepopLogo />
-      </div>
+      <Link to="/" className={styles['depop-logo']}>
+        <DepopLogo />
+      </Link>
 
       <div className={styles['search-bar-wrapper']}>
         <div className={styles['search-bar']}>

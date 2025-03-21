@@ -9,6 +9,10 @@
   margin-left: 13px;
 }
 
+.depop-logo:hover {
+  cursor: pointer;
+}
+
 .navbar-buttons {
   display: flex;
   gap: 0.5rem;
