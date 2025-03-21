@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemList = ({ title, items, highlightLast = false }) => {
+const ItemList = ({ title, items, highlightLast = false, bottomBorder = false }) => {
   return (
     <div className="w-full pt-5">
       <h2 
@@ -11,11 +11,13 @@ const ItemList = ({ title, items, highlightLast = false }) => {
         {items.map((item, index) => (
           <li
             key={index}
-            className="text-left"
+            className="text-left border-b"
             style={{ 
               paddingTop: "12.5px", 
               paddingBottom: "12.5px",
-              borderBottom: "1px solid rgb(243, 243, 243)" 
+              borderBottom: bottomBorder && index === items.length - 1 
+                ? "1px solid #262626" 
+                : "1px solid rgb(243, 243, 243)"
             }}
           >
             <span 
