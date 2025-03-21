@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/components/MobileNavBar.module.css";
 import SideMenu from "./SideMenu";
+import MobileSearchView from "./MobileSearchView";
 import { Link } from 'react-router-dom';
 import {
   DepopLogo,
@@ -13,6 +14,7 @@ import {
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   return (
     <nav className={styles.navbar}>
@@ -41,12 +43,20 @@ const MobileNavBar = () => {
           <span className={styles.searchIcon}>
             <LensIcon />
           </span>
-          <input type="text" placeholder="Search for anything" className={styles.searchInput} />
+          <input
+            type="text"
+            placeholder="Search for anything"
+            className={styles.searchInput}
+            onFocus={() => setIsSearchFocused(true)}
+          />
         </div>
       </div>
 
-      {/* Sidebar Component (Controlled by isOpen state) */}
       <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+
+      {isSearchFocused && (
+        <MobileSearchView closeSearchView={() => setIsSearchFocused(false)} />
+      )}
     </nav>
   );
 };
