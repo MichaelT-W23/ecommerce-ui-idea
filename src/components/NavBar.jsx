@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "../styles/components/Navbar.module.css";
 import SearchBar from "./SearchBar";
-import { DepopLogo } from "../assets/svg/DepopLogo";
-import { LikeIcon } from "../assets/svg/Like";
-import { BagIcon } from "../assets/svg/Bag";
 import { Link } from 'react-router-dom';
+import {
+  DepopLogo,
+  LikeIcon,
+  BagIcon,
+} from "../assets/depop-svg";
+
+
 
 const Navbar = () => {
   return (

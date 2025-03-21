@@ -1,4 +1,4 @@
-export const LensIcon = () => {
+const LensIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="23" viewBox="0 0 24 24" fill="none">
       <path 
@@ -19,3 +19,5 @@ export const LensIcon = () => {
     </svg>
   );
 };
+
+export default LensIcon;

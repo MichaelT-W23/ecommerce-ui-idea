@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { DepopLogo } from "../assets/svg/DepopLogo";
-import { CancelIcon } from "../assets/svg/Cancel";
-import { ArrowForwardIcon } from "../assets/svg/ArrowForward";
 import SubMenu from "./SubMenu";
 import styles from "../styles/components/SideMenu.module.css";
+import {
+  DepopLogo,
+  CancelIcon,
+  ArrowForwardIcon
+} from "../assets/depop-svg";
+
 
 const menuItems = ["Men", "Women", "Kids", "Sports", "Brands", "Sale"];
 

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import styles from "../styles/components/MobileNavBar.module.css";
-import { DepopLogo } from "../assets/svg/DepopLogo";
-import { LikeIcon } from "../assets/svg/Like";
-import { BagIcon } from "../assets/svg/Bag";
-import { MenuIcon } from "../assets/svg/Menu";
-import { LensIcon } from "../assets/svg/Lens";
 import SideMenu from "./SideMenu";
 import { Link } from 'react-router-dom';
+import {
+  DepopLogo,
+  LikeIcon,
+  BagIcon,
+  MenuIcon,
+  LensIcon
+} from "../assets/depop-svg";
+
 
 const MobileNavBar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -8,7 +8,6 @@ import {
 } from "./SubMenuComponents";
 
 const SaleSubMenu = () => {
-
   return (
     <div>
       <SubMenuTitle title={Data.Sale.Title} />

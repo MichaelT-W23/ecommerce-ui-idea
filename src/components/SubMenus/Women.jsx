@@ -7,9 +7,7 @@ import {
   ImageList
 } from "./SubMenuComponents";
 
-
 const WomenSubMenu = () => {
-
   return (
     <div>
       <SubMenuTitle title={Data.Women.Title} />

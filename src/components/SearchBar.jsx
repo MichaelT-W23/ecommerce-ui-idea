@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import styles from "../styles/components/SearchBar.module.css";
-import { LensIcon } from "../assets/svg/Lens";
-import { ArrowForwardIcon } from "../assets/svg/ArrowForward";
 import searchData from "../assets/SearchData.json";
+import { LensIcon, ArrowForwardIcon } from "../assets/depop-svg";
+
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");

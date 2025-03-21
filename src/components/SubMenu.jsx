@@ -1,6 +1,5 @@
 import styles from "../styles/components/SubMenu.module.css";
-import { CancelIcon } from "../assets/svg/Cancel";
-import { ArrowBackIcon } from "../assets/svg/ArrowBack";
+import { CancelIcon, ArrowBackIcon } from "../assets/depop-svg";
 
 import BrandSubMenu from "./SubMenus/Brands";
 import KidSubMenu from "./SubMenus/Kids";
@@ -8,6 +7,10 @@ import MenSubMenu from "./SubMenus/Men";
 import SaleSubMenu from "./SubMenus/Sale";
 import SportSubMenu from "./SubMenus/Sports";
 import WomenSubMenu from "./SubMenus/Women";
+
+
+
+
 
 
 const SubMenu = ({ activeMenu, setActiveMenu, setIsOpen }) => {

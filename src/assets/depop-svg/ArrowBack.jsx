@@ -1,4 +1,4 @@
-export const ArrowForwardIcon = ({ width = 24 }) => {
+const ArrowBackIcon = ({ width = 24 }) => {
   return (
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -7,21 +7,21 @@ export const ArrowForwardIcon = ({ width = 24 }) => {
       fill="none"
     >
       <path 
-        d="M19.9706 12H3.00002" 
+        d="M21 12H4.02944" 
         stroke="currentColor" 
         strokeWidth="1.5" 
         strokeLinecap="round" 
         strokeLinejoin="round"
       />
       <path 
-        d="M12 4L20 12" 
+        d="M12 4L4 12" 
         stroke="currentColor" 
         strokeWidth="1.5" 
         strokeLinecap="round" 
         strokeLinejoin="round"
       />
       <path 
-        d="M12.0073 20.0073L19.9926 12.0074" 
+        d="M12 20L4.00008 12.0147" 
         stroke="currentColor" 
         strokeWidth="1.5" 
         strokeLinecap="round" 
@@ -30,3 +30,5 @@ export const ArrowForwardIcon = ({ width = 24 }) => {
     </svg>
   );
 };
+
+export default ArrowBackIcon;

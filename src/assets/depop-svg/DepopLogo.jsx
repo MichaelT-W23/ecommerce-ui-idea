@@ -1,4 +1,4 @@
-export const DepopLogo = () => {
+const DepopLogo = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1295 333" width="95">
       <path 
@@ -9,3 +9,5 @@ export const DepopLogo = () => {
     </svg>
   );
 };
+
+export default DepopLogo;
