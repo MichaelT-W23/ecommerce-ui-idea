@@ -69,6 +69,10 @@ const MobileSearchView = ({ closeSearchView }) => {
 
   return (
     <div className={styles.overlay}>
+      <div className={styles.searchHeader}>
+        <h1>Search</h1>
+      </div>
+
       <div onClick={closeSearchView} className={styles.cancelIcon}>
         <CancelIcon />
       </div>
@@ -84,8 +88,6 @@ const MobileSearchView = ({ closeSearchView }) => {
           className={styles.searchInput}
         />
       </div>
-
-      <h1>Search view</h1>
     </div>
   );
 };
