@@ -95,12 +95,12 @@
             {
                 "id": 2,
                 "text": "Streetwear",
-                "path": "Men/minimalism.png"
+                "path": "Men/streetwear.png"
             },
             {
                 "id": 3,
                 "text": "Minimalism",
-                "path": "Men/streetwear.png"
+                "path": "Men/minimalism.png"
             },
             {
                 "id": 4,
