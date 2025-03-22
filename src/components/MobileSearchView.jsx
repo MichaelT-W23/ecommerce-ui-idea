@@ -6,22 +6,31 @@ import searchData from "../assets/SearchData.json";
 const MobileSearchView = ({ closeSearchView }) => {
   const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [recentSearches, setRecentSearches] = useState([]);
+  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+  const [trendingSearches, setTrendingSearches] = useState([]);
+  const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
 
+  // Typing animation state
   const searchTips = useMemo(
-    () => searchData["search-for-tips"].map((item) => `"${item.text}"`), []
+    () => searchData["search-for-tips"].map((item) => `"${item.text}"`),
+    []
   );
-
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
-  const [displayedTip, setDisplayedTip] = useState(searchTips[0]);
-  const [charIndex, setCharIndex] = useState(searchTips[0].length);
+  const [displayedTip, setDisplayedTip] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [pauseAfterDelete, setPauseAfterDelete] = useState(false);
   const [startTyping, setStartTyping] = useState(false);
 
+  // Focus input and initialize data
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    setTrendingSearches(searchData["trending-searches"]);
+    const storedRecentSearches =
+      JSON.parse(localStorage.getItem("recentSearches")) || [];
+    setRecentSearches(storedRecentSearches);
+
+    if (inputRef.current) inputRef.current.focus();
 
     const startTimeout = setTimeout(() => {
       setStartTyping(true);
@@ -31,8 +40,17 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => clearTimeout(startTimeout);
   }, []);
 
+  // Initialize tip display
   useEffect(() => {
-    if (!startTyping) return;
+    if (searchTips.length > 0) {
+      setDisplayedTip(searchTips[0]);
+      setCharIndex(searchTips[0].length);
+    }
+  }, [searchTips]);
+
+  // Typing animation
+  useEffect(() => {
+    if (!startTyping || searchTips.length === 0) return;
 
     if (pauseAfterDelete) {
       const timeout = setTimeout(() => {
@@ -68,15 +86,52 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => clearTimeout(typingEffect);
   }, [startTyping, charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
+  // Filter suggestions
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      const firstLetter = searchTerm[0].toLowerCase();
+      const suggestions = searchData["search-data"][firstLetter] || [];
+      const filtered = suggestions.filter((s) =>
+        s.search.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredSuggestions(filtered);
+      setIsSuggestionsOpen(true);
+    } else {
+      setFilteredSuggestions([]);
+      setIsSuggestionsOpen(false);
+    }
+  }, [searchTerm]);
+
   const handleClearInput = () => {
     setSearchTerm("");
+    setIsSuggestionsOpen(false);
   };
 
-  const handleSearchSubmit = () => {
-    if (searchTerm.trim() !== "") {
-      console.log("Search submitted:", searchTerm);
-      // You could add routing or real search logic here.
-    }
+  const handleSelectSuggestion = (item) => {
+    const selected = item.search || item;
+    setSearchTerm(selected);
+    setIsSuggestionsOpen(false);
+
+    const updatedRecent = [selected, ...recentSearches.filter((s) => s !== selected)].slice(0, 5);
+    setRecentSearches(updatedRecent);
+    localStorage.setItem("recentSearches", JSON.stringify(updatedRecent));
+  };
+
+  const clearRecentSearches = () => {
+    setRecentSearches([]);
+    localStorage.removeItem("recentSearches");
+  };
+
+  const highlightMatch = (text, term) => {
+    const index = text.toLowerCase().indexOf(term.toLowerCase());
+    if (index === -1) return text;
+    return (
+      <>
+        {text.substring(0, index)}
+        <b>{text.substring(index, index + term.length)}</b>
+        {text.substring(index + term.length)}
+      </>
+    );
   };
 
   return (
@@ -110,11 +165,54 @@ const MobileSearchView = ({ closeSearchView }) => {
         )}
 
         {searchTerm && (
-          <button className={styles.forwardButton} onClick={handleSearchSubmit}>
+          <button
+            className={styles.forwardButton}
+            onClick={() => console.log("Search submitted:", searchTerm)}
+          >
             <ArrowForwardIcon width={20} />
           </button>
         )}
       </div>
+
+      <ul className={styles.suggestionsList}>
+        {isSuggestionsOpen && filteredSuggestions.length > 0 ? (
+          filteredSuggestions.map((item, index) => (
+            <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
+              {highlightMatch(item.search, searchTerm)}
+              {index < 2 && item.category && (
+                <span className={styles["category-text"]}>{item.category}</span>
+              )}
+            </li>
+          ))
+        ) : (
+          <>
+            {recentSearches.length > 0 && (
+              <>
+                <li className={styles.trendingTitle}>
+                  Recent
+                  <span className={styles.clearButton} onClick={clearRecentSearches}>
+                    Clear
+                  </span>
+                </li>
+                {recentSearches.map((search, index) => (
+                  <li key={index} onMouseDown={() => handleSelectSuggestion(search)}>
+                    {search}
+                  </li>
+                ))}
+              </>
+            )}
+            <li className={styles.trendingTitle}>Trending searches</li>
+            {trendingSearches.map((search) => (
+              <li
+                key={search.id}
+                onMouseDown={() => handleSelectSuggestion(search.text)}
+              >
+                {search.text}
+              </li>
+            ))}
+          </>
+        )}
+      </ul>
     </div>
   );
 };
