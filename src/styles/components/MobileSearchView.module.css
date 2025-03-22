@@ -149,17 +149,27 @@
 
 .trendingTitle {
   margin-top: 16px;
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
+  color: rgb(116, 116, 116);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.trendingTitle:hover {
+  cursor: default; 
+  background-color: transparent !important;
+  color: rgb(116, 116, 116) !important;
+}
+
 .clearButton {
-  font-size: 12px;
-  color: #3d37bd;
+  font-size: 13px;
+  color: #2960af;
+  font-weight: 400;
   cursor: pointer;
-  text-transform: uppercase;
+}
+
+.clearButton:hover {
+  opacity: 0.7;
 }
 
