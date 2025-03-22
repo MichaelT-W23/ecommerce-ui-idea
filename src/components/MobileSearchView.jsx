@@ -86,7 +86,7 @@ const MobileSearchView = ({ closeSearchView }) => {
       </div>
 
       <div onClick={closeSearchView} className={styles.cancelIcon}>
-        <CancelIcon />
+        <CancelIcon width={24} />
       </div>
 
       <div className={styles.searchContainer}>

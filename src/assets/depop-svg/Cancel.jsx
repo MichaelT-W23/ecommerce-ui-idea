@@ -1,6 +1,6 @@
-const CancelIcon = () => {
+const CancelIcon = ({ width = 23 }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="23" viewBox="0 0 24 24" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 24 24" fill="none">
       <path 
         d="M4 4L20 20" 
         stroke="currentColor" 
