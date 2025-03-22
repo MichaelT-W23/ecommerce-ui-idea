@@ -119,14 +119,29 @@
 
 /* Suggestions below search */
 .suggestionsList {
-  margin-top: 150px; /* below fixed search bar */
+  margin-top: 120px;
   overflow-y: auto;
   flex-grow: 1;
   list-style: none;
 }
 
+.trendingTitle {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgb(116, 116, 116);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trendingTitle:hover {
+  cursor: default; 
+  background-color: transparent !important;
+  color: rgb(116, 116, 116) !important;
+}
+
 .suggestionsList li {
-  padding: 10px 0;
+  padding: 7px 0;
   font-family: "Roboto", Arial, sans-serif;
   cursor: pointer;
   padding-left: 10px;
@@ -145,21 +160,6 @@
 .category-text {
   color: #3D37BD;
   margin-left: 6px;
-}
-
-.trendingTitle {
-  margin-top: 16px;
-  font-size: 13px;
-  color: rgb(116, 116, 116);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.trendingTitle:hover {
-  cursor: default; 
-  background-color: transparent !important;
-  color: rgb(116, 116, 116) !important;
 }
 
 .clearButton {
