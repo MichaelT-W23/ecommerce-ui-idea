@@ -6,7 +6,7 @@ import searchData from "../assets/SearchData.json";
 const MobileSearchView = ({ closeSearchView }) => {
   const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [recentSearches, setRecentSearches] = useState([]);
+  const [recentSearchesMobile, setRecentSearchesMobile] = useState([]);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [trendingSearches, setTrendingSearches] = useState([]);
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
@@ -26,9 +26,9 @@ const MobileSearchView = ({ closeSearchView }) => {
   // Focus input and initialize data
   useEffect(() => {
     setTrendingSearches(searchData["trending-searches"]);
-    const storedRecentSearches =
-      JSON.parse(localStorage.getItem("recentSearches")) || [];
-    setRecentSearches(storedRecentSearches);
+    const storedRecentSearchesMobile =
+      JSON.parse(localStorage.getItem("recentSearchesMobile")) || [];
+    setRecentSearchesMobile(storedRecentSearchesMobile);
 
     if (inputRef.current) inputRef.current.focus();
 
@@ -112,13 +112,13 @@ const MobileSearchView = ({ closeSearchView }) => {
     setSearchTerm(selected);
     setIsSuggestionsOpen(false);
 
-    const updatedRecent = [selected, ...recentSearches.filter((s) => s !== selected)].slice(0, 5);
-    setRecentSearches(updatedRecent);
+    const updatedRecent = [selected, ...recentSearchesMobile.filter((s) => s !== selected)].slice(0, 5);
+    setRecentSearchesMobile(updatedRecent);
     localStorage.setItem("recentSearches", JSON.stringify(updatedRecent));
   };
 
   const clearRecentSearches = () => {
-    setRecentSearches([]);
+    setRecentSearchesMobile([]);
     localStorage.removeItem("recentSearches");
   };
 
@@ -186,7 +186,7 @@ const MobileSearchView = ({ closeSearchView }) => {
           ))
         ) : (
           <>
-            {recentSearches.length > 0 && (
+            {recentSearchesMobile.length > 0 && (
               <>
                 <li className={styles.trendingTitle}>
                   Recent
@@ -194,7 +194,7 @@ const MobileSearchView = ({ closeSearchView }) => {
                     Clear
                   </span>
                 </li>
-                {recentSearches.map((search, index) => (
+                {recentSearchesMobile.map((search, index) => (
                   <li key={index} onMouseDown={() => handleSelectSuggestion(search)}>
                     {search}
                   </li>
