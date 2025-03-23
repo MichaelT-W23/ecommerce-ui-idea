@@ -209,7 +209,7 @@ const MobileSearchView = ({ closeSearchView }) => {
         </div>
 
         <ul className={styles.suggestionsList}>
-          {isFocused && isSuggestionsOpen ? (
+          {isFocused && isSuggestionsOpen && !showNoResults ? (
             searchTerm && filteredSuggestions.length > 0 && !showNoResults ? (
               filteredSuggestions.map((item, index) => (
                 <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
