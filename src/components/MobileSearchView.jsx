@@ -4,8 +4,9 @@ import { LensIcon, CancelIcon, ArrowForwardIcon } from "../assets/depop-svg";
 import searchData from "../assets/SearchData.json";
 
 const MobileSearchView = ({ closeSearchView }) => {
-  const overlayRef = useRef(null);
+  const wrapperRef = useRef(null);
   const inputRef = useRef(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [recentSearchesMobile, setRecentSearchesMobile] = useState([]);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -36,17 +37,14 @@ const MobileSearchView = ({ closeSearchView }) => {
     setDisplayedTip(searchTips[0]);
     setCharIndex(searchTips[0].length);
 
-    const startTypingNow = () => {
-      setStartTyping(true);
-      setIsDeleting(true);
-    };
-    startTypingNow();
+    setStartTyping(true);
+    setIsDeleting(true);
   }, [searchTips]);
 
-  // Global click outside detection
+  // Handle click outside input + suggestions area
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (overlayRef.current && !overlayRef.current.contains(e.target)) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setIsFocused(false);
         setIsSuggestionsOpen(false);
       }
@@ -56,13 +54,12 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Typing animation effect
   useEffect(() => {
     if (!startTyping || searchTips.length === 0) return;
 
     if (pauseAfterDelete) {
-      const nextTip = () =>
-        setCurrentTipIndex((prev) => (prev + 1) % searchTips.length);
-      nextTip();
+      setCurrentTipIndex((prev) => (prev + 1) % searchTips.length);
       setPauseAfterDelete(false);
       return;
     }
@@ -98,6 +95,7 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => clearTimeout(timeout);
   }, [startTyping, charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
+  // Handle suggestions filtering
   useEffect(() => {
     if (searchTerm.length > 0) {
       const firstLetter = searchTerm[0].toLowerCase();
@@ -107,6 +105,7 @@ const MobileSearchView = ({ closeSearchView }) => {
         (max, item) => (item.search.length > max ? item.search.length : max),
         0
       );
+
       setMaxLength(longestSuggestion);
       setFilteredSuggestions(suggestions);
       setIsSuggestionsOpen(true);
@@ -165,96 +164,98 @@ const MobileSearchView = ({ closeSearchView }) => {
   const showNoResults = searchTerm.length > 0 && searchTerm.length > maxLength;
 
   return (
-    <div className={styles.overlay} ref={overlayRef}>
-      <div className={styles.searchHeader}>
-        <h1>Search</h1>
-      </div>
+    <div className={styles.overlay}>
+      <div className={styles.searchWrapper} ref={wrapperRef}>
+        <div className={styles.searchHeader}>
+          <h1>Search</h1>
+        </div>
 
-      <div onClick={closeSearchView} className={styles.cancelIcon}>
-        <CancelIcon width={24} />
-      </div>
+        <div onClick={closeSearchView} className={styles.cancelIcon}>
+          <CancelIcon width={24} />
+        </div>
 
-      <div className={styles.searchContainer}>
-        <span className={styles.searchIcon}>
-          <LensIcon />
-        </span>
+        <div className={styles.searchContainer}>
+          <span className={styles.searchIcon}>
+            <LensIcon />
+          </span>
 
-        <input
-          ref={inputRef}
-          type="text"
-          placeholder={`Search for ${displayedTip}`}
-          className={styles.searchInput}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onFocus={() => {
-            setIsFocused(true);
-            if (!searchTerm) setIsSuggestionsOpen(true);
-          }}
-        />
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder={`Search for ${displayedTip}`}
+            className={styles.searchInput}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onFocus={() => {
+              setIsFocused(true);
+              if (!searchTerm) setIsSuggestionsOpen(true);
+            }}
+          />
 
-        {searchTerm && (
-          <button className={styles.closeButton} onClick={handleClearInput}>
-            clear
-          </button>
-        )}
+          {searchTerm && (
+            <button className={styles.closeButton} onClick={handleClearInput}>
+              clear
+            </button>
+          )}
 
-        {searchTerm && (
-          <button
-            className={styles.forwardButton}
-            onClick={() => console.log("Search submitted:", searchTerm)}
-          >
-            <ArrowForwardIcon width={20} />
-          </button>
-        )}
-      </div>
+          {searchTerm && (
+            <button
+              className={styles.forwardButton}
+              onClick={() => console.log("Search submitted:", searchTerm)}
+            >
+              <ArrowForwardIcon width={20} />
+            </button>
+          )}
+        </div>
 
-      <ul className={styles.suggestionsList}>
-        {isFocused && isSuggestionsOpen ? (
-          searchTerm && filteredSuggestions.length > 0 && !showNoResults ? (
-            filteredSuggestions.map((item, index) => (
-              <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
-                {highlightMatch(item.search, searchTerm)}
-                {index < 2 && item.category && (
-                  <span className={styles["category-text"]}>{item.category}</span>
-                )}
-              </li>
-            ))
-          ) : (
-            <>
-              {recentSearchesMobile.length > 0 && (
-                <>
-                  <li className={styles.trendingTitle}>
-                    Recent
-                    <span
-                      className={styles.clearButton}
-                      onMouseDown={clearRecentSearches}
-                    >
-                      Clear
-                    </span>
-                  </li>
-                  {recentSearchesMobile.map((search, index) => (
-                    <li
-                      key={index}
-                      onMouseDown={() => handleSelectSuggestion(search)}
-                    >
-                      {search}
-                    </li>
-                  ))}
-                </>
-              )}
-              <li className={styles.trendingTitle}>Trending searches</li>
-              {trendingSearches.map((search) => (
-                <li
-                  key={search.id}
-                  onMouseDown={() => handleSelectSuggestion(search.text)}
-                >
-                  {search.text}
+        <ul className={styles.suggestionsList}>
+          {isFocused && isSuggestionsOpen ? (
+            searchTerm && filteredSuggestions.length > 0 && !showNoResults ? (
+              filteredSuggestions.map((item, index) => (
+                <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
+                  {highlightMatch(item.search, searchTerm)}
+                  {index < 2 && item.category && (
+                    <span className={styles["category-text"]}>{item.category}</span>
+                  )}
                 </li>
-              ))}
-            </>
-          )
-        ) : null}
-      </ul>
+              ))
+            ) : (
+              <>
+                {recentSearchesMobile.length > 0 && (
+                  <>
+                    <li className={styles.trendingTitle}>
+                      Recent
+                      <span
+                        className={styles.clearButton}
+                        onClick={clearRecentSearches}
+                      >
+                        Clear
+                      </span>
+                    </li>
+                    {recentSearchesMobile.map((search, index) => (
+                      <li
+                        key={index}
+                        onMouseDown={() => handleSelectSuggestion(search)}
+                      >
+                        {search}
+                      </li>
+                    ))}
+                  </>
+                )}
+                <li className={styles.trendingTitle}>Trending searches</li>
+                {trendingSearches.map((search) => (
+                  <li
+                    key={search.id}
+                    onMouseDown={() => handleSelectSuggestion(search.text)}
+                  >
+                    {search.text}
+                  </li>
+                ))}
+              </>
+            )
+          ) : null}
+        </ul>
+      </div>
     </div>
   );
 };
