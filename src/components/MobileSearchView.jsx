@@ -4,6 +4,7 @@ import { LensIcon, CancelIcon, ArrowForwardIcon } from "../assets/depop-svg";
 import searchData from "../assets/SearchData.json";
 
 const MobileSearchView = ({ closeSearchView }) => {
+  const overlayRef = useRef(null);
   const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [recentSearchesMobile, setRecentSearchesMobile] = useState([]);
@@ -13,11 +14,11 @@ const MobileSearchView = ({ closeSearchView }) => {
   const [maxLength, setMaxLength] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
 
-  // Typing animation state
   const searchTips = useMemo(
     () => searchData["search-for-tips"].map((item) => `"${item.text}"`),
     []
   );
+
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
   const [displayedTip, setDisplayedTip] = useState("");
   const [charIndex, setCharIndex] = useState(0);
@@ -32,38 +33,45 @@ const MobileSearchView = ({ closeSearchView }) => {
     setRecentSearchesMobile(storedRecent);
 
     if (inputRef.current) inputRef.current.focus();
+    setDisplayedTip(searchTips[0]);
+    setCharIndex(searchTips[0].length);
 
-    const startTimeout = setTimeout(() => {
+    const startTypingNow = () => {
       setStartTyping(true);
       setIsDeleting(true);
-    }, 3000);
-
-    return () => clearTimeout(startTimeout);
-  }, []);
-
-  useEffect(() => {
-    if (searchTips.length > 0) {
-      setDisplayedTip(searchTips[0]);
-      setCharIndex(searchTips[0].length);
-    }
+    };
+    startTypingNow();
   }, [searchTips]);
+
+  // Global click outside detection
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (overlayRef.current && !overlayRef.current.contains(e.target)) {
+        setIsFocused(false);
+        setIsSuggestionsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (!startTyping || searchTips.length === 0) return;
 
     if (pauseAfterDelete) {
-      const timeout = setTimeout(() => {
-        setPauseAfterDelete(false);
+      const nextTip = () =>
         setCurrentTipIndex((prev) => (prev + 1) % searchTips.length);
-      }, 750);
-      return () => clearTimeout(timeout);
+      nextTip();
+      setPauseAfterDelete(false);
+      return;
     }
 
     const currentTip = searchTips[currentTipIndex];
     const typingSpeed = isDeleting ? 10 : 20;
     const pauseTime = 1000;
 
-    const typingEffect = setTimeout(() => {
+    const typeChar = () => {
       if (!isDeleting) {
         if (charIndex < currentTip.length) {
           setDisplayedTip((prev) => prev + currentTip[charIndex]);
@@ -80,9 +88,14 @@ const MobileSearchView = ({ closeSearchView }) => {
           setPauseAfterDelete(true);
         }
       }
-    }, charIndex === currentTip.length && !isDeleting ? pauseTime : typingSpeed);
+    };
 
-    return () => clearTimeout(typingEffect);
+    const timeout = setTimeout(
+      typeChar,
+      charIndex === currentTip.length && !isDeleting ? pauseTime : typingSpeed
+    );
+
+    return () => clearTimeout(timeout);
   }, [startTyping, charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
   useEffect(() => {
@@ -95,14 +108,13 @@ const MobileSearchView = ({ closeSearchView }) => {
         0
       );
       setMaxLength(longestSuggestion);
-
       setFilteredSuggestions(suggestions);
       setIsSuggestionsOpen(true);
     } else {
       setFilteredSuggestions([]);
       setMaxLength(0);
       if (isFocused) {
-        setIsSuggestionsOpen(true); // show trending/recent on focus
+        setIsSuggestionsOpen(true);
       } else {
         setIsSuggestionsOpen(false);
       }
@@ -153,7 +165,7 @@ const MobileSearchView = ({ closeSearchView }) => {
   const showNoResults = searchTerm.length > 0 && searchTerm.length > maxLength;
 
   return (
-    <div className={styles.overlay}>
+    <div className={styles.overlay} ref={overlayRef}>
       <div className={styles.searchHeader}>
         <h1>Search</h1>
       </div>
@@ -177,10 +189,6 @@ const MobileSearchView = ({ closeSearchView }) => {
           onFocus={() => {
             setIsFocused(true);
             if (!searchTerm) setIsSuggestionsOpen(true);
-          }}
-          onBlur={() => {
-            setIsFocused(false);
-            setIsSuggestionsOpen(false);
           }}
         />
 
