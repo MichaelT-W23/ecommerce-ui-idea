@@ -11,6 +11,11 @@
   padding: 16px;
 }
 
+.searchAreaAboveInput {
+  /* background-color: blueviolet; */
+  min-height: 75px; 
+}
+
 .searchHeader {
   position: absolute;
   top: 35px;
@@ -29,7 +34,7 @@
 
 .searchContainer {
   position: fixed;
-  top: 90px; /* below header and cancel icon */
+  top: 90px; 
   left: 16px;
   right: 16px;
   display: flex;
@@ -119,8 +124,8 @@
 
 /* Suggestions below search */
 .suggestionsList {
-  background-color: red;
-  margin-top: 111px;
+  /* background-color: red; */
+  margin-top: 39px;
   overflow-y: auto;
   padding-top: 13px;
   list-style: none;

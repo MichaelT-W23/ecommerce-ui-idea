@@ -165,13 +165,24 @@ const MobileSearchView = ({ closeSearchView }) => {
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.searchWrapper} ref={wrapperRef}>
-        <div className={styles.searchHeader}>
-          <h1>Search</h1>
-        </div>
+      <div 
+        className={styles.searchWrapper} 
+        ref={wrapperRef}
+      >
+        <div 
+          className={styles.searchAreaAboveInput}
+          onClick={() => {
+            setIsFocused(false);
+            setIsSuggestionsOpen(false);
+          }}
+        >
+          <div className={styles.searchHeader}>
+            <h1>Search</h1>
+          </div>
 
-        <div onClick={closeSearchView} className={styles.cancelIcon}>
-          <CancelIcon width={24} />
+          <div onClick={closeSearchView} className={styles.cancelIcon}>
+            <CancelIcon width={24} />
+          </div>
         </div>
 
         <div className={styles.searchContainer}>
