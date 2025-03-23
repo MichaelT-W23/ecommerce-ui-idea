@@ -218,8 +218,9 @@ const MobileSearchView = ({ closeSearchView }) => {
         </div>
 
         <ul className={styles.suggestionsList}>
-          {isFocused && isSuggestionsOpen ? (
-            searchTerm && filteredSuggestions.length > 0 && !forceShowDefaults ? (
+          {isFocused && isSuggestionsOpen && !showNoResults ? (
+            searchTerm && filteredSuggestions.length > 0 
+            && !forceShowDefaults && !showNoResults? (
               filteredSuggestions.map((item, index) => (
                 <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
                   {highlightMatch(item.search, searchTerm)}
