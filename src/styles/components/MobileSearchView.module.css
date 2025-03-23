@@ -119,14 +119,15 @@
 
 /* Suggestions below search */
 .suggestionsList {
-  margin-top: 125px;
+  background-color: red;
+  margin-top: 111px;
   overflow-y: auto;
-  flex-grow: 1;
+  padding-top: 13px;
   list-style: none;
 }
 
 .trendingTitle {
-  margin-top: 4px;
+  margin-top: 5px;
   font-size: 13px;
   color: rgb(116, 116, 116);
   display: flex;
