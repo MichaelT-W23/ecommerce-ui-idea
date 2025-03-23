@@ -11,6 +11,7 @@ const MobileSearchView = ({ closeSearchView }) => {
   const [trendingSearches, setTrendingSearches] = useState([]);
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
   const [maxLength, setMaxLength] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
 
   // Typing animation state
   const searchTips = useMemo(
@@ -88,22 +89,25 @@ const MobileSearchView = ({ closeSearchView }) => {
     if (searchTerm.length > 0) {
       const firstLetter = searchTerm[0].toLowerCase();
       const suggestions = searchData["search-data"][firstLetter] || [];
-  
+
       const longestSuggestion = suggestions.reduce(
         (max, item) => (item.search.length > max ? item.search.length : max),
         0
       );
       setMaxLength(longestSuggestion);
-  
+
       setFilteredSuggestions(suggestions);
       setIsSuggestionsOpen(true);
     } else {
       setFilteredSuggestions([]);
       setMaxLength(0);
-      setIsSuggestionsOpen(false);
+      if (isFocused) {
+        setIsSuggestionsOpen(true); // show trending/recent on focus
+      } else {
+        setIsSuggestionsOpen(false);
+      }
     }
-  }, [searchTerm]);
-  
+  }, [searchTerm, isFocused]);
 
   const handleClearInput = () => {
     setSearchTerm("");
@@ -111,12 +115,15 @@ const MobileSearchView = ({ closeSearchView }) => {
   };
 
   const handleSelectSuggestion = (item) => {
-    const selected = item && typeof item === "object" && "search" in item
-                    ? item.search
-                    : item;
+    const selected =
+      item && typeof item === "object" && "search" in item
+        ? item.search
+        : item;
 
     setSearchTerm(selected);
     setIsSuggestionsOpen(false);
+    setIsFocused(false);
+    inputRef.current?.blur();
 
     const updatedRecent = [
       selected,
@@ -143,8 +150,7 @@ const MobileSearchView = ({ closeSearchView }) => {
     );
   };
 
-  const showNoResults =
-    searchTerm.length > 0 && searchTerm.length > maxLength;
+  const showNoResults = searchTerm.length > 0 && searchTerm.length > maxLength;
 
   return (
     <div className={styles.overlay}>
@@ -168,6 +174,14 @@ const MobileSearchView = ({ closeSearchView }) => {
           className={styles.searchInput}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={() => {
+            setIsFocused(true);
+            if (!searchTerm) setIsSuggestionsOpen(true);
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+            setIsSuggestionsOpen(false);
+          }}
         />
 
         {searchTerm && (
@@ -187,47 +201,51 @@ const MobileSearchView = ({ closeSearchView }) => {
       </div>
 
       <ul className={styles.suggestionsList}>
-        {searchTerm && isSuggestionsOpen ? (
-          !showNoResults && filteredSuggestions.length > 0 ? (
+        {isFocused && isSuggestionsOpen ? (
+          searchTerm && filteredSuggestions.length > 0 && !showNoResults ? (
             filteredSuggestions.map((item, index) => (
               <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
                 {highlightMatch(item.search, searchTerm)}
                 {index < 2 && item.category && (
-                  <span className={styles["category-text"]}>
-                    {item.category}
-                  </span>
+                  <span className={styles["category-text"]}>{item.category}</span>
                 )}
               </li>
             ))
-          ) : null
-        ) : (
-          <>
-            {recentSearchesMobile.length > 0 && (
-              <>
-                <li className={styles.trendingTitle}>
-                  Recent
-                  <span className={styles.clearButton} onClick={clearRecentSearches}>
-                    Clear
-                  </span>
-                </li>
-                {recentSearchesMobile.map((search, index) => (
-                  <li key={index} onMouseDown={() => handleSelectSuggestion(search)}>
-                    {search}
+          ) : (
+            <>
+              {recentSearchesMobile.length > 0 && (
+                <>
+                  <li className={styles.trendingTitle}>
+                    Recent
+                    <span
+                      className={styles.clearButton}
+                      onMouseDown={clearRecentSearches}
+                    >
+                      Clear
+                    </span>
                   </li>
-                ))}
-              </>
-            )}
-            <li className={styles.trendingTitle}>Trending searches</li>
-            {trendingSearches.map((search) => (
-              <li
-                key={search.id}
-                onMouseDown={() => handleSelectSuggestion(search.text)}
-              >
-                {search.text}
-              </li>
-            ))}
-          </>
-        )}
+                  {recentSearchesMobile.map((search, index) => (
+                    <li
+                      key={index}
+                      onMouseDown={() => handleSelectSuggestion(search)}
+                    >
+                      {search}
+                    </li>
+                  ))}
+                </>
+              )}
+              <li className={styles.trendingTitle}>Trending searches</li>
+              {trendingSearches.map((search) => (
+                <li
+                  key={search.id}
+                  onMouseDown={() => handleSelectSuggestion(search.text)}
+                >
+                  {search.text}
+                </li>
+              ))}
+            </>
+          )
+        ) : null}
       </ul>
     </div>
   );
