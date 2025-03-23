@@ -14,6 +14,8 @@ const MobileSearchView = ({ closeSearchView }) => {
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
   const [maxLength, setMaxLength] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
+  const [didUserStartTyping, setDidUserStartTyping] = useState(false);
+  const [forceShowDefaults, setForceShowDefaults] = useState(false);
 
   const searchTips = useMemo(
     () => searchData["search-for-tips"].map((item) => `"${item.text}"`),
@@ -41,7 +43,6 @@ const MobileSearchView = ({ closeSearchView }) => {
     setIsDeleting(true);
   }, [searchTips]);
 
-  // Handle click outside input + suggestions area
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
@@ -54,7 +55,6 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Typing animation effect
   useEffect(() => {
     if (!startTyping || searchTips.length === 0) return;
 
@@ -95,7 +95,6 @@ const MobileSearchView = ({ closeSearchView }) => {
     return () => clearTimeout(timeout);
   }, [startTyping, charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
-  // Handle suggestions filtering
   useEffect(() => {
     if (searchTerm.length > 0) {
       const firstLetter = searchTerm[0].toLowerCase();
@@ -120,11 +119,6 @@ const MobileSearchView = ({ closeSearchView }) => {
     }
   }, [searchTerm, isFocused]);
 
-  const handleClearInput = () => {
-    setSearchTerm("");
-    setIsSuggestionsOpen(false);
-  };
-
   const handleSelectSuggestion = (item) => {
     const selected =
       item && typeof item === "object" && "search" in item
@@ -134,7 +128,7 @@ const MobileSearchView = ({ closeSearchView }) => {
     setSearchTerm(selected);
     setIsSuggestionsOpen(false);
     setIsFocused(false);
-    inputRef.current?.blur();
+    setForceShowDefaults(true); // 👈 trigger default view on next focus
 
     const updatedRecent = [
       selected,
@@ -142,6 +136,12 @@ const MobileSearchView = ({ closeSearchView }) => {
     ].slice(0, 5);
     setRecentSearchesMobile(updatedRecent);
     localStorage.setItem("recentSearchesMobile", JSON.stringify(updatedRecent));
+  };
+
+  const handleClearInput = () => {
+    setSearchTerm("");
+    setIsSuggestionsOpen(false);
+    setDidUserStartTyping(false);
   };
 
   const clearRecentSearches = () => {
@@ -182,13 +182,22 @@ const MobileSearchView = ({ closeSearchView }) => {
           <input
             ref={inputRef}
             type="text"
-            placeholder={`Search for ${displayedTip}`}
+            placeholder={
+              didUserStartTyping
+                ? "Search for items, brands, or styles..."
+                : `Search for ${displayedTip}`
+            }
             className={styles.searchInput}
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              setDidUserStartTyping(true);
+              setSearchTerm(e.target.value);
+              setIsSuggestionsOpen(true);
+              setForceShowDefaults(false);
+            }}
             onFocus={() => {
               setIsFocused(true);
-              if (!searchTerm) setIsSuggestionsOpen(true);
+              setIsSuggestionsOpen(true);
             }}
           />
 
@@ -209,8 +218,8 @@ const MobileSearchView = ({ closeSearchView }) => {
         </div>
 
         <ul className={styles.suggestionsList}>
-          {isFocused && isSuggestionsOpen && !showNoResults ? (
-            searchTerm && filteredSuggestions.length > 0 && !showNoResults ? (
+          {isFocused && isSuggestionsOpen ? (
+            searchTerm && filteredSuggestions.length > 0 && !forceShowDefaults ? (
               filteredSuggestions.map((item, index) => (
                 <li key={index} onMouseDown={() => handleSelectSuggestion(item)}>
                   {highlightMatch(item.search, searchTerm)}
