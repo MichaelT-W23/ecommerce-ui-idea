@@ -88,17 +88,14 @@ const MobileSearchView = ({ closeSearchView }) => {
     if (searchTerm.length > 0) {
       const firstLetter = searchTerm[0].toLowerCase();
       const suggestions = searchData["search-data"][firstLetter] || [];
-      const filtered = suggestions.filter((s) =>
-        s.search.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
+  
       const longestSuggestion = suggestions.reduce(
         (max, item) => (item.search.length > max ? item.search.length : max),
         0
       );
       setMaxLength(longestSuggestion);
-
-      setFilteredSuggestions(filtered);
+  
+      setFilteredSuggestions(suggestions);
       setIsSuggestionsOpen(true);
     } else {
       setFilteredSuggestions([]);
@@ -106,6 +103,7 @@ const MobileSearchView = ({ closeSearchView }) => {
       setIsSuggestionsOpen(false);
     }
   }, [searchTerm]);
+  
 
   const handleClearInput = () => {
     setSearchTerm("");
