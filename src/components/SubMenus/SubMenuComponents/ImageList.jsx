@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./ImageList.module.css";
 
 const imageMap = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg}', {
   eager: true,
@@ -7,7 +8,7 @@ const imageMap = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg}', {
 
 const ImageList = ({ images }) => {
   return (
-    <div>
+    <div className={styles.imageContainer}>
       {images.map((image) => {
         const imagePath = `/src/assets/images/${image.path}`;
         const src = imageMap[imagePath];
@@ -18,9 +19,19 @@ const ImageList = ({ images }) => {
         }
 
         return (
-          <div key={image.id} style={{ marginBottom: "1rem" }}>
-            <img src={src} alt={image.text} style={{ width: "200px", height: "auto" }} />
-            <p>{image.text}</p>
+          <div
+            key={image.id}
+            tabIndex={0}
+            className={styles.imageCard}
+          >
+            <img
+              src={src}
+              alt={image.text}
+              className={styles.image}
+            />
+            <div className={styles.caption}>
+              {image.text}
+            </div>
           </div>
         );
       })}
