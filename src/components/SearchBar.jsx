@@ -13,6 +13,8 @@ const SearchBar = () => {
   const [recentSearches, setRecentSearches] = useState([]);
   const [isSuggestionsOpen, setSuggestionsOpen] = useState(false);
   const [didUserStartedTyping, setDidUserStartedTyping] = useState(false);
+  const [isManualSelection, setIsManualSelection] = useState(false);
+
   const searchBarRef = useRef(null);
 
   const searchTips = useMemo(() => 
@@ -97,15 +99,26 @@ const SearchBar = () => {
     return () => clearTimeout(typingEffect);
   }, [charIndex, isDeleting, currentTipIndex, pauseAfterDelete, searchTips]);
 
+  // const handleSelectSuggestion = (item) => {
+  //   setSearchTerm(item.search);
+  //   setIsFocused(false);
+  //   setSuggestionsOpen(false);
+
+  //   const updatedRecentSearches = [item.search, ...recentSearches.filter(search => search !== item.search)].slice(0, 5);
+  //   setRecentSearches(updatedRecentSearches);
+  //   localStorage.setItem("recentSearches", JSON.stringify(updatedRecentSearches));
+  // };
   const handleSelectSuggestion = (item) => {
     setSearchTerm(item.search);
     setIsFocused(false);
     setSuggestionsOpen(false);
-
+    setIsManualSelection(true);
+  
     const updatedRecentSearches = [item.search, ...recentSearches.filter(search => search !== item.search)].slice(0, 5);
     setRecentSearches(updatedRecentSearches);
     localStorage.setItem("recentSearches", JSON.stringify(updatedRecentSearches));
   };
+  
 
   const clearRecentSearches = () => {
     setRecentSearches([]);
@@ -135,8 +148,11 @@ const SearchBar = () => {
   return (
     <div
       className={`${styles.inputContainer} ${
+        // isFocused &&
+        // searchTerm.length <= maxLength &&
+        // (searchTerm === "" || filteredSuggestions.length > 0)
         isFocused &&
-        searchTerm.length <= maxLength &&
+        (isManualSelection || searchTerm.length <= maxLength) &&
         (searchTerm === "" || filteredSuggestions.length > 0)
           ? styles.active
           : ""
@@ -150,9 +166,10 @@ const SearchBar = () => {
         <input
           type="text"
           className={`${styles.inputField} ${
-            searchTerm.length > maxLength && isFocused 
-              ? styles.noResultsShadow : ""
-          }`}
+            !isManualSelection && searchTerm.length > maxLength && isFocused 
+              ? styles.noResultsShadow 
+              : ""
+          }`}          
           placeholder={
             didUserStartedTyping ? 
             "Search for items, brands, or styles..."
@@ -161,6 +178,7 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={(e) => {
             setDidUserStartedTyping(true);
+            setIsManualSelection(false);
             setSearchTerm(e.target.value);
             setSuggestionsOpen(true);
           }}
@@ -178,9 +196,12 @@ const SearchBar = () => {
           </button>
         ) : null}
       </div>
-      {isFocused && 
+      {/* {isFocused && 
         searchTerm.length <= maxLength &&
-        (searchTerm === "" || filteredSuggestions.length > 0) && (
+        (searchTerm === "" || filteredSuggestions.length > 0) && ( */}
+      {isFocused &&
+       (isManualSelection || searchTerm.length <= maxLength) &&
+       (searchTerm === "" || filteredSuggestions.length > 0) && (
           <ul className={styles.suggestionsList}>
             {searchTerm && isSuggestionsOpen ? (
               filteredSuggestions.map((item, index) => (
