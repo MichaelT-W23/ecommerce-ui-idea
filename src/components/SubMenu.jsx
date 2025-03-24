@@ -1,17 +1,13 @@
 import styles from "../styles/components/SubMenu.module.css";
 import { CancelIcon, ArrowBackIcon } from "../assets/depop-svg";
-
-import BrandSubMenu from "./SubMenus/Brands";
-import KidSubMenu from "./SubMenus/Kids";
-import MenSubMenu from "./SubMenus/Men";
-import SaleSubMenu from "./SubMenus/Sale";
-import SportSubMenu from "./SubMenus/Sports";
-import WomenSubMenu from "./SubMenus/Women";
-
-
-
-
-
+import {
+  BrandSubMenu,
+  KidSubMenu,
+  MenSubMenu,
+  SaleSubMenu,
+  SportSubMenu,
+  WomenSubMenu
+} from "./SubMenus";
 
 const SubMenu = ({ activeMenu, setActiveMenu, setIsOpen }) => {
   const renderSubMenu = () => {
