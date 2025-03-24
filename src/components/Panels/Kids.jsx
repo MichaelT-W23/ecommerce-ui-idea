@@ -1,6 +1,6 @@
 const KidsPanel = () => {
   return (
-    <h1>KIDS</h1>
+    <h1 className="bg-white">KIDS</h1>
   )
 }
 

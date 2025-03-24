@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   BrandsPanel,
   KidsPanel,
@@ -17,9 +16,7 @@ const panels = {
   Sale: <SalePanel />
 };
 
-const CategoryBar = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
-
+const CategoryBar = ({ activeCategory, setActiveCategory }) => {
   const handleMouseEnter = (category) => {
     setActiveCategory(category);
   };
@@ -30,8 +27,8 @@ const CategoryBar = () => {
 
   return (
     <div onMouseLeave={handleMouseLeave}>
-      {/* Top Category List */}
-      <ul className="flex justify-start items-center h-13.25 text-lg font-bold font-sans pl-3.25 border-t border-b border-gray-300 bg-white">
+      {/* Category List */}
+      <ul className="flex justify-start items-center h-13.25 text-lg font-bold font-sans pl-3.25 border-t border-b border-gray-300 bg-white z-50 relative">
         {["Men", "Women", "Kids", "Sports", "Brands"].map((item) => (
           <li
             key={item}
@@ -50,7 +47,7 @@ const CategoryBar = () => {
       </ul>
 
       {activeCategory && (
-        <div className="absolute left-0 w-full shadow-md z-10">
+        <div className="absolute left-0 w-full shadow-md z-50">
           {panels[activeCategory]}
         </div>
       )}

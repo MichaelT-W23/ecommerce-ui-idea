@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import SearchBar from "./SearchBar";
 import { Link } from 'react-router-dom';
@@ -10,6 +10,8 @@ import {
 } from "../assets/depop-svg";
 
 const Navbar = () => {
+  const [activeCategory, setActiveCategory] = useState(null);
+
   return (
     <div className={styles["navbar-container"]}>
       <nav className={styles.navbar}>
@@ -44,7 +46,18 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <CategoryBar />
+
+      {activeCategory && (
+        <div
+          className={styles["category-overlay"]}
+          onClick={() => setActiveCategory(null)} // optional
+        ></div>
+      )}
+
+      <CategoryBar
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+      />
     </div>
   );
 };

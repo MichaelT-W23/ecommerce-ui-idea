@@ -1,6 +1,6 @@
 const SportsPanel = () => {
   return (
-    <h1>SPORTS</h1>
+    <h1 className="bg-white">SPORTS</h1>
   )
 }
 

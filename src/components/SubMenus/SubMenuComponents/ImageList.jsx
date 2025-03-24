@@ -18,6 +18,8 @@ const ImageList = ({ images }) => {
           return null;
         }
 
+        const shouldShowCaption = image.text && !image["unused-text"];
+
         return (
           <div
             key={image.id}
@@ -26,12 +28,14 @@ const ImageList = ({ images }) => {
           >
             <img
               src={src}
-              alt={image.text}
+              alt={image.text || ""}
               className={styles.image}
             />
-            <div className={styles.caption}>
-              {image.text}
-            </div>
+            {shouldShowCaption && (
+              <div className={styles.caption}>
+                {image.text}
+              </div>
+            )}
           </div>
         );
       })}

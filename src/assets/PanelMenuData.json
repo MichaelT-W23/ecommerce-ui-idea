@@ -1,10 +1,8 @@
 {
     "Men": {
-        "Title": "Men",
-        "Data": {
-            "title": "Shop by category",
-            "highlightLast": true,
-            "items": [
+        "DoubleCol": {
+            "Title": "Shop by category",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "T-shirts"
@@ -28,38 +26,40 @@
                 {
                     "id": 6,
                     "text": "Coats & Jackets"
-                },
+                }
+            ],
+            "ColTwo": [
                 {
-                    "id": 7,
+                    "id": 1,
                     "text": "Shoes"
                 },
                 {
-                    "id": 8,
+                    "id": 2,
                     "text": "Bags"
                 },
                 {
-                    "id": 9,
+                    "id": 3,
                     "text": "Hats"
                 },
                 {
-                    "id": 10,
+                    "id": 4,
                     "text": "Jewelry"
                 },
                 {
-                    "id": 11,
+                    "id": 5,
                     "text": "Sunglasses"
                 },
                 {
-                    "id": 12,
-                    "text": "Sale"
+                    "id": 6,
+                    "text": "Sale",
+                    "color": "red"
                 }
-            ]
+            ],
+            "BoldText": "See all men's"
         },
-        "BoldText": "See all men's",
-        "DataTwo": {
-            "title": "Featured",
-            "bottomBorder": true,
-            "items": [
+        "OneCol": {
+            "Title": "Featured",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Big & Tall"
@@ -110,11 +110,9 @@
         ]
     },
     "Women": {
-        "Title": "Women",
-        "Data": {
-            "title": "Shop by category",
-            "highlightLast": true,
-            "items": [
+        "DoubleCol": {
+            "Title": "Shop by category",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Tops"
@@ -138,38 +136,39 @@
                 {
                     "id": 6,
                     "text": "Coats & Jackets"
-                },
+                }
+            ],
+            "ColTwo": [
                 {
-                    "id": 7,
+                    "id": 1,
                     "text": "Shoes"
                 },
                 {
-                    "id": 8,
+                    "id": 2,
                     "text": "Bags & Purses"
                 },
                 {
-                    "id": 9,
+                    "id": 3,
                     "text": "Sunglasses"
                 },
                 {
-                    "id": 10,
+                    "id": 4,
                     "text": "Hats"
                 },
                 {
-                    "id": 11,
+                    "id": 5,
                     "text": "Jewelry"
                 },
                 {
-                    "id": 12,
+                    "id": 6,
                     "text": "Sale"
                 }
-            ]
+            ],
+            "BoldText": "See all women's"
         },
-        "BoldText": "See all women's",
-        "DataTwo": {
-            "title": "Featured",
-            "bottomBorder": true,
-            "items": [
+        "OneCol": {
+            "Title": "Featured",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Plus Size"
@@ -220,10 +219,9 @@
         ]
     },
     "Kids": {
-        "Title": "Kids",
-        "Data": {
-            "title": "Shop by category",
-            "items": [
+        "OneCol": {
+            "Title": "Shop by category",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Tops"
@@ -248,13 +246,12 @@
                     "id": 6,
                     "text": "Bundles"
                 }
-            ]
+            ],
+            "BoldText": "See all kids"
         },
-        "BoldText": "See all kids",
-        "DataTwo": {
-            "title": "Popular brands",
-            "bottomBorder": true,
-            "items": [
+        "OneColTwo": {
+            "Title": "Popular brands",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Carhartt"
@@ -281,10 +278,9 @@
                 }
             ]
         },
-        "DataThree": {
-            "title": "Shop by gender",
-            "bottomBorder": true,
-            "items": [
+        "OneColThree": {
+            "Title": "Shop by gender",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Boy"
@@ -299,7 +295,9 @@
                 }
             ]
         },
-        "Images": [
+        "ImageData": {
+            "Title": "Shop by age",
+            "Images": [
                 {
                     "id": 1,
                     "text": "Baby (0-12m)",
@@ -321,12 +319,12 @@
                     "path": "Kids/teen.png"
                 }
             ]
+        }
     },
     "Sports": {
-        "Title": "Sports",
-        "Data": {
-            "title": "Shop by category",
-            "items": [
+        "OneCol": {
+            "Title": "Shop by category",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Jerseys"
@@ -359,13 +357,12 @@
                     "id": 8,
                     "text": "Cleats"
                 }
-            ]
+            ],
+            "BoldText": "Sell all sportswear"
         },
-        "BoldText": "See all sportswear",
-        "DataTwo": {
-            "title": "Shop vintage",
-            "bottomBorder": true,
-            "items": [
+        "OneColTwo": {
+            "Title": "Shop vintage",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Vintage jerseys"
@@ -400,10 +397,9 @@
                 }
             ]
         },
-        "DataThree": {
-            "title": "Shop by league",
-            "bottomBorder": true,
-            "items": [
+        "OneColThree": {
+            "Title": "Shop by league",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "NFL"
@@ -418,34 +414,36 @@
                 }
             ]
         },
-        "Images": [
-            {
-                "id": 1,
-                "text": "F1",
-                "path": "Sports/f1.png"
-            },
-            {
-                "id": 2,
-                "text": "Yoga",
-                "path": "Sports/yoga.png"
-            },
-            {
-                "id": 3,
-                "text": "Running",
-                "path": "Sports/running.png"
-            },
-            {
-                "id": 4,
-                "text": "Soccer",
-                "path": "Sports/soccer.png"
-            }
-        ]
+        "ImageData": {
+            "Title": "Shop by sport",
+            "Images": [
+                {
+                    "id": 1,
+                    "text": "F1",
+                    "path": "Sports/f1.png"
+                },
+                {
+                    "id": 2,
+                    "text": "Yoga",
+                    "path": "Sports/yoga.png"
+                },
+                {
+                    "id": 3,
+                    "text": "Running",
+                    "path": "Sports/running.png"
+                },
+                {
+                    "id": 4,
+                    "text": "Soccer",
+                    "path": "Sports/soccer.png"
+                }
+            ]
+        }
     },
     "Brands": {
-        "Title": "Brands",
-        "Data": {
-            "title": "Popular Brands",
-            "items": [
+        "TripleCol": {
+            "Title": "Popular brands",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Abercrombie & Fitch"
@@ -469,58 +467,62 @@
                 {
                     "id": 6,
                     "text": "Dr. Martens"
-                },
+                }
+            ],
+            "ColTwo": [
                 {
-                    "id": 7,
+                    "id": 1,
                     "text": "Free People"
                 },
                 {
-                    "id": 8,
+                    "id": 2,
                     "text": "Harley Davidson"
                 },
                 {
-                    "id": 9,
+                    "id": 3,
                     "text": "Jordan"
                 },
                 {
-                    "id": 10,
+                    "id": 4,
                     "text": "Lululemon"
                 },
                 {
-                    "id": 11,
+                    "id": 5,
                     "text": "New Balance"
                 },
                 {
-                    "id": 12,
+                    "id": 6,
                     "text": "Nike"
-                },
+                }
+            ],
+            "ColThree": [
                 {
-                    "id": 13,
+                    "id": 1,
                     "text": "Patagonia"
                 },
                 {
-                    "id": 14,
+                    "id": 2,
                     "text": "Polo Ralph Lauren"
                 },
                 {
-                    "id": 15,
+                    "id": 3,
                     "text": "Supreme"
                 },
                 {
-                    "id": 16,
+                    "id": 4,
                     "text": "The North Face"
                 },
                 {
-                    "id": 17,
+                    "id": 5,
                     "text": "Urban Outfitters"
                 },
                 {
-                    "id": 18,
+                    "id": 6,
                     "text": "Zara"
                 }
-            ]
+            ],
+            "BoldText": "See all brands"
         },
-        "BoldText": "Sell all brands",
         "Images": [
             {
                 "id": 1,
@@ -535,10 +537,9 @@
         ]
     },
     "Sale": {
-        "Title": "Sale",
-        "Data": {
-            "title": "Women's sale",
-            "items": [
+        "DoubleCol": {
+            "Title": "Women's sale",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Tops"
@@ -562,37 +563,39 @@
                 {
                     "id": 6,
                     "text": "Accessories"
-                },
+                }
+            ],
+            "ColTwo": [
                 {
-                    "id": 7,
+                    "id": 1,
                     "text": "T-shirts"
                 },
                 {
-                    "id": 8,
+                    "id": 2,
                     "text": "Bags & Purses"
                 },
                 {
-                    "id": 9,
+                    "id": 3,
                     "text": "Skirts"
                 },
                 {
-                    "id": 10,
+                    "id": 4,
                     "text": "Leather jackets"
                 },
                 {
-                    "id": 11,
+                    "id": 5,
                     "text": "Sneakers"
                 },
                 {
-                    "id": 12,
+                    "id": 6,
                     "text": "Boots"
                 }
-            ]
+            ],
+            "BoldText": "See all women's sale" 
         },
-        "BoldText": "See all women's sale",
-        "DataTwo": {
-            "title": "Men's sale",
-            "items": [
+        "DoubleColTwo": {
+            "Title": "Men's sale",
+            "ColOne": [
                 {
                     "id": 1,
                     "text": "Tops"
@@ -616,34 +619,36 @@
                 {
                     "id": 6,
                     "text": "T-shirts"
-                },
+                }
+            ],
+            "ColTwo": [
                 {
-                    "id": 7,
+                    "id": 1,
                     "text": "Sweaters"
                 },
                 {
-                    "id": 8,
+                    "id": 2,
                     "text": "Windbreakers"
                 },
                 {
-                    "id": 9,
+                    "id": 3,
                     "text": "Casual pants"
                 },
                 {
-                    "id": 10,
+                    "id": 4,
                     "text": "Jeans"
                 },
                 {
-                    "id": 11,
+                    "id": 5,
                     "text": "Sneakers"
                 },
                 {
-                    "id": 12,
+                    "id": 6,
                     "text": "Boots"
                 }
-            ]
+            ],
+            "BoldText": "See all men's sale" 
         },
-        "BoldTextTwo": "See all men's sale",
         "Images": [
             {
                 "id": 1,

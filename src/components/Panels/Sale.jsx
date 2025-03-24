@@ -1,6 +1,6 @@
 const SalePanel = () => {
   return (
-    <h1>Sale</h1>
+    <h1 className="bg-white">Sale</h1>
   )
 }
 
