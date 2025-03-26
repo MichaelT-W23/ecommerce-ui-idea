@@ -1,5 +1,5 @@
 import Data from "../../../src/assets/PanelMenuData.json";
-import { SingleCol } from "./PanelComponents";
+import { SingleCol, ImageGrid } from "./PanelComponents";
 
 const SportsPanel = () => {
   return (
@@ -7,6 +7,8 @@ const SportsPanel = () => {
       <SingleCol data={Data.Sports.SingleCol} />
       <SingleCol data={Data.Sports.SingleColTwo} />
       <SingleCol data={Data.Sports.SingleColThree} />
+
+      {/* <ImageGrid images={Data.Sports.Images} /> */}
     </div>
   )
 }

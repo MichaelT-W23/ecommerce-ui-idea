@@ -1,6 +1,7 @@
 import Data from "../../../src/assets/PanelMenuData.json";
 import {
-  DoubleCol
+  DoubleCol,
+  ImageGrid
 } from "./PanelComponents";
 
 const SalePanel = () => {
@@ -10,6 +11,8 @@ const SalePanel = () => {
       <DoubleCol data={Data.Sale.DoubleCol} />
 
       <DoubleCol data={Data.Sale.DoubleColTwo} />
+
+      <ImageGrid images={Data.Sale.Images} />
     </div>
   );
 };
