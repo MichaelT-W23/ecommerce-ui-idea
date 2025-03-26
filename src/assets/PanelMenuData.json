@@ -161,7 +161,8 @@
                 },
                 {
                     "id": 6,
-                    "text": "Sale"
+                    "text": "Sale",
+                    "color": "red"
                 }
             ],
             "BoldText": "See all women's"
