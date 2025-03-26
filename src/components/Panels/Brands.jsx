@@ -3,7 +3,7 @@ import { TripleCol } from "./PanelComponents";
 
 const BrandsPanel = () => {
   return (
-    <div className="p-6 grid grid-cols-3 gap-4 text-sm text-gray-800 bg-white">
+    <div className="grid grid-cols-3 text-sm text-gray-800 bg-white">
       <TripleCol data={Data.Brands.TripleCol} />
     </div>
   )

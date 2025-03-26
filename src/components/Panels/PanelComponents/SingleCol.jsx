@@ -8,7 +8,7 @@ const SingleCol = ({ data }) => {
 
   const getRowStyle = ({ isHovered, isFocused, color, withBorder = true }) => ({
     borderBottom: withBorder ? '1px solid #f3f3f3' : 'none',
-    fontSize: '1.125rem',
+    fontSize: '0.95rem',
     transition: 'background-color 0.2s',
     backgroundColor: isHovered ? '#f3f3f3' : 'transparent',
     cursor: isHovered ? 'pointer' : 'default',
@@ -19,7 +19,11 @@ const SingleCol = ({ data }) => {
 
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold mb-6 px-6">{data.Title}</h1>
+      <h1 
+        className="font-bold mb-6 pl-4"
+        style={{ fontSize: '1.15rem' }}>
+          {data.Title}
+      </h1>
       <div>
         {data.ColOne.map((item) => (
           <div
