@@ -8,9 +8,9 @@ const DoubleCol = ({ data }) => {
   const [boldHovered, setBoldHovered] = useState(false);
   const [boldFocused, setBoldFocused] = useState(false);
 
-  const getRowStyle = ({ isHovered, isFocused, color }) => ({
-    borderBottom: '1px solid #f3f3f3',
-    padding: '0.5rem',
+  const getRowStyle = ({ isHovered, isFocused, color, withBorder = true }) => ({
+    borderBottom: withBorder ? '1px solid #f3f3f3' : 'none',
+    fontSize: '1.125rem', // text-lg
     transition: 'background-color 0.2s',
     backgroundColor: isHovered ? '#f3f3f3' : 'transparent',
     cursor: isHovered ? 'pointer' : 'default',
@@ -20,14 +20,15 @@ const DoubleCol = ({ data }) => {
   });
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">{data.Title}</h1>
+    <div className="p-6">
+      <h1 className="text-xl font-bold mb-6 px-6">{data.Title}</h1>
       <div className="grid grid-cols-2 gap-4">
         <div>
           {data.ColOne.map((item) => (
             <div
               key={item.id}
               tabIndex={0}
+              className="pl-6 -ml-2 pr-2 py-3"
               style={getRowStyle({
                 isHovered: hoveredColOneId === item.id,
                 isFocused: focusedColOneId === item.id,
@@ -46,6 +47,7 @@ const DoubleCol = ({ data }) => {
             <div
               key={item.id}
               tabIndex={0}
+              className="pl-6 -ml-2 pr-2 py-3"
               style={getRowStyle({
                 isHovered: hoveredColTwoId === item.id,
                 isFocused: focusedColTwoId === item.id,
@@ -62,11 +64,12 @@ const DoubleCol = ({ data }) => {
         </div>
       </div>
       <div
-        className="font-bold mt-4 px-2 py-2"
+        className="font-bold py-4 pl-6 -ml-2 pr-2"
         tabIndex={0}
         style={getRowStyle({
           isHovered: boldHovered,
           isFocused: boldFocused,
+          withBorder: false,
         })}
         onMouseEnter={() => setBoldHovered(true)}
         onMouseLeave={() => setBoldHovered(false)}

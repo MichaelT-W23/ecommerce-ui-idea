@@ -57,7 +57,7 @@
             ],
             "BoldText": "See all men's"
         },
-        "OneCol": {
+        "SingleCol": {
             "Title": "Featured",
             "ColOne": [
                 {
@@ -167,7 +167,7 @@
             ],
             "BoldText": "See all women's"
         },
-        "OneCol": {
+        "SingleCol": {
             "Title": "Featured",
             "ColOne": [
                 {
@@ -220,7 +220,7 @@
         ]
     },
     "Kids": {
-        "OneCol": {
+        "SingleCol": {
             "Title": "Shop by category",
             "ColOne": [
                 {
@@ -250,7 +250,7 @@
             ],
             "BoldText": "See all kids"
         },
-        "OneColTwo": {
+        "SingleColTwo": {
             "Title": "Popular brands",
             "ColOne": [
                 {
@@ -279,7 +279,7 @@
                 }
             ]
         },
-        "OneColThree": {
+        "SingleColThree": {
             "Title": "Shop by gender",
             "ColOne": [
                 {
@@ -323,7 +323,7 @@
         }
     },
     "Sports": {
-        "OneCol": {
+        "SingleCol": {
             "Title": "Shop by category",
             "ColOne": [
                 {
@@ -361,7 +361,7 @@
             ],
             "BoldText": "Sell all sportswear"
         },
-        "OneColTwo": {
+        "SingleColTwo": {
             "Title": "Shop vintage",
             "ColOne": [
                 {
@@ -398,7 +398,7 @@
                 }
             ]
         },
-        "OneColThree": {
+        "SingleColThree": {
             "Title": "Shop by league",
             "ColOne": [
                 {
