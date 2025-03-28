@@ -5,20 +5,36 @@ const imageMap = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg}', {
   import: 'default',
 });
 
-const ImageGrid = ({ images }) => {
+const ImageGrid = ({ title = "", images }) => {
   return (
-    <div className={styles.grid}>
-      {images.map((image) => {
-        const imagePath = `/src/assets/images/${image.path}`;
-        const src = imageMap[imagePath];
+    <div className="p-6">
+      {title && (
+        <h1 className="font-bold mb-6 pl-4" style={{ fontSize: '1.15rem' }}>
+          {title}
+        </h1>
+      )}
+      <div className={styles.grid}>
+        {images.map((image) => {
+          const imagePath = `/src/assets/images/${image.path}`;
+          const src = imageMap[imagePath];
 
-        return (
-          <div key={image.id} className={styles.imageItem}>
-            <img src={src} alt={image.text} />
-            <p>{image.text}</p>
-          </div>
-        );
-      })}
+          if (!src) {
+            console.warn(`Image not found: ${imagePath}`);
+            return null;
+          }
+
+          const shouldShowCaption = image.text && !image["unused-text"];
+
+          return (
+            <div key={image.id} tabIndex={0} className={styles.imageCard}>
+              <img src={src} alt={image.text} className={styles.image} />
+              {shouldShowCaption && (
+                <div className={styles.caption}>{image.text}</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

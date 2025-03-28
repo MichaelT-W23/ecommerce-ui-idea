@@ -8,7 +8,10 @@ const SportsPanel = () => {
       <SingleCol data={Data.Sports.SingleColTwo} />
       <SingleCol data={Data.Sports.SingleColThree} />
 
-      {/* <ImageGrid images={Data.Sports.Images} /> */}
+      <ImageGrid 
+        title={Data.Sports.ImageData.Title}
+        images={Data.Sports.ImageData.Images} 
+      />
     </div>
   )
 }

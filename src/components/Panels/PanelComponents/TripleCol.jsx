@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 
 const TripleCol = ({ data }) => {
-  const [hoveredColOneId, setHoveredColOneId] = useState(null);
-  const [hoveredColTwoId, setHoveredColTwoId] = useState(null);
-  const [hoveredColThreeId, setHoveredColThreeId] = useState(null);
-
-  const [focusedColOneId, setFocusedColOneId] = useState(null);
-  const [focusedColTwoId, setFocusedColTwoId] = useState(null);
-  const [focusedColThreeId, setFocusedColThreeId] = useState(null);
-
+  const [hoveredId, setHoveredId] = useState(null);
+  const [focusedId, setFocusedId] = useState(null);
   const [boldHovered, setBoldHovered] = useState(false);
   const [boldFocused, setBoldFocused] = useState(false);
 
-  const getRowStyle = ({ isHovered, isFocused, color, withBorder = true }) => ({
-    borderBottom: withBorder ? '1px solid #f3f3f3' : 'none',
-    fontSize: '1.125rem', // text-lg
+  const getRowStyle = ({ isHovered, isFocused, color }) => ({
+    fontSize: '0.95rem',
     transition: 'background-color 0.2s',
     backgroundColor: isHovered ? '#f3f3f3' : 'transparent',
     cursor: isHovered ? 'pointer' : 'default',
@@ -25,82 +18,77 @@ const TripleCol = ({ data }) => {
 
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold mb-6 px-6">{data.Title}</h1>
-      <div className="grid grid-cols-3 gap-4">
-        {/* Column One */}
-        <div>
-          {data.ColOne.map((item) => (
-            <div
-              key={item.id}
-              tabIndex={0}
-              className="pl-6 -ml-2 pr-2 py-3"
-              style={getRowStyle({
-                isHovered: hoveredColOneId === item.id,
-                isFocused: focusedColOneId === item.id,
-              })}
-              onMouseEnter={() => setHoveredColOneId(item.id)}
-              onMouseLeave={() => setHoveredColOneId(null)}
-              onFocus={() => setFocusedColOneId(item.id)}
-              onBlur={() => setFocusedColOneId(null)}
-            >
-              {item.text}
-            </div>
-          ))}
-        </div>
+      <h1 className="font-bold mb-6 pl-4" style={{ fontSize: '1.15rem' }}>
+        {data.Title}
+      </h1>
 
-        {/* Column Two */}
-        <div>
-          {data.ColTwo.map((item) => (
-            <div
-              key={item.id}
-              tabIndex={0}
-              className="pl-6 -ml-2 pr-2 py-3"
-              style={getRowStyle({
-                isHovered: hoveredColTwoId === item.id,
-                isFocused: focusedColTwoId === item.id,
-                color: item.color,
-              })}
-              onMouseEnter={() => setHoveredColTwoId(item.id)}
-              onMouseLeave={() => setHoveredColTwoId(null)}
-              onFocus={() => setFocusedColTwoId(item.id)}
-              onBlur={() => setFocusedColTwoId(null)}
-            >
-              {item.text}
-            </div>
-          ))}
-        </div>
+      <div>
+        {data.ColOne.map((col1Item, idx) => {
+          const col2Item = data.ColTwo[idx];
+          const col3Item = data.ColThree[idx];
+          const sharedId = `row-${idx}`;
 
-        {/* Column Three */}
-        <div>
-          {data.ColThree.map((item) => (
+          return (
             <div
-              key={item.id}
-              tabIndex={0}
-              className="pl-6 -ml-2 pr-2 py-3"
-              style={getRowStyle({
-                isHovered: hoveredColThreeId === item.id,
-                isFocused: focusedColThreeId === item.id,
-                color: item.color,
-              })}
-              onMouseEnter={() => setHoveredColThreeId(item.id)}
-              onMouseLeave={() => setHoveredColThreeId(null)}
-              onFocus={() => setFocusedColThreeId(item.id)}
-              onBlur={() => setFocusedColThreeId(null)}
+              key={sharedId}
+              className="flex border-b"
+              style={{ borderBottomColor: '#f3f3f3' }}
             >
-              {item.text}
+              <div
+                tabIndex={0}
+                className="w-1/3 pl-6 -ml-2 pr-2 py-3"
+                style={getRowStyle({
+                  isHovered: hoveredId === `${sharedId}-1`,
+                  isFocused: focusedId === `${sharedId}-1`,
+                })}
+                onMouseEnter={() => setHoveredId(`${sharedId}-1`)}
+                onMouseLeave={() => setHoveredId(null)}
+                onFocus={() => setFocusedId(`${sharedId}-1`)}
+                onBlur={() => setFocusedId(null)}
+              >
+                {col1Item?.text}
+              </div>
+              <div
+                tabIndex={0}
+                className="w-1/3 pl-6 -ml-2 pr-2 py-3"
+                style={getRowStyle({
+                  isHovered: hoveredId === `${sharedId}-2`,
+                  isFocused: focusedId === `${sharedId}-2`,
+                  color: col2Item?.color,
+                })}
+                onMouseEnter={() => setHoveredId(`${sharedId}-2`)}
+                onMouseLeave={() => setHoveredId(null)}
+                onFocus={() => setFocusedId(`${sharedId}-2`)}
+                onBlur={() => setFocusedId(null)}
+              >
+                {col2Item?.text}
+              </div>
+              <div
+                tabIndex={0}
+                className="w-1/3 pl-6 -ml-2 pr-2 py-3"
+                style={getRowStyle({
+                  isHovered: hoveredId === `${sharedId}-3`,
+                  isFocused: focusedId === `${sharedId}-3`,
+                  color: col3Item?.color,
+                })}
+                onMouseEnter={() => setHoveredId(`${sharedId}-3`)}
+                onMouseLeave={() => setHoveredId(null)}
+                onFocus={() => setFocusedId(`${sharedId}-3`)}
+                onBlur={() => setFocusedId(null)}
+              >
+                {col3Item?.text}
+              </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
-      {/* Bottom bold row */}
       <div
         className="font-bold py-4 pl-6 -ml-2 pr-2"
         tabIndex={0}
         style={getRowStyle({
           isHovered: boldHovered,
           isFocused: boldFocused,
-          withBorder: false,
         })}
         onMouseEnter={() => setBoldHovered(true)}
         onMouseLeave={() => setBoldHovered(false)}
