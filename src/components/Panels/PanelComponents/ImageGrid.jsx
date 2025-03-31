@@ -7,11 +7,9 @@ const imageMap = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg}', {
 
 const ImageGrid = ({ title = "", images }) => {
   return (
-    <div className="p-6">
+    <div className={styles.container}>
       {title && (
-        <h1 className="font-bold mb-6 pl-4" style={{ fontSize: '1.15rem' }}>
-          {title}
-        </h1>
+        <h1 className={styles.title}>{title}</h1>
       )}
 
       <div className={styles.gridBackground}>

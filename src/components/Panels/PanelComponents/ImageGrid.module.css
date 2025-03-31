@@ -1,3 +1,17 @@
+
+
+.title {
+  font-weight: bold; 
+  padding-top: 1.5rem;
+  font-size: 1.15rem;
+}
+
+
+.gridBackground {
+  background-color: red;
+  padding: 1.2rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -12,11 +26,11 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.gridBackground {
-  background-color: red;
-  padding: 2rem;
-  border-radius: 1rem;
+.grid-2 .imageCard {
+  height: 18rem;
 }
+
+
 
   .imageItem {
     text-align: center;
