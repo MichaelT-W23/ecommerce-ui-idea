@@ -1,0 +1,22 @@
+.panel-container {
+    display: flex;
+    font-size: 0.875rem;
+    color: #1F2937;
+    background-color: #ffffff;
+}
+
+.columns-wrapper {
+    display: flex;
+    gap: 1rem; /* Adjust as needed */
+  }
+  
+  .columns-wrapper > * {
+    flex: 1;
+  }
+  
+
+  @media (max-width: 1024px) {
+    .image-grid {
+      display: none;
+    }
+  }

@@ -1,4 +1,5 @@
 import Data from "../../../src/assets/PanelMenuData.json";
+import styles from "../../styles/components/Panel.module.css";
 import {
   DoubleCol,
   ImageGrid
@@ -6,7 +7,7 @@ import {
 
 const SalePanel = () => {
   return (
-    <div className="flex text-sm text-gray-800 bg-white">
+    <div className={styles['panel-container']}>
       <div className="flex-1">
         <DoubleCol data={Data.Sale.DoubleCol} />
       </div>
@@ -15,7 +16,7 @@ const SalePanel = () => {
         <DoubleCol data={Data.Sale.DoubleColTwo} />
       </div>
 
-      <div className="hidden lg:block w-[240px] p-6">
+      <div className={styles['image-grid']}>
         <ImageGrid images={Data.Sale.Images} />
       </div>
     </div>

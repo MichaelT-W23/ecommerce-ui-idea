@@ -1,17 +1,27 @@
 import Data from "../../../src/assets/PanelMenuData.json";
+import styles from "../../styles/components/Panel.module.css";
 import { SingleCol, ImageGrid } from "./PanelComponents";
 
 const SportsPanel = () => {
   return (
-    <div className="grid grid-cols-3 text-sm text-gray-800 bg-white">
-      <SingleCol data={Data.Sports.SingleCol} />
-      <SingleCol data={Data.Sports.SingleColTwo} />
-      <SingleCol data={Data.Sports.SingleColThree} />
+    <div className={styles['panel-container']}>
+       <div className="flex-1">
+         <SingleCol data={Data.Sports.SingleCol} />
+       </div>
+       <div className="flex-1">
+        <SingleCol data={Data.Sports.SingleColTwo} />
+        </div>
+        <div className="flex-1">
+          <SingleCol data={Data.Sports.SingleColThree} />
+        </div>
 
-      <ImageGrid 
-        title={Data.Sports.ImageData.Title}
-        images={Data.Sports.ImageData.Images} 
-      />
+      <div className={styles['image-grid']}>
+        <ImageGrid 
+          title={Data.Sports.ImageData.Title}
+          images={Data.Sports.ImageData.Images} 
+        />
+      </div>
+      
     </div>
   )
 }

@@ -4,6 +4,21 @@
     gap: 1rem;
   }
   
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridBackground {
+  background-color: red;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+
   .imageItem {
     text-align: center;
   }

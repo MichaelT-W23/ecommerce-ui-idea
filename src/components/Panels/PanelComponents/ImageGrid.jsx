@@ -13,27 +13,30 @@ const ImageGrid = ({ title = "", images }) => {
           {title}
         </h1>
       )}
-      <div className={styles.grid}>
-        {images.map((image) => {
-          const imagePath = `/src/assets/images/${image.path}`;
-          const src = imageMap[imagePath];
 
-          if (!src) {
-            console.warn(`Image not found: ${imagePath}`);
-            return null;
-          }
+      <div className={styles.gridBackground}>
+        <div className={`${styles.grid} ${styles[`grid-${images.length}`]}`}>
+          {images.map((image) => {
+            const imagePath = `/src/assets/images/${image.path}`;
+            const src = imageMap[imagePath];
 
-          const shouldShowCaption = image.text && !image["unused-text"];
+            if (!src) {
+              console.warn(`Image not found: ${imagePath}`);
+              return null;
+            }
 
-          return (
-            <div key={image.id} tabIndex={0} className={styles.imageCard}>
-              <img src={src} alt={image.text} className={styles.image} />
-              {shouldShowCaption && (
-                <div className={styles.caption}>{image.text}</div>
-              )}
-            </div>
-          );
-        })}
+            const shouldShowCaption = image.text && !image["unused-text"];
+
+            return (
+              <div key={image.id} tabIndex={0} className={styles.imageCard}>
+                <img src={src} alt={image.text || "image"} className={styles.image} />
+                {shouldShowCaption && (
+                  <div className={styles.caption}>{image.text}</div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

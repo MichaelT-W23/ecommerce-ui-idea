@@ -1,4 +1,5 @@
 import Data from "../../../src/assets/PanelMenuData.json";
+import styles from "../../styles/components/Panel.module.css";
 import {
   DoubleCol,
   SingleCol,
@@ -8,13 +9,19 @@ import {
 const MenPanel = () => {
 
   return (
-    <div className="grid grid-cols-3 text-sm text-gray-800 bg-white">
+    <div className={styles['panel-container']}>
 
-      <DoubleCol data={Data.Men.DoubleCol} />
+      <div className="flex-1">
+        <DoubleCol data={Data.Men.DoubleCol} />
+      </div>
 
-      <SingleCol data={Data.Men.SingleCol} />
+      <div className="flex-1">
+        <SingleCol data={Data.Men.SingleCol} />
+      </div>
 
-      <ImageGrid images={Data.Men.Images} />
+      <div className={styles['image-grid']}>
+        <ImageGrid images={Data.Men.Images} />
+      </div>
 
     </div>
   );

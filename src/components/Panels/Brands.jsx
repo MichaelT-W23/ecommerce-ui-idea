@@ -1,16 +1,17 @@
 import Data from "../../../src/assets/PanelMenuData.json";
 import { TripleCol, ImageGrid } from "./PanelComponents";
+import styles from "../../styles/components/Panel.module.css";
 
 const BrandsPanel = () => {
   return (
-    <div className="flex text-sm text-gray-800 bg-white">
+    <div className={styles['panel-container']}>
       {/* Columns grow naturally */}
-      <div className="flex-grow">
+      <div className="flex-1">
         <TripleCol data={Data.Brands.TripleCol} />
       </div>
 
       {/* ImageGrid: fixed width, hidden below lg */}
-      <div className="hidden lg:block w-[240px] p-6">
+      <div className={styles['image-grid']}>
         <ImageGrid images={Data.Brands.Images} />
       </div>
     </div>
