@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
 const DoubleCol = ({ data }) => {
-  const [hoveredId, setHoveredId] = useState(null);
-  const [focusedId, setFocusedId] = useState(null);
+  const [hoveredIdCol1, setHoveredIdCol1] = useState(null);
+  const [focusedIdCol1, setFocusedIdCol1] = useState(null);
+  const [hoveredIdCol2, setHoveredIdCol2] = useState(null);
+  const [focusedIdCol2, setFocusedIdCol2] = useState(null);
   const [boldHovered, setBoldHovered] = useState(false);
   const [boldFocused, setBoldFocused] = useState(false);
 
@@ -16,71 +18,58 @@ const DoubleCol = ({ data }) => {
     boxShadow: isFocused ? 'inset 0 0 0 4px #ffda0a' : 'none',
   });
 
+  const renderColumn = (items, hoveredId, setHoveredId, focusedId, setFocusedId) =>
+    items.map((item) => (
+      <div
+        key={item.id}
+        tabIndex={0}
+        className="pl-6 -ml-2 pr-2 py-3 border-b border-gray-100"
+        style={getRowStyle({
+          isHovered: hoveredId === item.id,
+          isFocused: focusedId === item.id,
+          color: item.color,
+        })}
+        onMouseEnter={() => setHoveredId(item.id)}
+        onMouseLeave={() => setHoveredId(null)}
+        onFocus={() => setFocusedId(item.id)}
+        onBlur={() => setFocusedId(null)}
+      >
+        {item.text}
+      </div>
+    ));
+
   return (
-    <div className="p-6">
+    <div className="p-6 col-span-2 text-sm text-gray-800 bg-white">
       <h1 className="font-bold mb-6 pl-4" style={{ fontSize: '1.15rem' }}>
         {data.Title}
       </h1>
-
-      <div>
-        {data.ColOne.map((col1Item, idx) => {
-          const col2Item = data.ColTwo[idx];
-          const sharedId = `row-${idx}`;
-
-          return (
-            <div
-              key={sharedId}
-              className="flex border-b"
-              style={{ borderBottomColor: '#f3f3f3' }}
-            >
-              <div
-                tabIndex={0}
-                className="w-1/2 pl-6 -ml-2 pr-2 py-3"
-                style={getRowStyle({
-                  isHovered: hoveredId === `${sharedId}-1`,
-                  isFocused: focusedId === `${sharedId}-1`,
-                })}
-                onMouseEnter={() => setHoveredId(`${sharedId}-1`)}
-                onMouseLeave={() => setHoveredId(null)}
-                onFocus={() => setFocusedId(`${sharedId}-1`)}
-                onBlur={() => setFocusedId(null)}
-              >
-                {col1Item?.text}
-              </div>
-              <div
-                tabIndex={0}
-                className="w-1/2 pl-6 -ml-2 pr-2 py-3"
-                style={getRowStyle({
-                  isHovered: hoveredId === `${sharedId}-2`,
-                  isFocused: focusedId === `${sharedId}-2`,
-                  color: col2Item?.color,
-                })}
-                onMouseEnter={() => setHoveredId(`${sharedId}-2`)}
-                onMouseLeave={() => setHoveredId(null)}
-                onFocus={() => setFocusedId(`${sharedId}-2`)}
-                onBlur={() => setFocusedId(null)}
-              >
-                {col2Item?.text}
-              </div>
-            </div>
-          );
-        })}
+      <div className="grid grid-cols-2 gap-0">
+        <div className="flex flex-col">
+          {renderColumn(data.ColOne, hoveredIdCol1, setHoveredIdCol1, focusedIdCol1, setFocusedIdCol1)}
+        </div>
+        <div className="flex flex-col">
+          {renderColumn(data.ColTwo, hoveredIdCol2, setHoveredIdCol2, focusedIdCol2, setFocusedIdCol2)}
+        </div>
       </div>
-
-      <div
-        className="font-bold py-4 pl-6 -ml-2 pr-2"
-        tabIndex={0}
-        style={getRowStyle({
-          isHovered: boldHovered,
-          isFocused: boldFocused,
-        })}
-        onMouseEnter={() => setBoldHovered(true)}
-        onMouseLeave={() => setBoldHovered(false)}
-        onFocus={() => setBoldFocused(true)}
-        onBlur={() => setBoldFocused(false)}
-      >
-        {data.BoldText}
-      </div>
+      {data.BoldText && (
+        <div
+          className="font-bold py-4 pl-6 -ml-2 pr-2"
+          tabIndex={0}
+          style={{
+            backgroundColor: boldHovered ? '#f3f3f3' : 'transparent',
+            cursor: boldHovered ? 'pointer' : 'default',
+            outline: boldFocused ? '4px dotted transparent' : 'none',
+            boxShadow: boldFocused ? 'inset 0 0 0 4px #ffda0a' : 'none',
+            transition: 'background-color 0.2s',
+          }}
+          onMouseEnter={() => setBoldHovered(true)}
+          onMouseLeave={() => setBoldHovered(false)}
+          onFocus={() => setBoldFocused(true)}
+          onBlur={() => setBoldFocused(false)}
+        >
+          {data.BoldText}
+        </div>
+      )}
     </div>
   );
 };

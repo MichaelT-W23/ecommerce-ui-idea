@@ -6,13 +6,18 @@ import {
 
 const SalePanel = () => {
   return (
-    <div className="grid grid-cols-3 text-sm text-gray-800 bg-white">
+    <div className="flex text-sm text-gray-800 bg-white">
+      <div className="flex-1">
+        <DoubleCol data={Data.Sale.DoubleCol} />
+      </div>
 
-      <DoubleCol data={Data.Sale.DoubleCol} />
+      <div className="flex-1">
+        <DoubleCol data={Data.Sale.DoubleColTwo} />
+      </div>
 
-      <DoubleCol data={Data.Sale.DoubleColTwo} />
-
-      <ImageGrid images={Data.Sale.Images} />
+      <div className="hidden lg:block w-[240px] p-6">
+        <ImageGrid images={Data.Sale.Images} />
+      </div>
     </div>
   );
 };
