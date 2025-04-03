@@ -6,24 +6,27 @@ import {
   ImageGrid
 } from "./PanelComponents";
 
+
 const WomenPanel = () => {
   return (
     <div className={styles['panel-container']}>
+      <div className={styles['columns-wrapper']}>
+        <div className={styles['double-col']}>
+          <DoubleCol data={Data.Women.DoubleCol} />
+        </div>
 
-      <div className="flex-1">
-        <DoubleCol data={Data.Women.DoubleCol} />
-      </div>
+        <div className={styles['single-col']}>
+          <SingleCol data={Data.Women.SingleCol} />
+        </div>
 
-      <div className="flex-1">
-        <SingleCol data={Data.Women.SingleCol} />
+        <div className={styles['image-grid']}>
+          <ImageGrid images={Data.Women.Images} />
+        </div>
       </div>
-
-      <div className={styles['image-grid']}>
-        <ImageGrid images={Data.Women.Images} />
-      </div>
-      
     </div>
   );
 };
+
+
 
 export default WomenPanel;

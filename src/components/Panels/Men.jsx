@@ -7,22 +7,21 @@ import {
 } from "./PanelComponents";
 
 const MenPanel = () => {
-
   return (
     <div className={styles['panel-container']}>
+      <div className={styles['columns-wrapper']}>
+        <div className={styles['double-col']}>
+          <DoubleCol data={Data.Men.DoubleCol} />
+        </div>
 
-      <div className="flex-1">
-        <DoubleCol data={Data.Men.DoubleCol} />
+        <div className={styles['single-col']}>
+          <SingleCol data={Data.Men.SingleCol} />
+        </div>
+
+        <div className={styles['image-grid']}>
+          <ImageGrid images={Data.Men.Images} />
+        </div>
       </div>
-
-      <div className="flex-1">
-        <SingleCol data={Data.Men.SingleCol} />
-      </div>
-
-      <div className={styles['image-grid']}>
-        <ImageGrid images={Data.Men.Images} />
-      </div>
-
     </div>
   );
 };
