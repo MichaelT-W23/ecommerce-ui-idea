@@ -19,7 +19,6 @@ function App() {
   return (
     <>
       {isMobile ? <MobileNavBar /> : <Navbar />}
-      <p className="text-2xl">TEST WEBSITE</p>
       <AppRouter />
     </>
   );

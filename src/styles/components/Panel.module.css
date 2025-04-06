@@ -11,21 +11,21 @@
 }
 
 .column {
-  flex: 1; /* 1/3 each */
-  min-width: 0; /* allow flex shrinking */
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
 .double-col {
-  flex: 2; /* takes up 2/3 */
+  flex: 2;
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
 .single-col {
-  flex: 1; /* takes up 1/3 */
+  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;

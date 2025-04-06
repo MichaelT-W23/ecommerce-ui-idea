@@ -1,120 +1,122 @@
 .sideMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 22rem;   
-    background-color: white; 
-    color: black;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .sideMenu.open {
-    transform: translateX(0);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 22rem;   
+  background-color: white; 
+  color: black;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  z-index: 20;
+}
 
-  .logoContainer {
-    margin-top: 18px;
-    margin-left: 15px;
-  }
+.sideMenu.open {
+  transform: translateX(0);
+}
 
-  .logoContainer:hover {
-    cursor: pointer;
-  }
+.logoContainer {
+  margin-top: 18px;
+  margin-left: 15px;
+}
 
-  .closeButton {
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;  /* Move the close button to the right */
-    background: none;
-    border: none;
-    cursor: pointer;
+.logoContainer:hover {
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .closeButton:hover {
   color: rgb(116, 116, 116);
 }
 
-  .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-  }
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
   
-  .menuButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 15px;
-    align-items: center;
-  }
-
-  .menuBtn {
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    width: 322px;
-    padding: 9px 4px;
-    border-radius: 2px;
-    border: 2px solid #262626;
-    cursor: pointer;
-  }
-  
-  .menuBtn:hover {
-    text-decoration: underline;
-    text-decoration-color: black;
-  }
-  
-  .menuBtn:focus {
-    box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
-    outline: transparent dotted 4px;
-  }
-  
-  .sellNowBtn {
-    background-color: #262626;
-    color: white;
-  }
-
-  .sellNowBtn:hover {
-    background-color: #747474;
-    border-color: #747474;
-  }
-  
-  .signUpBtn:hover {
-    color: #747474;
-    border-color: #747474;
-  }
-
-  .logInBtn:hover {
-    color: #747474;
-    border-color: #747474;
-  }
-  
-  .menuList {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .menuItem:first-child {
-    border-top: 1px solid rgb(38, 38, 38);
-    margin-top: 25px;
+.menuButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 15px;
+  align-items: center;
 }
 
-  .menuItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 1.15rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-top: 1px solid rgb(243, 243, 243);
-  }
+.menuBtn {
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  width: 322px;
+  padding: 9px 4px;
+  border-radius: 2px;
+  border: 2px solid #262626;
+  cursor: pointer;
+}
 
-  .menuItem:last-child span {
-    color: rgb(226, 0, 32);
-  }
+.menuBtn:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.menuBtn:focus {
+  box-shadow: rgb(255, 218, 10) 0px 0px 0px 4px;
+  outline: transparent dotted 4px;
+}
+
+.sellNowBtn {
+  background-color: #262626;
+  color: white;
+}
+
+.sellNowBtn:hover {
+  background-color: #747474;
+  border-color: #747474;
+}
+
+.signUpBtn:hover {
+  color: #747474;
+  border-color: #747474;
+}
+
+.logInBtn:hover {
+  color: #747474;
+  border-color: #747474;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem:first-child {
+  border-top: 1px solid rgb(38, 38, 38);
+  margin-top: 25px;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-top: 1px solid rgb(243, 243, 243);
+}
+
+.menuItem:last-child span {
+  color: rgb(226, 0, 32);
+}
+
