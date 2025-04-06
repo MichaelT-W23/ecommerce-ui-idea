@@ -5,6 +5,6 @@ Example navbar component for an e-commerce website.
 <br>
 
 ### Inspiration
-This design was heavily inspired by the following website. I made this as a practice exercise to see if I could replicate it.
+This design was heavily inspired by the following website. I made this as a practice exercise to see if I could replicate it. The main purpose was to replicate the Navbar and search functionality.
 
 Website -> [depop.com](https://www.depop.com/)
