@@ -25,7 +25,7 @@ const TripleCol = ({ data }) => {
       <div
         key={item.id}
         tabIndex={0}
-        className="pl-6 -ml-2 pr-2 py-3 border-b border-gray-100"
+        className="pl-6 -ml-2 pr-2 py-4 border-b border-gray-100"
         style={getRowStyle({
           isHovered: hoveredId === item.id,
           isFocused: focusedId === item.id,

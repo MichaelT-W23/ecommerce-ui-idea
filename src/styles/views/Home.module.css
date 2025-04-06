@@ -2,13 +2,13 @@
   width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* Maintains consistent ratio on any screen */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -49,19 +49,20 @@
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: #ddd;
+.button:focus {
+  outline: 4px solid rgb(255, 218, 10);
 }
 
-@media (min-width: 1024px) {
-  .container {
-    flex-direction: row;
-  }
+@media (max-width: 1024px) {
 
-  .imageWrapper {
-    width: 50%;
-    aspect-ratio: auto;
-    height: auto;
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
 
   .image {
