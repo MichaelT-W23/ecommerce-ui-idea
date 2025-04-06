@@ -25,10 +25,10 @@ function HomePage() {
         </div>
       </div>
 
-      <div className={styles.bottomSection}>
+      {/* <div className={styles.bottomSection}>
         <p className={styles.subTitle}>Buy for less. Sell for free. Keep fashion circular.</p>
         <button className={styles.sellNowBtn}>Sell now</button>
-      </div>
+      </div> */}
 
     </div>
   );
