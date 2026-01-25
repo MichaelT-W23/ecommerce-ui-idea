@@ -54,7 +54,8 @@
 }
 
 .sell-now-btn {
-  background-color: #262626;
+  /* background-color: #262626; */
+  background-color: red;
 }
 
 .sell-now-btn:hover {
