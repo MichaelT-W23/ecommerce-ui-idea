@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import SearchBar from "./SearchBar";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import CategoryBar from "./CategoryBar";
 import {
   DepopLogo,

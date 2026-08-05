@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../styles/components/MobileNavBar.module.css";
 import SideMenu from "./SideMenu";
 import MobileSearchView from "./MobileSearchView";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import {
   DepopLogo,
   LikeIcon,
